@@ -1,0 +1,170 @@
+---
+title: Solution to Day 1 of 7 Days of JS
+date: 2019-11-29 19:48 -03
+tags: JavaScript, Challenge
+image: /images/solutionday1.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js",
+ "headline": "Solution to Day 1 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS: Solution to Day 1",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript",  
+  "challenge",
+  "Computer Science", 
+  "programming" 
+],  
+ "wordcount": "198",
+ "datePublished": "2019-11-29",
+ "dateCreated": "2019-11-29",
+ "dateModified": "2019-11-29",
+ "description": "This is the solution to the first day of the #7DaysofJS challenge",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/solutionday1-1e41eef8.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+First of all, we have a functional solution, not the best solution (it may take some time to run with large numbers), but a solution at least:
+
+~~~javascript
+function factorial(n)
+{
+    if (n==0 || n==1){ 
+      return 1; 
+    }
+    else { 
+      return n * factorial( n-1 ); 
+    }
+}
+
+console.log(factorial(5))
+~~~
+
+The good thing is that is pretty easy to read.
+
+Now, a better solution would be something like this:
+
+~~~javascript
+function factorial(n){
+  let j = 1;
+  for (let i = 1; i <= n; i++){
+    j = j * i;
+  }
+  return j;
+}
+
+console.log(factorial(5))
+~~~
+
+An imperative solution using a for loop. This makes our function run faster.
+
+Now let's see the average function. First of all, a solution using a for loop:
+
+~~~javascript
+function average(array) {
+  let count = array.length;
+  if (count == 0){
+    return 0;
+  } else {
+    var sum = 0;
+    for (var i = 0; i < count; i++) {
+    sum = sum + array[i];
+  }
+  return sum / count;
+  }
+}
+
+console.log(average([2,4]))
+~~~
+
+I also made it using the `reduce()` method and an arrow function. Something weird came out:
+
+~~~javascript
+function average(array) {
+  let count = array.length;
+  if (count == 0){
+    return 0;
+  } else {
+     return array.reduce( (a,b) => a + b) / count;
+  }
+   
+}
+
+console.log(average([2,5,2]));
+~~~
+
+That's not very readable, so I prefer the first solution, which btw runs faster.
+
+Both solutions have if and else statements, and you probably noticed why: to return 0 when the input is an empty array, and not some weird error, or the good ol' `NaN`.
+
+Any questions? Leave a comment!

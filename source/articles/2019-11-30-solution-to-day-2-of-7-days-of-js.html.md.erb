@@ -1,0 +1,137 @@
+---
+title: Solution to Day 2 of 7 Days of JS
+date: 2019-11-30 12:27 -03
+tags: JavaScript, Challenge
+image: /images/solutionday2.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js",
+ "headline": "Solution to Day 2 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 2 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "46",
+ "datePublished": "2019-11-30",
+ "dateCreated": "2019-11-30",
+ "dateModified": "2019-11-30",
+ "description": "This is the solutions to the second day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+Let's see. First of all a solution using a while loop:
+
+~~~javascript
+function sumboth(array) {
+  let count = array.length;
+  let i = 0, even = 0, odd = 0;
+  while (i < count) {
+    array[i] % 2 == 0 ? even += array[i] : odd += array[i];
+    i++;  
+  }
+  return {even, odd};
+}
+
+console.log(sumboth([3,1,6,2]))
+~~~
+
+And as a second choice, a solution using a for loop:
+
+~~~javascript
+function sumboth2(array) {
+  let count = array.length;
+  let even = 0, odd = 0;
+  for (let i = 0; i < count; i++) {
+    array[i] % 2 == 0 ? even += array[i] : odd += array[i];
+  }
+  return {even, odd};
+}
+
+console.log(sumboth2([3,1,4,2]))
+~~~
+
+I've used the conditional (ternary) operator:
+
+~~~javascript
+condition ? inCaseIsTrue : inCaseIsFalse;
+~~~
+
+You can read more about it <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank" title="conditional (ternary) operator">here</a>.
+
+Any questions? Leave a comment!
+
+See you in the next challenge!

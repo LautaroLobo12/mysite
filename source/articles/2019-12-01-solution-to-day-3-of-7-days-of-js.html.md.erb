@@ -1,0 +1,141 @@
+---
+title: Solution to Day 3 of 7 Days of JS
+date: 2019-12-01 18:35 -03
+tags: JavaScript, Challenge
+image: /images/solutionday3.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js",
+ "headline": "Solution to Day 3 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 3 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "50",
+ "datePublished": "2019-12-01",
+ "dateCreated": "2019-12-01",
+ "dateModified": "2019-12-01",
+ "description": "This is the solution to the 3th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+I wrote first the solution using a while loop:
+
+~~~javascript
+function sign(array) {
+  let count = array.length;
+  let i = 0, positives = 0, negatives = 0, zeros = 0;
+  while (i < count) {
+    if (array[i] === 0) {
+      zeros += 1;
+    } if (array[i] > 0){
+      positives += 1; 
+    } if (array[i] < 0){
+      negatives += 1;
+    }
+    i++;  
+  }
+  return {zeros, positives, negatives};
+}
+
+console.log(sign([-3,0,6,2]))
+~~~
+
+And it works! Then, I wrote the same but with a for loop:
+
+~~~javascript
+function sign(array) {
+  let count = array.length;
+  let positives = 0, negatives = 0, zeros = 0;
+  for (let i = 0; i < count; i++) {
+    if (array[i] === 0) {
+      zeros += 1;
+    } if (array[i] > 0){
+      positives += 1; 
+    } if (array[i] < 0){
+      negatives += 1;
+    }
+  }
+  return {zeros, positives, negatives};
+}
+
+console.log(sign([3,-1,0,-2]))
+~~~
+
+You may want to write this function using the `Math.sign()` method. You can read about it <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign" target="_blank" title="Math.sign() JavaScript method">here</a>.
+
+Do you have a different solution? Share it in the comments!

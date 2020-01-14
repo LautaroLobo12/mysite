@@ -1,0 +1,129 @@
+---
+title: Installing Haskell Compiler in Linux 
+date: 2019-04-21 11:14 -03
+tags: Haskell, Linux
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/installing-ghc-in-linux",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/installing-ghc-in-linux",
+ "headline": "Installing Haskell Compiler in Linux",
+ "alternativeHeadline": "How To Install GHC",
+ "genre": "Haskell", 
+ "keywords": [
+  "Programming", 
+  "Haskell", 
+  "Compiler", 
+  "Computer Science" ,
+  "Linux"
+], 
+ "wordcount": "275",
+ "datePublished": "2019-04-21",
+ "dateCreated": "2019-04-21",
+ "dateModified": "2019-05-22",
+ "description": "If you want to test Haskell in your own computer like a real developer, you must have GHC, come and find what it is!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+Assuming that you know what Haskell is (if not, [read this brief introduction](https://lautarolobo.xyz/blog/what-s-haskell/)), and you know what the Glasgow Haskell Compiler is (check [this](https://en.wikipedia.org/wiki/Glasgow_Haskell_Compiler) if you don't), I'll show you how to get GHC up and running in your computer.
+
+First things first, open the terminal and type:
+
+```console
+sudo apt-get install haskell-platform
+```
+
+This command should work on the most common Linux distros out there ([Debian](https://www.debian.org/index.en.html), [Mint](https://linuxmint.com/), [Ubuntu](https://www.ubuntu.com/)). 
+
+Press Enter, and you will be asked to type your password, after you type it you'll see a list of sugested packages, those won't be installed, and a list of the packages that will be installed, with the amount of space that they are willing to occupe in your drive. Classic pre-installation info. Then you must type _s_ if you want to proceed with the installation, or _n_ if you regret.
+
+Have in mind that the installation process once you type _s_, may take some time depending in your internet conection.
+
+Following this simple operation, you have your Glasgow Haskell Compiler installed, ready to use.
+
+If you want to make sure that it's installed, just open the terminal and simply type:
+
+```console
+ghci
+```
+
+Therefore you should see in your console something like this:
+
+```console
+GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+Prelude> 
+```
+ <hr>
+
+Didn't work? [Tell me](mailto:contact@lautarolobo.xyz) what went wrong and I'll be glad to help you out!
+
+If you want to write your first Haskell function and test it with GHC, [click me!](https://lautarolobo.xyz/blog/first-haskell-function/)

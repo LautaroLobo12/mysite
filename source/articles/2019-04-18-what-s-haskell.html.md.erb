@@ -1,0 +1,102 @@
+---
+title: What's Haskell?
+date: 2019-04-18 17:09 -03
+tags: Haskell 
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/what-s-haskell",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/what-s-haskell",
+ "headline": "What's Haskell?",
+ "alternativeHeadline": "Brief introduction to Haskell",
+ "genre": "Haskell", 
+ "keywords": [
+  "Haskell", 
+  "Programming", 
+  "Computer-Science"
+], 
+ "wordcount": "210",
+ "datePublished": "2019-04-18",
+ "dateCreated": "2019-04-18",
+ "dateModified": "2019-05-22",
+ "description": "You are new in Haskell and want to know the base of it. Here I'll show what is Haskell, and what is with it that is so cool.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+So, you are new in [Haskell](http://wikipedia.org/wiki/Haskell_programming_language), and you want to know the basis, great! 
+
+<img src="/images/haskell-logo.png" alt="Haskell" title="Haskell logo">Haskell is a _purely functional_ [programming language.](https://en.wikipedia.org/wiki/Programming_language) What this is? Well, the variables do not change over time, the variable will always stay setted to the sepcific value given. So, if you called a function twice, with the same parameters given, the output will be always the same. This property is known as _referential transparency_. It lets you evaluate a function, and get to know if it's correct. 
+
+Haskell is known as a _lazy_ programming language. This means that it will do just the bare minimum computation required to show the result of a piece of code (if you tell him to show it).
+
+And not less important, Haskell is _statically typed_ and has _type inference_, so, if you do not specify the [type](https://en.wikipedia.org/wiki/Data_type) of a function, Haskell will intelegently figure it out. And, if you mess up with the types, the [compiler](https://en.wikipedia.org/wiki/Compiler) will tell you the error and, most of the times, specificly show you in wich line is it that everything blowed up. This helps to fix errors in early stages of development, so the probabilities of the program failing once it is released will be decreased.
+

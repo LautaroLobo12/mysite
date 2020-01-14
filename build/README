@@ -1,0 +1,9 @@
+<h1>lautarolobo.xyz</h1>
+
+<p>This is my personal website, built with <a href="https://middlemanapp.com/">Middleman</a>, where I post stuff from times to times. It&rsquo;s hosted on Hostinger, and configured with continous deployment. </p>
+
+<p>I&rsquo;ve used JSON-LD (schema.org vocabulary) on the articles, for SEO pourpose. </p>
+
+<p>You see something that may be improved? Open an issue, fork this repo and make your PR, I&rsquo;ll review it ASAP.</p>
+
+<p>Thanks @dtcristo for developing the template: https://github.com/dtcristo/middleman-cactus</p>

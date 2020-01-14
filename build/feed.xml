@@ -1,0 +1,3616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lautaro Jordan Lobo Ravarotto</title>
+  <subtitle>Web Developer | Computer Science Student</subtitle>
+  <link href="https://lautarolobo.xyz/feed.xml" rel="self"/>
+  <link href="https://lautarolobo.xyz/"/>
+  <id>urn:uuid:4b6fc0ee-c5f9-4c67-849f-b220d14bb6f1</id>
+  <updated>2019-12-04T11:11:21-03:00</updated>
+  <author>
+    <name>Lautaro Jordan Lobo Ravarotto</name>
+  </author>
+  <rights>© Lautaro Jordan Lobo Ravarotto 2019</rights>
+  <entry>
+    <title>Solution to Day 7 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-7-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-12-05T08:19:00-03:00</published>
+    <updated>2019-12-04T11:07:29-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-7-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-7-of-7-days-of-js",
+ "headline": "Solution to Day 7 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS - Solution to Day 7",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "111",
+ "datePublished": "2019-12-05",
+ "dateCreated": "2019-12-05",
+ "dateModified": "2019-12-05",
+ "description": "This is the solution to the last day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;When writing this solution, I realized that I needed a function that returns &lt;code&gt;true&lt;/code&gt; if a number is prime. So I wrote that function first:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And once I had that, I was ready to write primesUntil, which you can see here:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)){&lt;/span&gt;
+      &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Those are the first '&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;' primes.'&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s possible to write both functions with for loops instead of while loops. If you are just starting out with loops in JavaScript, you should try to do that.&lt;/p&gt;
+
+&lt;p&gt;Any questions? Write a comment!&lt;/p&gt;
+
+&lt;p&gt;This is the end of our journey. But don&amp;rsquo;t worry, I&amp;rsquo;ll be back soon with more challenges. If you don&amp;rsquo;t want to miss them, follow me on &lt;a href="https://dev.to/lautarolobo" title="My DEV Profile"&gt;DEV&lt;/a&gt; &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; &lt;a href="http://pinterest.com/lautarolobo/" title="My Pinterest Profile"&gt;Pinterest&lt;/a&gt; &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; &lt;a href="https://twitter.com/jordan12ok" title="My Twitter Profile"&gt;Twitter&lt;/a&gt; &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; &lt;a href="javascript:;" onclick="ml_account('webforms', '1426892', 'g8s3m6', 'show')" title="My Newsletter"&gt;I have a newsletter!&lt;/a&gt; 😊&lt;/p&gt;
+
+&lt;p&gt;See you soon!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Primes Until n</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-primes-until-n/" rel="alternate"/>
+    <id/>
+    <published>2019-12-05T08:16:00-03:00</published>
+    <updated>2019-12-04T11:11:21-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-primes-until-n/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-primes-until-n/",
+ "headline": "7 Days of JS: Primes Until n",
+ "alternativeHeadline": "Day 7 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "86",
+ "datePublished": "2019-12-05",
+ "dateCreated": "2019-12-05",
+ "dateModified": "2019-12-05",
+ "description": "Last Day of 7 Days of JS",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 7 of 7 Days of JavaScript! &lt;/p&gt;
+
+&lt;p&gt;Today, on the last day of this challenge, we will tackle a hard one.&lt;/p&gt;
+
+&lt;p&gt;Write a function that takes a Natural number &lt;code&gt;n&lt;/code&gt;, which returns all the primes from 0 to &lt;code&gt;n&lt;/code&gt; and a string at the end with some phrase.&lt;/p&gt;
+
+&lt;p&gt;Example: &lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;span class="s1"&gt;'Why the string?'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hint: you may want to use a helper function.&lt;/p&gt;
+
+&lt;p&gt;Give it time. If you feel frustrated, go take a walk and then sit down to try it again. &lt;/p&gt;
+
+&lt;p&gt;And then, read the solution &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-7-of-7-days-of-js/" title="Solution to the last day of 7 Days of JS"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 6 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-6-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-12-04T09:26:00-03:00</published>
+    <updated>2019-12-04T10:01:33-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-6-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-6-of-7-days-of-js",
+ "headline": "Solution to Day 6 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS - Solution to Day 6",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "32",
+ "datePublished": "2019-12-04",
+ "dateCreated": "2019-12-04",
+ "dateModified": "2019-12-04",
+ "description": "This is the solution to the 6th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;I first wrote this code using the &lt;code&gt;push()&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, using concatenation:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This returns a string, not an array.&lt;/p&gt;
+
+&lt;p&gt;And finally, using the &lt;code&gt;map()&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;element&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Any question? Write a comment!&lt;/p&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: myElement + n</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-myelement-plus-n/" rel="alternate"/>
+    <id/>
+    <published>2019-12-04T09:25:00-03:00</published>
+    <updated>2019-12-04T10:25:25-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-myelement-plus-n/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-myelement-plus-n/",
+ "headline": "7 Days of JS: myElement + n",
+ "alternativeHeadline": "Day 6 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "66",
+ "datePublished": "2019-12-04",
+ "dateCreated": "2019-12-04",
+ "dateModified": "2019-12-04",
+ "description": "6th Day of 7 Days of JS",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 6 of 7 Days of JavaScript!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see, I got a nice one for today.&lt;/p&gt;
+
+&lt;p&gt;Given an array and a number &lt;code&gt;n&lt;/code&gt;, return the array with each element summed to &lt;code&gt;n&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want, you can also return the output as a string- If that makes it easier for you, it&amp;rsquo;s OK.&lt;/p&gt;
+
+&lt;p&gt;You can check out the solution algorithm &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-6-of-7-days-of-js/" title="#7DaysJs - myElement + n"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 5 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-12-03T21:03:00-03:00</published>
+    <updated>2019-12-04T10:01:22-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js",
+ "headline": "Solution to Day 5 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS - Solution to Day 5",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "31",
+ "datePublished": "2019-12-03",
+ "dateCreated": "2019-12-03",
+ "dateModified": "2019-12-03",
+ "description": "This is the solution to the 5th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;As before, I first made it with a while loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;positionOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then, a for loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;positionOf1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Do you have a better solution? Share it in the comments!&lt;/p&gt;
+
+&lt;p&gt;See you on day 6!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Where is My Element</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-where-is-my-element/" rel="alternate"/>
+    <id/>
+    <published>2019-12-03T20:20:00-03:00</published>
+    <updated>2019-12-04T10:25:17-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-where-is-my-element/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-where-is-my-element/",
+ "headline": "7 Days of JS: Where is My Element",
+ "alternativeHeadline": "Day 5 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "55",
+ "datePublished": "2019-12-03",
+ "dateCreated": "2019-12-03",
+ "dateModified": "2019-12-03",
+ "description": "5th Day of 7 Days of JS",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 5 of 7 Days of JavaScript! Today we will code a classic function that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Takes two parameters: an element and an array of elements&lt;/li&gt;
+&lt;li&gt;Returns the position of the element inside the array. If the element is not in the array, returns -1.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wish you luck!&lt;/p&gt;
+
+&lt;p&gt;You can see the solution &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js/" title="Solution to Day 5 of 7 Days of JS"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 4 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-12-02T14:48:00-03:00</published>
+    <updated>2019-12-04T10:01:08-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js",
+ "headline": "Solution to Day 4 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 4 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "85",
+ "datePublished": "2019-12-02",
+ "dateCreated": "2019-12-02",
+ "dateModified": "2019-12-02",
+ "description": "This is the solution to the 4th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;So, first the shortest solution:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Japan'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;ve used 3 methods here: &lt;code&gt;split()&lt;/code&gt;, &lt;code&gt;reverse()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt;. The split method turns the string into an array of characters, then I use the reverse method, that reverses (duh) the array, and then I take the array of characters and make it look again like a string.&lt;/p&gt;
+
+&lt;p&gt;Then I cracked my head up to make it work with a for loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Bananas'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And also implemented this same algorithm as a while loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+  &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'goodbye'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Do you have any questions? Write a comment!&lt;/p&gt;
+
+&lt;p&gt;Cheers!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Reverse a String</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-reverse-a-string/" rel="alternate"/>
+    <id/>
+    <published>2019-12-02T14:43:00-03:00</published>
+    <updated>2019-12-04T10:25:01-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-reverse-a-string/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-reverse-a-string/",
+ "headline": "7 Days of JS: Reverse a String",
+ "alternativeHeadline": "Day 4 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "76",
+ "datePublished": "2019-12-02",
+ "dateCreated": "2019-12-02",
+ "dateModified": "2019-12-02",
+ "description": "4th Day of 7 Days of JS",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 4 of 7 Days of JavaScript!&lt;/p&gt;
+
+&lt;p&gt;Today we will see how to reverse a string. It&amp;rsquo;s probably the most asked question ever on technical interviews.&lt;/p&gt;
+
+&lt;p&gt;So the statement is quite simple, although the problem has an unexpected complexity when you face it for the first time: write a function that takes a string and returns the string reversed. &lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Japan'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="s1"&gt;'napaJ'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Give it a try. &lt;/p&gt;
+
+&lt;p&gt;You can see the solutions I made &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js/" title="Solution to day 4 of 7 days of JS"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 3 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-12-01T18:35:00-03:00</published>
+    <updated>2019-12-04T10:00:52-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js",
+ "headline": "Solution to Day 3 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 3 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "50",
+ "datePublished": "2019-12-01",
+ "dateCreated": "2019-12-01",
+ "dateModified": "2019-12-01",
+ "description": "This is the solution to the 3th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;I wrote first the solution using a while loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And it works! Then, I wrote the same but with a for loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+      &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You may want to write this function using the &lt;code&gt;Math.sign()&lt;/code&gt; method. You can read about it &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign" target="_blank" title="Math.sign() JavaScript method"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Do you have a different solution? Share it in the comments!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Read My Sign</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-read-my-sign/" rel="alternate"/>
+    <id/>
+    <published>2019-12-01T18:22:00-03:00</published>
+    <updated>2019-12-04T10:24:53-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-read-my-sign/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-read-my-sign/",
+ "headline": "7 Days of JS: Read My Sign",
+ "alternativeHeadline": "Day 3 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "47",
+ "datePublished": "2019-12-01",
+ "dateCreated": "2019-12-01",
+ "dateModified": "2019-12-01",
+ "description": "3th Day of 7 Days of JS",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 3 of 7 of Days of JavaScript! &lt;/p&gt;
+
+&lt;p&gt;Today&amp;rsquo;s challenge is to write a function that takes an array, and says how many numbers are positives, how many numbers are negatives, and how many are zeros.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="nl"&gt;zeros:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="nl"&gt;positives:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="nl"&gt;negatives:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; 
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Good luck!&lt;/p&gt;
+
+&lt;p&gt;You can see the solution &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js/" title="#7DaysJs - Read My Sign"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 2 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-11-30T12:27:00-03:00</published>
+    <updated>2019-12-04T10:00:39-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js",
+ "headline": "Solution to Day 2 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 2 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "46",
+ "datePublished": "2019-11-30",
+ "dateCreated": "2019-11-30",
+ "dateModified": "2019-11-30",
+ "description": "This is the solutions to the second day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see. First of all a solution using a while loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;even&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumboth&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And as a second choice, a solution using a for loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;even&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumboth2&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;ve used the conditional (ternary) operator:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;condition&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsTrue&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsFalse&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can read more about it &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank" title="conditional (ternary) operator"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any questions? Leave a comment!&lt;/p&gt;
+
+&lt;p&gt;See you in the next challenge!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Even or Odd</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-even-or-odd/" rel="alternate"/>
+    <id/>
+    <published>2019-11-30T12:17:00-03:00</published>
+    <updated>2019-12-04T10:24:42-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-even-or-odd",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-even-or-odd",
+ "headline": "7 Days of JS: Even or Odd",
+ "alternativeHeadline": "Day 2 of 7 Days of JS: Even or Odd",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "69",
+ "datePublished": "2019-11-30",
+ "dateCreated": "2019-11-30",
+ "dateModified": "2019-11-30",
+ "description": "Today we are working with a classic problem: diferentiate odds from even numbers in an array.",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 2 of 7 Days of JavaScript!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s begin our journey today. We need to write a function that takes an array and gives back two values: one with the sum of all the odd numbers of the array, and other with the sum of all the even numbers on the array.&lt;/p&gt;
+
+&lt;p&gt;It can&amp;rsquo;t be that hard right?&lt;/p&gt;
+
+&lt;p&gt;You can read the solution to today&amp;rsquo;s challenge &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-2-of-7-days-of-js" title="Solution to Day 2 of 7 Days of JS"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solution to Day 1 of 7 Days of JS</title>
+    <link href="https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js/" rel="alternate"/>
+    <id/>
+    <published>2019-11-29T19:48:00-03:00</published>
+    <updated>2019-11-30T12:20:24-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js",
+ "headline": "Solution to Day 1 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS: Solution to Day 1",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript",  
+  "challenge",
+  "Computer Science", 
+  "programming" 
+],  
+ "wordcount": "198",
+ "datePublished": "2019-11-29",
+ "dateCreated": "2019-11-29",
+ "dateModified": "2019-11-29",
+ "description": "This is the solution to the first day of the #7DaysofJS challenge",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/solutionday1-1e41eef8.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;First of all, we have a functional solution, not the best solution (it may take some time to run with large numbers), but a solution at least:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt; 
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; 
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; 
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The good thing is that is pretty easy to read.&lt;/p&gt;
+
+&lt;p&gt;Now, a better solution would be something like this:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An imperative solution using a for loop. This makes our function run faster.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s see the average function. First of all, a solution using a for loop:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I also made it using the &lt;code&gt;reduce()&lt;/code&gt; method and an arrow function. Something weird came out:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reduce&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s not very readable, so I prefer the first solution, which btw runs faster.&lt;/p&gt;
+
+&lt;p&gt;Both solutions have if and else statements, and you probably noticed why: to return 0 when the input is an empty array, and not some weird error, or the good ol&amp;rsquo; &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any questions? Leave a comment!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>7 Days of JS: Factorial and Average</title>
+    <link href="https://lautarolobo.xyz/blog/7-days-of-js-factorial-and-average/" rel="alternate"/>
+    <id/>
+    <published>2019-11-29T19:32:00-03:00</published>
+    <updated>2019-11-30T12:19:20-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/7-days-of-js-factorial-and-average",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/7-days-of-js-factorial-and-average",
+ "headline": "7 Days of JS: Factorial and Average",
+ "alternativeHeadline": "7 Days of JavaScript Challenge: Day 1",
+ "genre": "JavaScript", 
+ "keywords": [
+  "challenge", 
+  "javascript", 
+  "computer science", 
+  "programming" 
+],  
+ "wordcount": "204",
+ "datePublished": "2019-11-29",
+ "dateCreated": "2019-11-29",
+ "dateModified": "2019-11-29",
+ "description": "A 7 days challenge to make you a better JavaScript programmer",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/7daysJS-7f7d8328.webp",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Welcome to day 1 of 7 Days of JavaScript! A 7 days challenge to crack your head up into some simple but complex algorithms. Today we&amp;rsquo;ll work on writing two math functions, factorial and average. &lt;/p&gt;
+
+&lt;p&gt;To test and run JavaScript, you need the JSC compiler.&lt;/p&gt;
+
+&lt;p&gt;Just kidding! A compiler?! You can run it in your own browser!&lt;/p&gt;
+
+&lt;p&gt;But, I&amp;rsquo;ve found this website: &lt;a href="https://playcode.io/" target="_blank"&gt;Playcode.io&lt;/a&gt;. It has all I want, a minimalistic dark theme and a clean console. You can run the code wherever you want, but I encourage you to use Playcode, everything is just nicer. &lt;/p&gt;
+
+&lt;p&gt;Enough introduction, let&amp;rsquo;s dive right in!&lt;/p&gt;
+
+&lt;h2&gt;Factorial&lt;/h2&gt;
+
+&lt;p&gt;So the factorial function takes a Natural number &lt;code&gt;n&lt;/code&gt;, and returns the product between all the Naturales numbers that are between 1 and &lt;code&gt;n&lt;/code&gt;, like this:&lt;/p&gt;
+&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;span class="c1"&gt;//1*2*3*4*5&lt;/span&gt;
+&lt;span class="mi"&gt;120&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Average&lt;/h2&gt;
+
+&lt;p&gt;The average function is a well known one. It takes an array of numbers, sums them and divides that sum by the length of the initial array. Here&amp;rsquo;s an example:&lt;/p&gt;
+&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;//(1+5+8+4)/4&lt;/span&gt;
+&lt;span class="mf"&gt;4.5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s your turn. Give them a try, especially if you are kinda newbie on JavaScript because you’ll build a good understanding of how loops work.&lt;/p&gt;
+
+&lt;p&gt;Did you solve them already? Try a different approach! Making more than one solution will strengthen your knowledge, giving you some flexibility when facing problems. And that’s key when programming.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://lautarolobo.xyz/blog/solution-to-day-1-of-7-days-of-js" title="Solution to Day 1 of 7 Days of JS"&gt;Here&lt;/a&gt; are the solutions.&lt;/p&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Here Are 5 Reasons Why You Need to Go to a Hackathon</title>
+    <link href="https://lautarolobo.xyz/blog/here-are-5-reasons-why-you-need-to-go-to-a-hackathon/" rel="alternate"/>
+    <id/>
+    <published>2019-10-17T12:00:00-03:00</published>
+    <updated>2019-11-29T17:48:26-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/here-are-5-reasons-why-you-need-to-go-to-a-hackathon/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/here-are-5-reasons-why-you-need-to-go-to-a-hackathon/",
+ "headline": "Here's Why You Need to go to a Hackathon, Bullet-Pointed",
+ "alternativeHeadline": "",
+ "image": "https://lautarolobo.xyz/images/hackatrix-cb1b1607.png",
+ "genre": "Hackathon", 
+ "keywords": [
+  "Hackathon",
+  "Coding Competition", 
+  "Coding Challenge", 
+  "Computer Science"
+],  
+ "wordcount": "687",
+ "datePublished": "2019-10-17",
+ "dateCreated": "2019-10-17",
+ "dateModified": "2019-10-17",
+ "description": "Hackathons everywhere but, are they worthy? For sure! And here's why.",
+ "isFamilyFriendly": "true",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Here&amp;rsquo;s why you need to go to a Hackathon, bullet-pointed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#h2-1"&gt;To Network&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#h2-2"&gt;To Learn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#h2-3"&gt;To Build&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#h2-4"&gt;To Listen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#h2-5"&gt;To Have Fun&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But first, let me tell you more about the Hackathon which I attended 2 weeks ago, the Hackatrix. That&amp;rsquo;s when I got inspired to write this post.&lt;/p&gt;
+
+&lt;p&gt;The Hackatrix was organized by Belatrix, an international software factory recently bought by an even more international software factory: Globant.&lt;/p&gt;
+
+&lt;p&gt;It was lovely, big thanks to the organizers! Cool prices and cool food through the full day.&lt;/p&gt;
+
+&lt;p&gt;It was my second time attending the Hackatrix, and their 5th edition in Buenos Aires.&lt;/p&gt;
+
+&lt;p&gt;I was on a different team than the year before, which is great because that way you get to know new people! We built a platform to connect volunteers with nonprofit organizations, using the create-react-app boilerplate, adding Bootstrap and Redux, and even an API wrote that day by one of the team members using Kotlin. Fact: that guy was a Backend magician.&lt;/p&gt;
+
+&lt;p&gt;You can take a look at the code &lt;a href="https://github.com/hackathon-prost/"&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We ended up being on the half that passed the technical interview and went to the final exposition. Although we didn&amp;rsquo;t win, I can say that it was an awesome experience, I&amp;rsquo;ll get back to the Hackatrix next year for sure!&lt;/p&gt;
+
+&lt;p&gt;Well, that&amp;rsquo;s it about the recap, now let&amp;rsquo;s see why YOU should go to a Hackathon too!&lt;/p&gt;
+
+&lt;h2 id="h2-1"&gt;To Network&lt;/h2&gt;
+
+&lt;p&gt;On Hackathons you get to know people. You get to know a possible future employee, employer, someone with you may end up working with&amp;hellip; or even someone that will become a friend! &lt;/p&gt;
+
+&lt;p&gt;Yes, it may happen too, that you never see them again. But listen, the feeling of sharing the experience with them will never leave you. &lt;/p&gt;
+
+&lt;p&gt;You will share thoughts, experiences. Why not, right?&lt;/p&gt;
+
+&lt;h2 id="h2-2"&gt; To Learn &lt;/h2&gt;
+
+&lt;p&gt;Guess what, your team members will teach you things. That always happens. And you will even teach some stuff to others too, reinforcing your knowledge about that specific topic.&lt;/p&gt;
+
+&lt;p&gt;You will gain confidence when sharing your ideas and your project with others. &lt;/p&gt;
+
+&lt;p&gt;And you will need to ask for help at some time. Don&amp;rsquo;t be shy, do it! You&amp;rsquo;ll learn new stuff.&lt;/p&gt;
+
+&lt;h2 id="h2-3"&gt; To Build &lt;/h2&gt;
+
+&lt;p&gt;You will end up with a cool project to enlarge your resume. &lt;/p&gt;
+
+&lt;p&gt;If you really like the project, you can keep working on the project before the Hackathon ends. You may even end up with a functional app uploaded on the Google Play Store, or something like that. If you give it steroids (not real steroids&amp;hellip; you know what I mean), you will end up with those popping-everywhere things&amp;hellip; a Startup!&lt;/p&gt;
+
+&lt;h2 id="h2-4"&gt; To Listen &lt;/h2&gt;
+
+&lt;p&gt;At any Hackathon, you&amp;rsquo;ll hear about some cool and brand-new projects and ideas. Your teammates will talk to you about career-path, jobs and experiences, all invaluable pieces of information. &lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t stay quiet, but neither talk all day or you are going to lose many insights that will refresh your soul, get you motivated, and lead you in a good way. &lt;/p&gt;
+
+&lt;h2 id="h2-5"&gt; To Have Fun &lt;/h2&gt;
+
+&lt;p&gt;Finally, the most important thing: have fun! That&amp;rsquo;s what life is all about, right?&lt;/p&gt;
+
+&lt;p&gt;Smile. Laugh a bit. You may don&amp;rsquo;t get the cool merchandise, either a small price, but you end up fresh, new, motivated, with a cool project to showcase. You get out as a different person, more mature, or more capable to work on your next project.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now, find a Hackathon near you and go! &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://giphy.com/gifs/just-do-it-shia-UqZ4imFIoljlr5O2sM"&gt;&lt;div style="width:80%;height:0;padding-bottom:75%;position:relative;margin-left:10%;"&gt;&lt;iframe src="https://giphy.com/embed/UqZ4imFIoljlr5O2sM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll have a blast. &lt;/p&gt;
+
+&lt;p&gt;Comment below if you have participated in a Hackathon, to inspire others to go! &lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>How Machine Learning, 5G and Data Science Will be Critical to the Future of the Internet of Things</title>
+    <link href="https://lautarolobo.xyz/blog/how-machine-learning-5g-and-data-science-will-be-critical-to-the-future-of-the-internet-of-things/" rel="alternate"/>
+    <id/>
+    <published>2019-09-30T12:20:00-03:00</published>
+    <updated>2019-10-17T13:14:46-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/how-machine-learning-5g-and-data-science-will-be-critical-to-the-future-of-the-internet-of-things/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/how-machine-learning-5g-and-data-science-will-be-critical-to-the-future-of-the-internet-of-things/",
+ "headline": "How Machine Learning, 5G and Data Science Will be Critical to the Future of the Internet of Things",
+ "alternativeHeadline": "What's Coming on Internet of Things",
+ "image": "https://lautarolobo.xyz/images/cincoge-d568d5df.webp",
+ "genre": "Internet of Things", 
+ "keywords": [
+  "Artificial Neural Networks",
+  "Internet of Things", 
+  "Neural Networks", 
+  "Computer Science", 
+  "Artificial Intelligence",
+  "AI",
+  "Machine Learning",
+  "Deep Learning",
+  "Data Science",
+  "Ubiquitous Computing",
+  "5G",
+  "4G",
+  "Smart Cities",
+  "Big Data"
+],  
+ "wordcount": "1375",
+ "datePublished": "2019-09-30",
+ "dateCreated": "2019-09-30",
+ "dateModified": "2019-09-30",
+ "description": "Machine Learning to understand the Big Data collected from Internet of Things. That says it all.",
+ "isFamilyFriendly": "true",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;By 2020, the total number of Internet-connected devices will be between 25-50 billion.&lt;/p&gt;
+
+&lt;p&gt;This is a deep dive into the future of the Internet of Things and the challenges to come with the rise of new technologies and big amounts of data collected by all these connected devices.&lt;/p&gt;
+
+&lt;div id="index"&gt;
+
+&lt;h4&gt; Index &lt;/h4&gt;
+ 
+&lt;ul&gt;
+
+&lt;li&gt;
+    &lt;a href="#h2-1"&gt;What 5G has new&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href="#h2-2"&gt;How IoT will benefit from 5G&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href="#h2-3"&gt;How IoT goes hand-to-hand with Data Science and Machine Learning&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt; 
+    &lt;a href="#h2-4"&gt;Summary&lt;/a&gt; 
+&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id="h2-1"&gt; What 5G has new &lt;/h2&gt;
+
+&lt;p&gt;5G is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Less battery consuming&lt;/li&gt;
+&lt;li&gt;20+ times faster than 4G LTE &lt;/li&gt;
+&lt;li&gt;Able to support up to a million devices per km²&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Less battery consuming&lt;/h3&gt;
+
+&lt;p&gt;We all know it, 4G drains battery like a champ.&lt;/p&gt;
+
+&lt;p&gt;But don’t worry, 5G will be less battery consuming than 4G, the International Telecommunications Union is working on it. They are a part of the ONU and the ones that are working strong to develop 5G.&lt;/p&gt;
+
+&lt;p&gt;The changes in the latency, among other measures, will make 5G less battery consuming than 4G. &lt;/p&gt;
+
+&lt;p&gt;Won&amp;rsquo;t make your battery last forever, but hopefully a few hours more.&lt;/p&gt;
+
+&lt;h3&gt;20+ times faster than 4G LTE&lt;/h3&gt;
+
+&lt;p&gt;The max download speed on 4G LTE is on 64 Mbps/s. The max download on 5G is more than 1 Gb/s. &lt;/p&gt;
+
+&lt;p&gt;And this stills in development. It&amp;rsquo;s expected to have a download speed at a minimum of&amp;hellip; 20 Gbs/s!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://giphy.com/gifs/bye-looney-tunes-running-away-xT39CVCn6Eq8Ve9FZu"&gt;&lt;div style="width:100%;height:0;padding-bottom:67%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/xT39CVCn6Eq8Ve9FZu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Want some more real data? &lt;/p&gt;
+
+&lt;p&gt;Qualcomm made a test at San Franciso. The median 4G user was browsing on 71 Mbps/s. Browsing speed increased to 1.4 Gbs/s to the median 5G user. &lt;/p&gt;
+
+&lt;p&gt;They made a similar test on Frankfurt. This time they saw a jump from 56 Mbps/s on browsing speed on the median 4G user, to more than 490 Mbps/s for the median 5G user.&lt;/p&gt;
+
+&lt;p&gt;Impressive, right?&lt;/p&gt;
+
+&lt;h3&gt;Able to support up to a million devices per km²&lt;/h3&gt;
+
+&lt;p&gt;Yeap, it&amp;rsquo;s true. It&amp;rsquo;s in the official specifications.&lt;/p&gt;
+
+&lt;p&gt;But, how? &lt;/p&gt;
+
+&lt;p&gt;Well, among other things, 5G uses higher frequencies than 4G. Extremely high. That helps to support more devices, without the speed decreases.&lt;/p&gt;
+
+&lt;h2 id="h2-2"&gt; How IoT will benefit from 5G &lt;/h2&gt;
+
+&lt;p&gt;There are tons of systems already made. Tons of devices out there gathering data, making someone&amp;rsquo;s life easier. But how we can make the IoT experience even better?&lt;/p&gt;
+
+&lt;p&gt;To tackle this we need to first that are different &amp;lsquo;layers&amp;rsquo; where IoT is being applied. As examples: financial, educational, health care, military and so on.&lt;/p&gt;
+
+&lt;p&gt;The real challenge comes on connecting these layers, making IoT smarter, and more helpful for the final user. In one word, better.&lt;/p&gt;
+
+&lt;p&gt;This IoT network would be also a step forward to smart cities, if well implemented.&lt;/p&gt;
+
+&lt;p&gt;Where 5G come in?&lt;/p&gt;
+
+&lt;p&gt;Well, to build these networks, sharing data between devices, we would need a better Internet. Higher bandwidth and lower latency, for name some. All things that 5G delivers. &lt;/p&gt;
+
+&lt;h2 id="h2-3"&gt; How IoT goes hand-to-hand with Data Science and Machine Learning &lt;/h2&gt; 
+
+&lt;p&gt;IoT needs data to either represent better services to users or to enhance IoT framework performance.&lt;/p&gt;
+
+&lt;p&gt;There are thousands of devices in every city, each of these smart devices stores data of its users and handles it.&lt;/p&gt;
+
+&lt;p&gt;We know the name of this big quantity of diverse data: Big Data.&lt;/p&gt;
+
+&lt;p&gt;Intelligent processing and analysis of this Big Data is the key to developing smart IoT applications.&lt;/p&gt;
+
+&lt;p&gt;All this information gathered becomes more relevant in big cities, cities that are getting closer to the definition of smart-cities, that have all these devices connected with in-depth online experiences and tons of data of every citizen, every device and every system.&lt;/p&gt;
+
+&lt;p&gt;This Big Data without context, without &amp;ldquo;meaning&amp;rdquo;, won&amp;rsquo;t be really useful. &lt;/p&gt;
+
+&lt;p&gt;Here Data Science steps on. A way to find patterns and new insights from data through different techniques.&lt;/p&gt;
+
+&lt;p&gt;Data Scientists will work on collecting all this data, giving more context and relating all the different layers, to create these online experiences and improve them, getting to understand the users&amp;rsquo; behavior.&lt;/p&gt;
+
+&lt;p&gt;In the beginning, most of the Data Scientists will be tagging all this Big Data. In the future, a &lt;a href="https://lautarolobo.xyz/blog/neural-networks-101/" target="_blank"&gt;Neural Network&lt;/a&gt; will do this work, but to train this Neural Network, there must be some good quantity of tagged data to start with. &lt;/p&gt;
+
+&lt;p&gt;Then, the Data Scientists will work on giving all this Big Data more context, more meaning, and developing charts and visualizations to better understand it.&lt;/p&gt;
+
+&lt;p&gt;But this giant network of small devices may be insecure. Too many small devices, too many entry points, a public network&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, how can we make all these more secure? &lt;/p&gt;
+
+&lt;p&gt;Machine Learning!&lt;/p&gt;
+
+&lt;p&gt;Just use some good encryption algorithm, and then an extra layer of &lt;a href="https://www.infosecurity-magazine.com/next-gen-infosec/machine-learning-applying/" alt="Machine Learning Concepts on Cryptography"&gt;Machine Learning encryption&lt;/a&gt;, to make it &lt;a href="https://en.wikipedia.org/wiki/Neural_cryptography" alt="Neural Cryptography"&gt;even more secure&lt;/a&gt;. If the network is not easy to hack, then these devices won&amp;rsquo;t be easy to hack. Also, we will be protecting the users&amp;rsquo; privacy, which is something that we must always have in mind.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s now get back and remember that 5G will be less energy-consuming than 4G. But with Machine Learning, we can improve even more energy usage! Using some smart algorithms we can improve the network usage, so if the device is not active and there is no need to collect data, we can disconnect the device from the network, or keep the network usage very low. &lt;/p&gt;
+
+&lt;p&gt;This way we won&amp;rsquo;t overcharge the network. We know that 5G supports a lot of devices connected but, you know, prevention.&lt;/p&gt;
+
+&lt;p&gt;More on, we&amp;rsquo;ll optimize costs. Being that smart will make these devices work for longer periods and also, with less energy used, less money spent.&lt;/p&gt;
+
+&lt;p&gt;What if you want to make things behave based on your personal preferences, on your everyday activities? &lt;/p&gt;
+
+&lt;p&gt;Machine Learning again! &lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src="/images/MLmeme.jpeg" alt="Machine Learning Meme"&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you every day make your coffee for breakfast from Monday to Friday at the same hour each day. Then, thanks to a Machine Learning algorithm that searches for similarities in the usage of your smart devices, you may automate your coffee machine to do it for you.&lt;/p&gt;
+
+&lt;p&gt;Sounds cool, right? Well, it&amp;rsquo;s not so far from reality&amp;hellip; this is actually &lt;a href="https://ideaing.com/ideas/best-smart-coffee-makers/" alt="Best Smart Coffee-Makers"&gt;a thing &lt;/a&gt; today! &lt;/p&gt;
+
+&lt;p&gt;There are more uses of Machine Learning in IoT. A Neural Network may be trained to predict maintenance. &lt;/p&gt;
+
+&lt;p&gt;Algorithms can find the devices that tend to fail, letting us know that those particular devices must be improved and replaced, or removed from the system. &lt;/p&gt;
+
+&lt;p&gt;Knowing when a device will fail, or when will start to fail, gives repairmen a huge advantage. They can schedule better the workdays. Enterprises can predict costs and know beforehand with much certainty when and how much they will be spending on repairs. &lt;/p&gt;
+
+&lt;p&gt;And this gives a huge advantage to the user too. The service providers will be able to replace devices before they fail, making a better UX, and preventing possible risks and malfunctions (like a coffee machine burning your coffee, your car velocimeter working crazy or a water tank overfilling).&lt;/p&gt;
+
+&lt;h2 id="h2-4"&gt; Summary &lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hundreds of computers in a room could seem intimidating at first, just as hundreds of volts coursing through wires in the walls did at one time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a quote taken from &lt;a href="https://en.wikipedia.org/wiki/Mark_Weiser"&gt;Mark Weiser&lt;/a&gt;&amp;lsquo;s famous paper &lt;a href="https://www.ics.uci.edu/~corps/phaseii/Weiser-Computer21stCentury-SciAm.pdf"&gt;&amp;ldquo;The Computer for the 21st Century&amp;rdquo;&lt;/a&gt;. He was talking about this newly conceived concept of ubiquitous computing. &lt;/p&gt;
+
+&lt;p&gt;Now we may say that he was talking about the Internet of Things&amp;hellip; before it was actually a thing! &lt;/p&gt;
+
+&lt;p&gt;This somehow dystopic, Sci-Fi scenario, it&amp;rsquo;s not quite distant from us. We are getting there. We are already there.&lt;/p&gt;
+
+&lt;p&gt;With these tiny computers in every room, we have some tasks to address, some technologies to discuss, to improve, to use. Machine Learning algorithms will be critical, not only for managing the data but also for the sake of our privacy. &lt;/p&gt;
+
+&lt;p&gt;If experts in these fields &lt;a href="https://blogs-images.forbes.com/louiscolumbus/files/2019/03/average-base-salary.jpg" alt="indeed.com salary charts"&gt;are needed now&lt;/a&gt;, imagine in the future, when 5G will support even more devices connected to the network, when more data will be collected every day. It&amp;rsquo;s an industry that will never stop growing, for good or wrong.&lt;/p&gt;
+
+&lt;p&gt;All the gathered information from the IoT must be used to make smarter decisions, with responsibility and taking care of the user&amp;rsquo;s privacy. Something that every person working on the field must have in mind. &lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;Do you think I forgot about something? Do you have any experience in IoT? Use the comments box!&lt;/p&gt;
+
+&lt;p&gt;If you found this post somehow cool, share it with your somehow cool friends!&lt;/p&gt;
+
+&lt;p&gt;Stay tunned from my next post!&lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;h2&gt;Related posts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lautarolobo.xyz/blog/neural-networks-101/" target="_blank"&gt;Neural Networks 101&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>IDs vs Classes: a CSS Specificity Chapter</title>
+    <link href="https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter/" rel="alternate"/>
+    <id/>
+    <published>2019-08-25T00:20:00-03:00</published>
+    <updated>2019-11-29T17:51:05-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "headline": "IDs vs Classes: a CSS Specificity Chapter",
+ "alternativeHeadline": "Which one should I use? IDs or Classes?",
+ "image": "https://lautarolobo.xyz/images/g945-afa10c28.png",
+ "genre": "Web Development", 
+ "keywords": [
+  "CSS", 
+  "Web Development", 
+  "Web Design", 
+  "Front-End" ,
+  "UX",
+  "UI"
+],  
+ "wordcount": "778",
+ "datePublished": "2019-08-25",
+ "dateCreated": "2019-08-25",
+ "dateModified": "2019-08-25",
+ "description": "Thousands of Web Developers asked the question, which one should I use? IDs or Classes? We will answer this question by explaining what CSS Specificity is and how it's related to the correct usage of CSS selectors",
+ "isFamilyFriendly": "true",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Who will win? IDs or classes? &lt;/p&gt;
+
+&lt;p&gt;We may be able to answer this question by looking at the context, and the differences between each one.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s jump right in!&lt;/p&gt;
+
+&lt;h2&gt;What is CSS Specificity?&lt;/h2&gt;
+
+&lt;p&gt;CSS Specificity is like a rank, that determines which set of rules will be applied to an element instead of other sets of rules.&lt;/p&gt;
+
+&lt;p&gt;If the browser finds two conflicting styles pointing to the same element, it will apply the rules with higher &amp;lsquo;ranking&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;When writing CSS, you should always remember this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;inline style &amp;gt; #id &amp;gt; .class &amp;gt; element &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That&amp;rsquo;s the CSS Specificity Hierarchy between the CSS Selectors. &lt;/p&gt;
+
+&lt;p&gt;The all-mighty styles that would be applied no matter what, are the inline styles. Next, if there are no inline styles, the ID selector takes the lead. Among the other two, the class styles have a higher ranking than the element type ones.&lt;/p&gt;
+
+&lt;h2&gt;Benefits of using them wisely&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll get less conflicting styles&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll find and correct conflicting styles faster&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll understand better what&amp;rsquo;s happening in your stylesheet&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll end up with a better CSS code (cleaner, shorter, more readable)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Differences between each CSS Selector&lt;/h2&gt;
+
+&lt;h3&gt;Inline styles&lt;/h3&gt;
+
+&lt;p&gt;Most of the times these styles are never used. Why? Well, to write better code more &lt;em&gt;humanly-readable&lt;/em&gt;, it&amp;rsquo;s better to have the CSS code all in one place: an external file.&lt;/p&gt;
+
+&lt;p&gt;Using inline styles is often seen as a bad practice. You are mixing HTML code with CSS so your code will be larger and harder to read and often harder to write too.&lt;/p&gt;
+
+&lt;p&gt;Try to avoid it.&lt;/p&gt;
+
+&lt;h3&gt;IDs&lt;/h3&gt;
+
+&lt;p&gt;IDs are unique, meaning that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;there&amp;rsquo;s only one ID per element&lt;/li&gt;
+&lt;li&gt;there&amp;rsquo;s only one element with that particular ID on the page&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;IDs are often used when adding JavaScript code, for performance sakes. But we are talking about CSS here! When adding styles, IDs are usually avoided because the code won&amp;rsquo;t end up being scalable nor modular. You can&amp;rsquo;t reuse styles, and if you are working on a big site, that will slow down the development process.&lt;/p&gt;
+
+&lt;h3&gt;Classes&lt;/h3&gt;
+
+&lt;p&gt;Classes are not unique, meaning that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the same class can be used on different elements&lt;/li&gt;
+&lt;li&gt;the same element can have different classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The common practice is to use mostly (if not only) classes for CSS.&lt;/p&gt;
+
+&lt;p&gt;Like said before, you can apply the same styles to different elements, ending up with less and easier to read code. &lt;/p&gt;
+
+&lt;p&gt;This approach works better with big websites when you don&amp;rsquo;t want to write over and over again styles to each element, just give a set of rules for a class and give all the desired elements the same class. And if you want to add some different styles, add another class and problem solved.&lt;/p&gt;
+
+&lt;h3&gt;Element type&lt;/h3&gt;
+
+&lt;p&gt;By using these you are styling the element (&amp;lsquo;tag&amp;rsquo;) that has the specified name, like:&lt;/p&gt;
+&lt;pre class="highlight css"&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Roboto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s not really specific, right?&lt;/p&gt;
+
+&lt;p&gt;If you use &amp;lsquo;div&amp;rsquo; as the selector, you&amp;rsquo;ll apply those styles to &lt;em&gt;all&lt;/em&gt; the divs of your website. &lt;/p&gt;
+
+&lt;p&gt;Why would you do that? &lt;/p&gt;
+
+&lt;p&gt;There are plenty of divs on your site, ones on the footer, others on the navbar, on the header, some may contain text, others images&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;There is no good rule of thumb on when to use type selectors. Just use classes a lot and add type selectors whenever possible, to keep specificity levels low, preventing styling conflicts.&lt;/p&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;You should keep the specificity levels low, so when a styling conflict shows up, you can easily solve it. The way to do it is using element type selectors and classes most of the times, along with pseudo-classes and attributes, avoiding IDs and inline styles.&lt;/p&gt;
+
+&lt;p&gt;Also, as told before, &lt;a href="https://dev.to/clairecodes/reasons-not-to-use-ids-in-css-4ni4" hreflang="en" rel="external"&gt;classes have several advantages over IDs.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So in the war between IDs and classes, classes win. But hey! You know the differences now, and keep in mind that there may be cases when using an ID selector would be better than using a class, so keep your eyes open!&lt;/p&gt;
+
+&lt;p&gt;There are some other good posts on the topic that I encourage for further reading:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.w3schools.com/css/css_specificity.asp" hreflang="en" rel="external"&gt;W3S: CSS Specificity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dev.to/emmawedekind/css-specificity-1kca" hreflang="en" rel="external"&gt;Emma Wedekind on Dev: CSS Specificity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://css-tricks.com/the-difference-between-id-and-class/" hreflang="en" rel="external"&gt;CSS Tricks: The Difference Between ID and Class&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope that this post has somehow helped you. Thanks for reading!&lt;/p&gt;
+
+&lt;p&gt;PS: Consider subscribing to my monthly newsletter down below to get my recent posts right into your inbox 😉&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Neural Networks 101</title>
+    <link href="https://lautarolobo.xyz/blog/neural-networks-101/" rel="alternate"/>
+    <id/>
+    <published>2019-07-31T12:21:00-03:00</published>
+    <updated>2019-11-29T17:47:15-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/neural-networks-101",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/neural-networks-101",
+ "headline": "Neural Networks 101",
+ "alternativeHeadline": "A friendly introduction to Artificial Neural Networks",
+ "genre": "Neural Networks", 
+ "keywords": [
+  "Artificial Neural Networks", 
+  "Neural Networks", 
+  "Computer Science", 
+  "Artificial Intelligence",
+  "AI",
+  "Machine Learning",
+  "Deep Learning"
+],  
+ "wordcount": "689",
+ "datePublished": "2019-07-31",
+ "dateCreated": "2019-07-31",
+ "dateModified": "2019-07-31",
+ "description": "How Artifical Neural Networks work? Well, here it is! Finally!",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/ANN-cover-d2927098.jpg",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This post is about Artificial Neural Networks. Computer Science != Biology.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What is a Neural Network?&lt;/li&gt;
+&lt;li&gt;What are Neural Networks used for?&lt;/li&gt;
+&lt;li&gt;Structure of a Neural Network&lt;/li&gt;
+&lt;li&gt;How Neural Networks work&lt;/li&gt;
+&lt;li&gt;How to improve the learning process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;What is a Neural Network?&lt;/h2&gt;
+
+&lt;p&gt;A Neural Network is a computational model inspired by biological neural networks, like yours and mine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/ANN-comparison-a841f410.png" alt="Ann comparison" /&gt;&lt;/p&gt;
+
+&lt;p&gt;A key concept here is that these models learn from examples (inputs), without being programmed with any task-specific rule.&lt;/p&gt;
+
+&lt;h2&gt;What are they used for?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Image and voice recognition.&lt;/li&gt;
+&lt;li&gt;Text generation.&lt;/li&gt;
+&lt;li&gt;Genetical analysis.&lt;/li&gt;
+&lt;li&gt;Language translations.&lt;/li&gt;
+&lt;li&gt;Autonomous driving.&lt;/li&gt;
+&lt;li&gt;Fraud prevention.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Structure of a Neural Network&lt;/h2&gt;
+
+&lt;h3&gt;Different layers&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Input&lt;/li&gt;
+&lt;li&gt;Hidden (interconnected)&lt;/li&gt;
+&lt;li&gt;Output&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/images/Neural-Network-Structure.jpg" alt="Structure of a Neural Network"&gt;&lt;/p&gt;
+
+&lt;p&gt;Each layer has a specific amount of neurons. And every neuron connects with another neuron from a different layer, it can&amp;rsquo;t connect to a neuron from the same layer unless you use a &lt;a href="https://towardsdatascience.com/recurrent-neural-networks-d4642c9bc7ce" target="_blank"&gt;Recurrent Neural Network.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;How Neural Networks work&lt;/h2&gt;
+
+&lt;p&gt;Explaining this is not a simple task.&lt;/p&gt;
+
+&lt;p&gt;First of all, your Neural Network must &amp;ldquo;learn&amp;rdquo;. In other words, you must train them.&lt;/p&gt;
+
+&lt;p&gt;How do you train a Neural Network? &lt;/p&gt;
+
+&lt;p&gt;Well, you pass information to the input layer, that is already processed. This is easier to get through an example. &lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you pass to the input layer 500 cat pictures, with the tag &amp;lsquo;cat pictures&amp;rsquo;, so the Neural Network knows that those are cat pictures. Then, you start to pass some cat pictures not tagged, and the network will taggit on its own. Also, you can pass it some car pictures, bird pictures, a non-sense picture, whatever, and your network should not taggit with &amp;lsquo;cat picture&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;if it tags some images wrong, you can warn the network of its mistakes, and it will learn from them.&lt;/p&gt;
+
+&lt;p&gt;You can repeat this process many times until you are happy with how your Neural Network works, and there you have it. A trained Neural Network, ready to work.&lt;/p&gt;
+
+&lt;p&gt;Now use it! Pass to the input layer some non-tagged pictures, and see how well it does it.&lt;/p&gt;
+
+&lt;p&gt;If the output is not what you expected, you should train it more, or improve the learning process. I&amp;rsquo;ll talk more about this in the next lines.&lt;/p&gt;
+
+&lt;p&gt;But now, let&amp;rsquo;s get nerdy.&lt;/p&gt;
+
+&lt;p&gt;Your Neural Network works because identifies a pattern on the &amp;lsquo;cat pictures&amp;rsquo; images. Then starts to &amp;ldquo;memorize&amp;rdquo; that pattern&amp;hellip; somehow learns that this particular set of pixels (a bunch of ones &amp;amp; zeros) goes inside the &amp;lsquo;cat pictures&amp;rsquo; tag, then it can tag cat images without our help.&lt;/p&gt;
+
+&lt;p&gt;Every neuron gets these inputs, sums all those weights, and outputs come out. Before going to the next layer, this output goes through an activation function.  This function adds to the output an “activation rate”, telling the next neuron much important is this data. More in-depth math in &lt;a href="https://medium.com/coinmonks/the-mathematics-of-neural-network-60a112dd3e05" target="_blank" alt="The Mathematics of Neural Networks on Medium"&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;img src="/images/Neuron-Structure.png" alt="Structure of a Neuron"&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Inputs coming in, sum, activation function, outputs coming out.
+    &lt;/td&gt;  
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This is how neurons process data but wait, there&amp;rsquo;s more!&lt;/p&gt;
+
+&lt;p&gt;These outputs can go to the next layer, and also can go to a previous layer. &lt;/p&gt;
+
+&lt;p&gt;This process when the data goes to a previous layer is known as backpropagation. Thanks to it, data gets processed several times. This may help you or not, depending on the problem that you are willing to solve with your network.&lt;/p&gt;
+
+&lt;p&gt;Also, a friendly advice, &lt;em&gt;size matter&lt;/em&gt;. If your network&amp;rsquo;s size is too small or too big, it won&amp;rsquo;t be able to group the data, the outputs will always be wrong, so you would need to find your network&amp;rsquo;s perfect size. &lt;/p&gt;
+
+&lt;p&gt;In the majority of cases, you would find this through trial and error, until you build your intuition.&lt;/p&gt;
+
+&lt;h2&gt;How to improve the learning process&lt;/h2&gt;
+
+&lt;p&gt;Through regularization. &lt;/p&gt;
+
+&lt;p&gt;This is a broad concept, that includes a bunch of techniques. More common ones are weight regularization, &lt;a href="https://en.wikipedia.org/wiki/Early_stopping"&gt;early stopping&lt;/a&gt;, learning rate decay, &lt;a src="https://www.quora.com/What-is-data-augmentation-in-deep-learning" target="_blank"&gt;data augmentation,&lt;/a&gt; and dropout. &lt;/p&gt;
+
+&lt;p&gt;These are all measurements to prevent &lt;a href="https://youtu.be/DEMmkFC6IGM" target="_blank" alt="Neural Networks - Overfitting"&gt;overfitting&lt;/a&gt; and &lt;a href="https://youtu.be/0h8lAm5Ki5g" target="_blank" alt="Artificial Neural Networks: Underfitting"&gt;underfitting.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;Want to become an expert on Neural Networks? Get the exclusive lectures &lt;a href="javascript:;" onclick="ml_webform_1427060('show')"&gt;right into your inbox!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Do you have any questions? Do you think that I may be missing something? Write it down in the comments! &lt;/p&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+
+&lt;script&gt;
+    var ml_webform_1427060 = ml_account('webforms', '1427060', 'n8u0c3', 'load');
+    ml_webform_1427060('animation', 'fadeIn');
+&lt;/script&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Continuous Deployment on Hostinger</title>
+    <link href="https://lautarolobo.xyz/blog/continuous-deployment-on-hostinger/" rel="alternate"/>
+    <id/>
+    <published>2019-07-17T03:37:00-03:00</published>
+    <updated>2019-11-29T17:52:56-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/continuous-deployment-on-hostinger",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/continuous-deployment-on-hostinger",
+ "headline": "Continuous Deployment on Hostinger",
+ "alternativeHeadline": "Connecting Git on Hostinger",
+ "genre": "Web Development", 
+ "keywords": [
+  "Hostinger", 
+  "Continuous Deployment", 
+  "Dev Ops", 
+  "Git" ,
+  "GitHub"
+],  
+ "wordcount": "426",
+ "datePublished": "2019-07-17",
+ "dateCreated": "2019-07-17",
+ "dateModified": "2019-07-17",
+ "description": "Wondered how to set Continuous Deployment on Hostinger? Me too! That's why I wrote this post.",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/git-plus-hostinger-9cfb1753.jpg",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t find any good guide about this topic, so I wrote it my self!&lt;/p&gt;
+
+&lt;p&gt;First things first, what is Continuous Deployment? Really broad: you change the file, test it, build it and gets deployed (gets live) automatically.&lt;/p&gt;
+
+&lt;p&gt;Sounds good, isn&amp;rsquo;t it?&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how we can make this happen!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This tutorial assumes that you have your site on a repository at GitHub, and a configured account on Hostinger. If that&amp;rsquo;s not your case, &lt;a href="https://github.com/new"&gt;upload your files to Github&lt;/a&gt; and &lt;a href="https://www.hostg.xyz/aff_c?offer_id=6&amp;amp;aff_id=19988"&gt;join to Hostinger&lt;/a&gt; and you&amp;rsquo;ll be ready to go.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;On Hostinger&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Go to your cPanel &amp;gt; Advanced &amp;gt; Git.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add your repository address, where you have all your site&amp;rsquo;s files (Images, Stylesheets, everything must be in this repo). Copy and paste the address that shows up when your click on the &amp;ldquo;Clone or download&amp;rdquo; button founded at your GitHub repository. Leave everything else as it is, unless you &lt;a href="https://help.github.com/en/articles/about-branches"&gt;know&lt;/a&gt; what you&amp;rsquo;re doing.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You may have read somewhere that your public_html folder must be empty. Absolutelly right, on your left bar, go to Files &amp;gt; File Manager.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There, click the green button.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now delete all what is there (be sure to have a backup, just in case). &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now go back to Git on cPanel, and click the Manage button at the side of the repo you just added, and then click on Auto Deployment.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A Webhook is an HTTP callback (HTTP POST), that occurs when an specific event happens. In this case, when a commit takes place on your repo. There&amp;rsquo;s also &lt;a href="https://developer.github.com/webhooks/creating/"&gt;that GitHub guide&lt;/a&gt; about setting up Webhooks, but I found my explanation more straight to the point. After you copied the Webhook URL let&amp;rsquo;s go to the second easy-peazy part.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;On GitHub&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Get into your site&amp;rsquo;s GitHub repository, and go to Settings &amp;gt; Webhooks &amp;gt; Add webhook.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There, paste the URL that you copied from Hostinger into the &lt;em&gt;Payload URL&lt;/em&gt; field. At &lt;em&gt;Content type&lt;/em&gt; select the &lt;em&gt;application/json&lt;/em&gt; option, and everything else as it is. Change things on your own risk! (actually nothing bad can happen, just, it may be won&amp;rsquo;t work as expected). After that, click the green button.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+
+&lt;p&gt;Now you have Continuous Deployment &lt;a href="https://www.hostg.xyz/aff_c?offer_id=6&amp;amp;aff_id=19988"&gt;on Hostinger&lt;/a&gt;, through Git. &lt;/p&gt;
+
+&lt;p&gt;Use the comments to say thanks if this was worth your time, and share to someone who may be interested. On the unlikely case where things didn&amp;rsquo;t work to you, tell me in the comments below and I&amp;rsquo;ll give you a hand, see you next time!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Is Virtualization Technology Enabled On My PC?</title>
+    <link href="https://lautarolobo.xyz/blog/is-virtualization-enabled/" rel="alternate"/>
+    <id/>
+    <published>2019-06-24T17:55:00-03:00</published>
+    <updated>2019-06-24T17:59:30-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "headline": "Is Virtualization Enabled On My PC?",
+ "alternativeHeadline": "VTX or AMD On My PC?",
+ "genre": "main tag", 
+ "keywords": [
+  "Linux", 
+  "VTX", 
+  "AMD", 
+  "AMD-v" ,
+  "Virtual Machine",
+  "Virtualization Technology"
+],  
+ "wordcount": "246",
+ "datePublished": "2019-06-24",
+ "dateCreated": "2019-06-24",
+ "dateModified": "2019-06-24",
+ "description": "Let's find out if your PC can run a Virtual Machine!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Interested in virtual machines? And you need to know if your PC can run them? Well, you are in the right place!&lt;/p&gt;
+
+&lt;p&gt;First the never-fails one:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lscpu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command shows a lot of information about your PC, in fact, about your CPU architecture, displaying the number, model, family, and manufacturer ID of your CPU, together with the threads, cores, sockets, nodes and so on. You should search for the line that contains the Virtualization keyword (don&amp;rsquo;t worry, it&amp;rsquo;s easy to find).&lt;/p&gt;
+
+&lt;p&gt;Actually that&amp;rsquo;s it. That command &lt;em&gt;never&lt;/em&gt; fails. But here are another options, because some times the unpredictable happens.&lt;/p&gt;
+
+&lt;p&gt;With the next one, you&amp;rsquo;ll get  &amp;lsquo;vmx&amp;rsquo; (Intel) or &amp;lsquo;smv&amp;rsquo; (AMD) on the output. Hopefully colored.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep "(svm|vmx)" /proc/cpuinfo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If it doesn&amp;rsquo;t shows those keywords with colors, don&amp;rsquo;t worry, I got you covered:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep --color -i "svm|vmx" /proc/cpuinfo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here, the last one. If nothing worked out, don&amp;rsquo;t lose hope! This one will do the job. &lt;/p&gt;
+
+&lt;p&gt;Some OS come with the cpu-checker package pre-installed. It may be not your case, so here&amp;rsquo;s how you can installit, quick and easy with&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo apt-get install cpu-checker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then, let the magic happens: &lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo kvm-ok
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you have virtualization enabled, you&amp;rsquo;ll see something like&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: /dev/kvm exists
+KVM acceleration can be used
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Otherwise:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: Your CPU does not support KVM extensions
+KVM acceleration can NOT be used
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, that&amp;rsquo;s it for now. Any thought write it down in the comments. See you next time!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wich Linux distro am I running?</title>
+    <link href="https://lautarolobo.xyz/blog/which-linux-distro-am-I-running/" rel="alternate"/>
+    <id/>
+    <published>2019-06-02T13:33:00-03:00</published>
+    <updated>2019-06-02T13:10:10-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/which-linux-distro-am-I-running",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/which-linux-distro-am-I-running",
+ "headline": "Wich Linux distro am I running?",
+ "alternativeHeadline": "9 ways to know wich Linux distro are you running",
+ "genre": "Linux", 
+ "keywords": [
+  "Debian", 
+  "Distro", 
+  "Ubuntu",
+  "GNU/Linux"
+],  
+ "wordcount": "107",
+ "datePublished": "2019-06-2",
+ "dateCreated": "2019-06-2",
+ "dateModified": "2019-06-2",
+ "description": "This are 9 ways to find out wich Linux distro are you running.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Once I was a Linux Newbie too, and I struggled my self to answer such a frivolous question, so here I have put all these lines of code together, so you won&amp;rsquo;t need to open 7 tabs and try to figure out which one has the key to get that coveted knowledge. This are many methods, so I can asure you that at least one will work on your PC. &lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s jump right into the code:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;hostnamectl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;gcc --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;uname -a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -irc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -ds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/issue*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /proc/version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/*-release
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;hr&gt;
+Well, I hope that this has helped to let you know which Linux distro are you running. Remember that you can approach me &lt;a href="mailto:contact@lautarolobo.xyz"&gt;by email&lt;/a&gt; or &lt;a href="https://t.me/LautaroLobo"&gt;through Telegram&lt;/a&gt;. Keep learning kiddo!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>A Recursive Function in Haskell</title>
+    <link href="https://lautarolobo.xyz/blog/recursive-function-haskell/" rel="alternate"/>
+    <id/>
+    <published>2019-05-17T17:05:00-03:00</published>
+    <updated>2019-11-29T17:51:46-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "headline": "A Recursive Function in Haskell",
+ "alternativeHeadline": "Recursion 101",
+ "genre": "Haskell", 
+ "keywords": [
+  "Programming", 
+  "Haskell", 
+  "Recursion", 
+  "Computer Science" 
+],
+ "wordcount": "583",
+ "datePublished": "2019-05-17",
+ "dateCreated": "2019-05-17",
+ "dateModified": "2019-05-22",
+ "description": "This is the next level in Haskell programming, we are going to define a simple function applying recursion!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;&lt;img src="/images/wowed-sculpture.webp" alt="WOW" title="WOWed Sculpture"&gt;Ready to get your head cracked? Ok, let&amp;rsquo;s define a simple function that multiplies each number of a list of numbers by 2. We will give this function the name of &amp;ldquo;by2&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So, you have a function that takes a list of numbers as a parameter, and after the computation process shows a list of numbers. How do you write this in Haskell? Well:&lt;/p&gt;
+&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The brackets represent a list of something, in this case Integers. This is how you define a &lt;em&gt;type&lt;/em&gt; in Haskell, I talked about that in &lt;a href="https://lautarolobo.xyz/blog/first-haskell-function"&gt;my previous post.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the type is defined, the next step is to define the actual function. First, you call the function, with the parameters, and then you type the process that the function must do, at the end, you should have something like this:&lt;/p&gt;
+&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;xs&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/images/whatt.webp" alt="What?" title="What?"&gt;
+Hm, let me explain what is that code saying, you have a list with at least one element (an Integer in this case), by2 takes the first element and multiplies it by 2, nothing new, but then I&amp;rsquo;m including the element multiplied by 2 in&amp;hellip; the function without the first element? Seems weird? Well, next and last line of code, and then I will explain much deeply a few concepts that you need to know to fully understand this function.&lt;/p&gt;
+&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First af all, I&amp;rsquo;m ussing &lt;em&gt;pattern matching&lt;/em&gt;, a way to defining functions that compares patterns, the one given in the function definition with the paramater given. If you want to know more about it, check &lt;a href="http://learnyouahaskell.com/syntax-in-functions#pattern-matching"&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Remember at the start when I sayd &amp;ldquo;a simple function&amp;rdquo;? When, actually I may have been wrong, this one is not quite simple, because introduces an important concept besides pattern matching, &lt;em&gt;recursion&lt;/em&gt;. by2 is a recursive function, meaning that the function is applied inside its own definition. To make a function work with recursion, you must make the recursive call smaller that the parameter given. Go back to your code and you will se this, the first element of the list is no more appearing in the recursive call of by2. Also, you always need to write your base case, the smaller case that the function may encounter, in this case is a list with no elements, just like in the second line of code that I showed you. Then, the recursive call will be getting smaller until the parameter given to the function will be&amp;hellip; an empty list! And there, each element, in order, will be inserted in this list. &lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s tough to understand, you may get it better with an example:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;by2 [7,3,5]
+[14,6,10]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is what happened there:&lt;/p&gt;
+
+&lt;p&gt;$$(2 \times 7) \triangleright by2 [3,5] \rightarrow$$ 
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright by2 [5]) \rightarrow$$ 
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright by2 [\hspace{2mm}])) \rightarrow $$
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright [\hspace{2mm}])$$&lt;/p&gt;
+
+&lt;p&gt;And then, solves the multiplications and each number goes back where it was; 10 goes inside the empty list, then 6 and last 14.&lt;/p&gt;
+
+&lt;p&gt;Well, I think we explained a few concepts in the way, pattern matching and recursion. But&amp;hellip; have you tried the function? Open the terminal, then the compiler, load your file and test by2!&lt;/p&gt;
+
+&lt;p&gt;You can try other parameters, like the empty list, or a list with words. Start playing around, changing the definition of by2, creating a by3, or a plus2; new functions that accept more and different parameters, with new definitions. &lt;/p&gt;
+
+&lt;p&gt;If anything went wrong, &lt;a href="mailto:contact@lautarolobo.xyz"&gt;tell me&lt;/a&gt; and I&amp;rsquo;ll be glad to help you out!&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ve made it this far, kid. Impressive. Don&amp;rsquo;t stop learning!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Your First Haskell Function</title>
+    <link href="https://lautarolobo.xyz/blog/first-haskell-function/" rel="alternate"/>
+    <id/>
+    <published>2019-05-01T21:42:00-03:00</published>
+    <updated>2019-05-22T14:24:50-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/first-haskell-function",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/first-haskell-function",
+ "headline": "Your First Haskell Function",
+ "alternativeHeadline": "You won't be a total newbie at Haskell anymore!",
+ "genre": "Haskell", 
+ "keywords": [
+  "Haskell", 
+  "Programming", 
+  "Computer Science"
+],  
+ "wordcount": "380",
+ "datePublished": "2019-05-01",
+ "dateCreated": "2019-05-01",
+ "dateModified": "2019-05-22",
+ "description": "You want to go deeper in Haskell? Well, let's do it! We will define our first function, easy peasy.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Your first Haskell function. Who would say that you would come this far, ah. &lt;/p&gt;
+
+&lt;p&gt;A function takes some parameters and shows up an output, after a computational process that used the parameters in some way.&lt;/p&gt;
+
+&lt;p&gt;The function that we are going to define today, since it&amp;rsquo;s the first one, will be basic. You will give it two numbers and it&amp;rsquo;ll sum them, giving you back a single number. But, what kind of number? Any number? Actually not, this function will work with just Integers. You will clarifiy this by writing the &lt;em&gt;type&lt;/em&gt; of the function.&lt;/p&gt;
+
+&lt;p&gt;The first thing that you should know about writing functions in Haskell, is that you should always define the type of the function before you define the function itself, if you don&amp;rsquo;t define it, Haskell will figure out which type is the best to match with your function, most of the time it will figure it out right, but some times may miss match the inferenced type and your function won&amp;rsquo;t work.&lt;/p&gt;
+&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We defined the type; it takes one Integer, then another Integer, and the output will be an Integer, great. You may have noticed that I named the function &amp;ldquo;sumBoth&amp;rdquo;, this is because it&amp;rsquo;s important that the function&amp;rsquo;s name tells you what that particular function does and also, the name should be short, so when you call it you won&amp;rsquo;t waste much time writing it. It may seem a silly advise but trust me, getting used to good practices will save you tons of bugs.&lt;/p&gt;
+
+&lt;p&gt;Now, the function definition:&lt;/p&gt;
+&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it! Now save your file with &lt;em&gt;.hs&lt;/em&gt; extension, and then open up the terminal, we will test this function there. Go to the directory where you saved your file and simply write&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;ghci
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;ll see something like this:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+Prelude&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There write&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;:load filename.hs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this should show up:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;[1 of 1] Compiling Main             ( filename.hs, interpreted )
+Ok, modules loaded: Main.
+*Main&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then call sumBoth and in the line below you&amp;rsquo;ll see the result:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;*Main&amp;gt; sumBoth 5 4
+9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;Something went wrong? Please &lt;a href="mailto:contact@lautarolobo.xyz"&gt;tell me&lt;/a&gt; and I&amp;rsquo;ll be glad to help you out!&lt;/p&gt;
+
+&lt;p&gt;Want to try the next level? &lt;a href="https://lautarolobo.xyz/blog/recursive-function-haskell"&gt;Go ahead!&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Installing Haskell Compiler in Linux</title>
+    <link href="https://lautarolobo.xyz/blog/installing-ghc-in-linux/" rel="alternate"/>
+    <id/>
+    <published>2019-04-21T11:14:00-03:00</published>
+    <updated>2019-05-22T14:17:32-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/installing-ghc-in-linux",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/installing-ghc-in-linux",
+ "headline": "Installing Haskell Compiler in Linux",
+ "alternativeHeadline": "How To Install GHC",
+ "genre": "Haskell", 
+ "keywords": [
+  "Programming", 
+  "Haskell", 
+  "Compiler", 
+  "Computer Science" ,
+  "Linux"
+], 
+ "wordcount": "275",
+ "datePublished": "2019-04-21",
+ "dateCreated": "2019-04-21",
+ "dateModified": "2019-05-22",
+ "description": "If you want to test Haskell in your own computer like a real developer, you must have GHC, come and find what it is!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Assuming that you know what Haskell is (if not, &lt;a href="https://lautarolobo.xyz/blog/what-s-haskell/"&gt;read this brief introduction&lt;/a&gt;), and you know what the Glasgow Haskell Compiler is (check &lt;a href="https://en.wikipedia.org/wiki/Glasgow_Haskell_Compiler"&gt;this&lt;/a&gt; if you don&amp;rsquo;t), I&amp;rsquo;ll show you how to get GHC up and running in your computer.&lt;/p&gt;
+
+&lt;p&gt;First things first, open the terminal and type:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;sudo apt-get install haskell-platform
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command should work on the most common Linux distros out there (&lt;a href="https://www.debian.org/index.en.html"&gt;Debian&lt;/a&gt;, &lt;a href="https://linuxmint.com/"&gt;Mint&lt;/a&gt;, &lt;a href="https://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt;). &lt;/p&gt;
+
+&lt;p&gt;Press Enter, and you will be asked to type your password, after you type it you&amp;rsquo;ll see a list of sugested packages, those won&amp;rsquo;t be installed, and a list of the packages that will be installed, with the amount of space that they are willing to occupe in your drive. Classic pre-installation info. Then you must type &lt;em&gt;s&lt;/em&gt; if you want to proceed with the installation, or &lt;em&gt;n&lt;/em&gt; if you regret.&lt;/p&gt;
+
+&lt;p&gt;Have in mind that the installation process once you type &lt;em&gt;s&lt;/em&gt;, may take some time depending in your internet conection.&lt;/p&gt;
+
+&lt;p&gt;Following this simple operation, you have your Glasgow Haskell Compiler installed, ready to use.&lt;/p&gt;
+
+&lt;p&gt;If you want to make sure that it&amp;rsquo;s installed, just open the terminal and simply type:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;ghci
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore you should see in your console something like this:&lt;/p&gt;
+&lt;pre class="highlight shell_session"&gt;&lt;code&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+Prelude&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;Didn&amp;rsquo;t work? &lt;a href="mailto:contact@lautarolobo.xyz"&gt;Tell me&lt;/a&gt; what went wrong and I&amp;rsquo;ll be glad to help you out!&lt;/p&gt;
+
+&lt;p&gt;If you want to write your first Haskell function and test it with GHC, &lt;a href="https://lautarolobo.xyz/blog/first-haskell-function/"&gt;click me!&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>What's Haskell?</title>
+    <link href="https://lautarolobo.xyz/blog/what-s-haskell/" rel="alternate"/>
+    <id/>
+    <published>2019-04-18T17:09:00-03:00</published>
+    <updated>2019-05-22T14:12:50-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/what-s-haskell",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/what-s-haskell",
+ "headline": "What's Haskell?",
+ "alternativeHeadline": "Brief introduction to Haskell",
+ "genre": "Haskell", 
+ "keywords": [
+  "Haskell", 
+  "Programming", 
+  "Computer-Science"
+], 
+ "wordcount": "210",
+ "datePublished": "2019-04-18",
+ "dateCreated": "2019-04-18",
+ "dateModified": "2019-05-22",
+ "description": "You are new in Haskell and want to know the base of it. Here I'll show what is Haskell, and what is with it that is so cool.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;So, you are new in &lt;a href="http://wikipedia.org/wiki/Haskell_programming_language"&gt;Haskell&lt;/a&gt;, and you want to know the basis, great! &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/haskell-logo.png" alt="Haskell" title="Haskell logo"&gt;Haskell is a &lt;em&gt;purely functional&lt;/em&gt; &lt;a href="https://en.wikipedia.org/wiki/Programming_language"&gt;programming language.&lt;/a&gt; What this is? Well, the variables do not change over time, the variable will always stay setted to the sepcific value given. So, if you called a function twice, with the same parameters given, the output will be always the same. This property is known as &lt;em&gt;referential transparency&lt;/em&gt;. It lets you evaluate a function, and get to know if it&amp;rsquo;s correct. &lt;/p&gt;
+
+&lt;p&gt;Haskell is known as a &lt;em&gt;lazy&lt;/em&gt; programming language. This means that it will do just the bare minimum computation required to show the result of a piece of code (if you tell him to show it).&lt;/p&gt;
+
+&lt;p&gt;And not less important, Haskell is &lt;em&gt;statically typed&lt;/em&gt; and has &lt;em&gt;type inference&lt;/em&gt;, so, if you do not specify the &lt;a href="https://en.wikipedia.org/wiki/Data_type"&gt;type&lt;/a&gt; of a function, Haskell will intelegently figure it out. And, if you mess up with the types, the &lt;a href="https://en.wikipedia.org/wiki/Compiler"&gt;compiler&lt;/a&gt; will tell you the error and, most of the times, specificly show you in wich line is it that everything blowed up. This helps to fix errors in early stages of development, so the probabilities of the program failing once it is released will be decreased.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

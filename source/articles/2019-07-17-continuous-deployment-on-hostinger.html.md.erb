@@ -1,0 +1,134 @@
+---
+title: Continuous Deployment on Hostinger
+date: 2019-07-17 03:37 -03
+tags: Git, GitHub, Hostinger
+image: /images/git-plus-hostinger.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/continuous-deployment-on-hostinger",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/continuous-deployment-on-hostinger",
+ "headline": "Continuous Deployment on Hostinger",
+ "alternativeHeadline": "Connecting Git on Hostinger",
+ "genre": "Web Development", 
+ "keywords": [
+  "Hostinger", 
+  "Continuous Deployment", 
+  "Dev Ops", 
+  "Git" ,
+  "GitHub"
+],  
+ "wordcount": "426",
+ "datePublished": "2019-07-17",
+ "dateCreated": "2019-07-17",
+ "dateModified": "2019-07-17",
+ "description": "Wondered how to set Continuous Deployment on Hostinger? Me too! That's why I wrote this post.",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/git-plus-hostinger-9cfb1753.jpg",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+I couldn't find any good guide about this topic, so I wrote it my self!
+
+First things first, what is Continuous Deployment? Really broad: you change the file, test it, build it and gets deployed (gets live) automatically.
+
+Sounds good, isn't it?
+
+Let's see how we can make this happen!
+
+> _This tutorial assumes that you have your site on a repository at GitHub, and a configured account on Hostinger. If that's not your case, [upload your files to Github](https://github.com/new) and [join to Hostinger](https://www.hostg.xyz/aff_c?offer_id=6&aff_id=19988) and you'll be ready to go._
+
+## On Hostinger
+
+* Go to your cPanel > Advanced > Git.
+
+* Add your repository address, where you have all your site's files (Images, Stylesheets, everything must be in this repo). Copy and paste the address that shows up when your click on the "Clone or download" button founded at your GitHub repository. Leave everything else as it is, unless you [know](https://help.github.com/en/articles/about-branches) what you're doing.
+
+* You may have read somewhere that your public_html folder must be empty. Absolutelly right, on your left bar, go to Files > File Manager.
+
+* There, click the green button.
+
+* Now delete all what is there (be sure to have a backup, just in case). 
+
+* Now go back to Git on cPanel, and click the Manage button at the side of the repo you just added, and then click on Auto Deployment.
+
+* A Webhook is an HTTP callback (HTTP POST), that occurs when an specific event happens. In this case, when a commit takes place on your repo. There's also [that GitHub guide](https://developer.github.com/webhooks/creating/) about setting up Webhooks, but I found my explanation more straight to the point. After you copied the Webhook URL let's go to the second easy-peazy part.
+
+## On GitHub
+
+* Get into your site's GitHub repository, and go to Settings > Webhooks > Add webhook.
+
+* There, paste the URL that you copied from Hostinger into the _Payload URL_ field. At _Content type_ select the _application/json_ option, and everything else as it is. Change things on your own risk! (actually nothing bad can happen, just, it may be won't work as expected). After that, click the green button.
+
+## That's it!
+
+Now you have Continuous Deployment [on Hostinger](https://www.hostg.xyz/aff_c?offer_id=6&aff_id=19988), through Git. 
+
+Use the comments to say thanks if this was worth your time, and share to someone who may be interested. On the unlikely case where things didn't work to you, tell me in the comments below and I'll give you a hand, see you next time!

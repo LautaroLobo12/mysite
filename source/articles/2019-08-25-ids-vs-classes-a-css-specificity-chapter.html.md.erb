@@ -1,0 +1,221 @@
+---
+title: "IDs vs Classes: a CSS Specificity Chapter"
+date: 2019-08-25 00:20 -03
+tags: CSS 
+image: /images/g945.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "headline": "IDs vs Classes: a CSS Specificity Chapter",
+ "alternativeHeadline": "Which one should I use? IDs or Classes?",
+ "image": "https://lautarolobo.xyz/images/g945-afa10c28.png",
+ "genre": "Web Development", 
+ "keywords": [
+  "CSS", 
+  "Web Development", 
+  "Web Design", 
+  "Front-End" ,
+  "UX",
+  "UI"
+],  
+ "wordcount": "778",
+ "datePublished": "2019-08-25",
+ "dateCreated": "2019-08-25",
+ "dateModified": "2019-08-25",
+ "description": "Thousands of Web Developers asked the question, which one should I use? IDs or Classes? We will answer this question by explaining what CSS Specificity is and how it's related to the correct usage of CSS selectors",
+ "isFamilyFriendly": "true",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+Who will win? IDs or classes? 
+
+We may be able to answer this question by looking at the context, and the differences between each one.
+
+Let's jump right in!
+
+## What is CSS Specificity?
+
+CSS Specificity is like a rank, that determines which set of rules will be applied to an element instead of other sets of rules.
+
+If the browser finds two conflicting styles pointing to the same element, it will apply the rules with higher 'ranking'.
+
+When writing CSS, you should always remember this:
+
+> inline style > #id > .class > element 
+
+That's the CSS Specificity Hierarchy between the CSS Selectors. 
+
+The all-mighty styles that would be applied no matter what, are the inline styles. Next, if there are no inline styles, the ID selector takes the lead. Among the other two, the class styles have a higher ranking than the element type ones.
+
+## Benefits of using them wisely
+* You'll get less conflicting styles
+* You'll find and correct conflicting styles faster
+* You'll understand better what's happening in your stylesheet
+* You'll end up with a better CSS code (cleaner, shorter, more readable)
+
+## Differences between each CSS Selector
+
+### Inline styles
+
+Most of the times these styles are never used. Why? Well, to write better code more _humanly-readable_, it's better to have the CSS code all in one place: an external file.
+
+Using inline styles is often seen as a bad practice. You are mixing HTML code with CSS so your code will be larger and harder to read and often harder to write too.
+
+Try to avoid it.
+
+### IDs
+
+IDs are unique, meaning that:
+
+* there's only one ID per element
+* there's only one element with that particular ID on the page
+
+IDs are often used when adding JavaScript code, for performance sakes. But we are talking about CSS here! When adding styles, IDs are usually avoided because the code won't end up being scalable nor modular. You can't reuse styles, and if you are working on a big site, that will slow down the development process.
+
+### Classes
+
+Classes are not unique, meaning that:
+
+* the same class can be used on different elements
+* the same element can have different classes
+
+The common practice is to use mostly (if not only) classes for CSS.
+
+Like said before, you can apply the same styles to different elements, ending up with less and easier to read code. 
+
+This approach works better with big websites when you don't want to write over and over again styles to each element, just give a set of rules for a class and give all the desired elements the same class. And if you want to add some different styles, add another class and problem solved.
+
+### Element type
+
+By using these you are styling the element ('tag') that has the specified name, like:
+
+~~~css
+div {
+    font-family: Roboto;
+    border-radius: 4px;
+}
+~~~
+
+It's not really specific, right?
+
+If you use 'div' as the selector, you'll apply those styles to *all* the divs of your website. 
+
+Why would you do that? 
+
+There are plenty of divs on your site, ones on the footer, others on the navbar, on the header, some may contain text, others images...
+
+There is no good rule of thumb on when to use type selectors. Just use classes a lot and add type selectors whenever possible, to keep specificity levels low, preventing styling conflicts.
+
+## Summary
+
+You should keep the specificity levels low, so when a styling conflict shows up, you can easily solve it. The way to do it is using element type selectors and classes most of the times, along with pseudo-classes and attributes, avoiding IDs and inline styles.
+
+Also, as told before, <a href="https://dev.to/clairecodes/reasons-not-to-use-ids-in-css-4ni4" hreflang="en" rel="external">classes have several advantages over IDs.</a>
+
+So in the war between IDs and classes, classes win. But hey! You know the differences now, and keep in mind that there may be cases when using an ID selector would be better than using a class, so keep your eyes open!
+
+There are some other good posts on the topic that I encourage for further reading:
+
+* <a href="https://www.w3schools.com/css/css_specificity.asp" hreflang="en" rel="external">W3S: CSS Specificity</a>
+* <a href="https://dev.to/emmawedekind/css-specificity-1kca" hreflang="en" rel="external">Emma Wedekind on Dev: CSS Specificity</a>
+* <a href="https://css-tricks.com/the-difference-between-id-and-class/" hreflang="en" rel="external">CSS Tricks: The Difference Between ID and Class</a> 
+
+<hr>
+
+I hope that this post has somehow helped you. Thanks for reading!
+
+PS: Consider subscribing to my monthly newsletter down below to get my recent posts right into your inbox 😉
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

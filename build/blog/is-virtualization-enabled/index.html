@@ -1,0 +1,123 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <title>Is Virtualization Technology Enabled On My PC? | Lautaro Jordan Lobo Ravarotto</title> <link rel=alternate href="/feed.xml" type="application/atom+xml" title="Atom Feed"> <link rel=stylesheet href="/stylesheets/all-3ff0324d.css"> </head> <body> <nav class=main-nav> <a href="/"><span class=arrow>←</span> Home</a> </nav> <section id=wrapper> <article class=post> <header> <img src=""></img> <h1>Is Virtualization Technology Enabled On My PC?</h1> <h2 class=date>24 June 2019</h2> </header> <section id=post-body> <script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "headline": "Is Virtualization Enabled On My PC?",
+ "alternativeHeadline": "VTX or AMD On My PC?",
+ "genre": "main tag", 
+ "keywords": [
+  "Linux", 
+  "VTX", 
+  "AMD", 
+  "AMD-v" ,
+  "Virtual Machine",
+  "Virtualization Technology"
+],  
+ "wordcount": "246",
+ "datePublished": "2019-06-24",
+ "dateCreated": "2019-06-24",
+ "dateModified": "2019-06-24",
+ "description": "Let's find out if your PC can run a Virtual Machine!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script> <p>Interested in virtual machines? And you need to know if your PC can run them? Well, you are in the right place!</p> <p>First the never-fails one:</p> <pre class="highlight plaintext"><code>lscpu
+</code></pre> <p>This command shows a lot of information about your PC, in fact, about your CPU architecture, displaying the number, model, family, and manufacturer ID of your CPU, together with the threads, cores, sockets, nodes and so on. You should search for the line that contains the Virtualization keyword (don&rsquo;t worry, it&rsquo;s easy to find).</p> <p>Actually that&rsquo;s it. That command <em>never</em> fails. But here are another options, because some times the unpredictable happens.</p> <p>With the next one, you&rsquo;ll get &lsquo;vmx&rsquo; (Intel) or &lsquo;smv&rsquo; (AMD) on the output. Hopefully colored.</p> <pre class="highlight plaintext"><code>egrep "(svm|vmx)" /proc/cpuinfo
+</code></pre> <p>If it doesn&rsquo;t shows those keywords with colors, don&rsquo;t worry, I got you covered:</p> <pre class="highlight plaintext"><code>egrep --color -i "svm|vmx" /proc/cpuinfo
+</code></pre> <p>Here, the last one. If nothing worked out, don&rsquo;t lose hope! This one will do the job. </p> <p>Some OS come with the cpu-checker package pre-installed. It may be not your case, so here&rsquo;s how you can installit, quick and easy with</p> <pre class="highlight plaintext"><code>sudo apt-get install cpu-checker
+</code></pre> <p>And then, let the magic happens: </p> <pre class="highlight plaintext"><code>sudo kvm-ok
+</code></pre> <p>If you have virtualization enabled, you&rsquo;ll see something like</p> <pre class="highlight plaintext"><code>INFO: /dev/kvm exists
+KVM acceleration can be used
+</code></pre> <p>Otherwise:</p> <pre class="highlight plaintext"><code>INFO: Your CPU does not support KVM extensions
+KVM acceleration can NOT be used
+</code></pre> <p><hr></p> <p>Well, that&rsquo;s it for now. Any thought write it down in the comments. See you next time!</p> </section> </article> <footer id=post-meta> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <a href="/"> <img class=avatar src="/images/100px-3211424c.jpg" alt=Avatar> <div class=details> <div class=dark>Lautaro Jordan Lobo Ravarotto</div> <div class=light>Web Developer | Computer Science Student</div> </div> </a> <div class=sharing> <a href="https://twitter.com/share?text=Is Virtualization Technology Enabled On My PC?&url=https://lautarolobo.xyz/blog/is-virtualization-enabled/" target=_blank> <span class=icon-twitter></span> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://lautarolobo.xyz/blog/is-virtualization-enabled/" target=_blank> <span class=icon-facebook></span> </a> <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lautarolobo.xyz/blog/is-virtualization-enabled/&title=Is Virtualization Technology Enabled On My PC?&source=https://lautarolobo.xyz" target=_blank> <span class=icon-linkedin></span> </a> </div> <div class=newsletter-wrapper> <div class=ml-form-embed data-account="1607694:c8w6g9c9z6" data-form="1426892:g8s3m6"> </div> </div> </footer> <div id=disqus_thread></div> <script>
+  var disqus_shortname = 'lautarolobo';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel=nofollow>comments powered by Disqus.</a></noscript> <footer id=footer> <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script> <p class=small>© Lautaro Jordan Lobo Ravarotto 2019</p> </footer> </section> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-138446504-1', 'auto');
+  ga('send', 'pageview');
+</script> </body> </html>

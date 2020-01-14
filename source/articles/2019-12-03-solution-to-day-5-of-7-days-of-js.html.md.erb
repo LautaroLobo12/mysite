@@ -1,0 +1,133 @@
+---
+title: Solution to Day 5 of 7 Days of JS
+date: 2019-12-03 21:03 -03
+tags: JavaScript, Challenge
+image: /images/solutionday5.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-5-of-7-days-of-js",
+ "headline": "Solution to Day 5 of 7 Days of JS",
+ "alternativeHeadline": "7 Days of JS - Solution to Day 5",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "31",
+ "datePublished": "2019-12-03",
+ "dateCreated": "2019-12-03",
+ "dateModified": "2019-12-03",
+ "description": "This is the solution to the 5th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+As before, I first made it with a while loop:
+
+~~~javascript
+function positionOf(n,array){
+  let i = 0;
+  let count = array.length;
+  while (i < count){
+    if (array[i] == n){
+      return i;
+    } else {
+      i++;
+    }
+  }
+  return -1;
+}
+
+console.log(positionOf(5,[-5,0,50,5,35]))
+~~~
+
+And then, a for loop:
+
+~~~javascript
+function positionOf1(n,array){
+  let count = array.length;
+  for (let i = 0; i < count; i++){
+    if (array[i] == n){
+      return i;
+    }
+  }
+  return -1;
+}
+
+console.log(positionOf1(3,[-3,0,3,5,35]))
+~~~
+
+Do you have a better solution? Share it in the comments!
+
+See you on day 6!

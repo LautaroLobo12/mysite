@@ -1,0 +1,207 @@
+---
+title: Neural Networks 101
+date: 2019-07-31 12:21 -03
+tags: Neural Networks, AI, Machine Learning, Deep Learning
+image: /images/ANN-cover.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/neural-networks-101",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/neural-networks-101",
+ "headline": "Neural Networks 101",
+ "alternativeHeadline": "A friendly introduction to Artificial Neural Networks",
+ "genre": "Neural Networks", 
+ "keywords": [
+  "Artificial Neural Networks", 
+  "Neural Networks", 
+  "Computer Science", 
+  "Artificial Intelligence",
+  "AI",
+  "Machine Learning",
+  "Deep Learning"
+],  
+ "wordcount": "689",
+ "datePublished": "2019-07-31",
+ "dateCreated": "2019-07-31",
+ "dateModified": "2019-07-31",
+ "description": "How Artifical Neural Networks work? Well, here it is! Finally!",
+ "isFamilyFriendly": "true",
+ "image": "https://lautarolobo.xyz/images/ANN-cover-d2927098.jpg",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+
+> This post is about Artificial Neural Networks. Computer Science != Biology.
+
+## Summary
+
+* What is a Neural Network?
+* What are Neural Networks used for?
+* Structure of a Neural Network
+* How Neural Networks work
+* How to improve the learning process
+
+## What is a Neural Network?
+
+A Neural Network is a computational model inspired by biological neural networks, like yours and mine.
+
+![](/images/ANN-comparison.png)
+
+A key concept here is that these models learn from examples (inputs), without being programmed with any task-specific rule.
+
+## What are they used for?
+
+* Image and voice recognition.
+* Text generation.
+* Genetical analysis.
+* Language translations.
+* Autonomous driving.
+* Fraud prevention.
+
+## Structure of a Neural Network
+
+### Different layers 
+
+* Input
+* Hidden (interconnected)
+* Output
+
+<img src="/images/Neural-Network-Structure.jpg" alt="Structure of a Neural Network">
+
+Each layer has a specific amount of neurons. And every neuron connects with another neuron from a different layer, it can't connect to a neuron from the same layer unless you use a <a href="https://towardsdatascience.com/recurrent-neural-networks-d4642c9bc7ce" target="_blank">Recurrent Neural Network.</a>
+
+## How Neural Networks work
+
+Explaining this is not a simple task.
+
+First of all, your Neural Network must "learn". In other words, you must train them.
+
+How do you train a Neural Network? 
+
+Well, you pass information to the input layer, that is already processed. This is easier to get through an example. 
+
+Let's say you pass to the input layer 500 cat pictures, with the tag 'cat pictures', so the Neural Network knows that those are cat pictures. Then, you start to pass some cat pictures not tagged, and the network will taggit on its own. Also, you can pass it some car pictures, bird pictures, a non-sense picture, whatever, and your network should not taggit with 'cat picture'.
+
+if it tags some images wrong, you can warn the network of its mistakes, and it will learn from them.
+
+You can repeat this process many times until you are happy with how your Neural Network works, and there you have it. A trained Neural Network, ready to work.
+
+Now use it! Pass to the input layer some non-tagged pictures, and see how well it does it.
+
+If the output is not what you expected, you should train it more, or improve the learning process. I'll talk more about this in the next lines.
+
+But now, let's get nerdy.
+
+Your Neural Network works because identifies a pattern on the 'cat pictures' images. Then starts to "memorize" that pattern... somehow learns that this particular set of pixels (a bunch of ones & zeros) goes inside the 'cat pictures' tag, then it can tag cat images without our help.
+
+Every neuron gets these inputs, sums all those weights, and outputs come out. Before going to the next layer, this output goes through an activation function.  This function adds to the output an “activation rate”, telling the next neuron much important is this data. More in-depth math in <a href="https://medium.com/coinmonks/the-mathematics-of-neural-network-60a112dd3e05" target="_blank" alt="The Mathematics of Neural Networks on Medium">here.</a>
+
+<table>
+  <tr>
+    <th><img src="/images/Neuron-Structure.png" alt="Structure of a Neuron"></td>
+  </tr>
+  <tr>
+    <td>
+      Inputs coming in, sum, activation function, outputs coming out.
+    </td>  
+  </tr>
+</table>
+
+This is how neurons process data but wait, there's more!
+
+These outputs can go to the next layer, and also can go to a previous layer. 
+
+This process when the data goes to a previous layer is known as backpropagation. Thanks to it, data gets processed several times. This may help you or not, depending on the problem that you are willing to solve with your network.
+
+Also, a friendly advice, _size matter_. If your network's size is too small or too big, it won't be able to group the data, the outputs will always be wrong, so you would need to find your network's perfect size. 
+
+In the majority of cases, you would find this through trial and error, until you build your intuition.
+
+## How to improve the learning process
+
+Through regularization. 
+
+This is a broad concept, that includes a bunch of techniques. More common ones are weight regularization, [early stopping](https://en.wikipedia.org/wiki/Early_stopping), learning rate decay, <a src="https://www.quora.com/What-is-data-augmentation-in-deep-learning" target="_blank">data augmentation,</a> and dropout. 
+
+These are all measurements to prevent <a href="https://youtu.be/DEMmkFC6IGM" target="_blank" alt="Neural Networks - Overfitting">overfitting</a> and <a href="https://youtu.be/0h8lAm5Ki5g" target="_blank" alt="Artificial Neural Networks: Underfitting">underfitting.</a>
+
+<hr>
+
+Want to become an expert on Neural Networks? Get the exclusive lectures <a href="javascript:;" onclick="ml_webform_1427060('show')">right into your inbox!</a>
+
+Do you have any questions? Do you think that I may be missing something? Write it down in the comments! 
+
+See ya!
+
+<script>
+    var ml_webform_1427060 = ml_account('webforms', '1427060', 'n8u0c3', 'load');
+    ml_webform_1427060('animation', 'fadeIn');
+</script>
+

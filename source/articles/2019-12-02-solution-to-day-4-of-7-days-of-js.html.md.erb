@@ -1,0 +1,140 @@
+---
+title: Solution to Day 4 of 7 Days of JS
+date: 2019-12-02 14:48 -03
+tags: JavaScript, Challenge
+image: /images/solutionday4.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js",
+ "headline": "Solution to Day 4 of 7 Days of JS",
+ "alternativeHeadline": "Solution to Day 4 of 7 Days of JS",
+ "genre": "JavaScript", 
+ "keywords": [
+  "javascript", 
+  "challenge", 
+  "programming"
+],  
+ "wordcount": "85",
+ "datePublished": "2019-12-02",
+ "dateCreated": "2019-12-02",
+ "dateModified": "2019-12-02",
+ "description": "This is the solution to the 4th day of #7DaysJS",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+So, first the shortest solution:
+
+~~~javascript
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+console.log(reverseString('Japan'))
+~~~ 
+
+I've used 3 methods here: `split()`, `reverse()` and `join()`. The split method turns the string into an array of characters, then I use the reverse method, that reverses (duh) the array, and then I take the array of characters and make it look again like a string.
+
+Then I cracked my head up to make it work with a for loop:
+
+~~~javascript
+function reverseString(string) {
+  let length = string.length - 1;
+  let output = '';
+  for (let i = length; i >= 0; i--)
+    output += string[i];
+  return output;
+}
+
+console.log(reverseString('Bananas'))
+~~~
+
+And also implemented this same algorithm as a while loop:
+
+~~~javascript
+function reverse(string) {
+  let output = '';
+  let i = string.length - 1; 
+  while (i >= 0){
+    output += string[i];
+    i--;
+  }
+  return output;
+}
+
+console.log(reverse('goodbye'))
+~~~
+
+Do you have any questions? Write a comment!
+
+Cheers!

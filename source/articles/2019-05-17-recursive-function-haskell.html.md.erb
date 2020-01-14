@@ -1,0 +1,149 @@
+---
+title: A Recursive Function in Haskell
+date: 2019-05-17 17:05 -03
+tags: Haskell, Recursion
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "headline": "A Recursive Function in Haskell",
+ "alternativeHeadline": "Recursion 101",
+ "genre": "Haskell", 
+ "keywords": [
+  "Programming", 
+  "Haskell", 
+  "Recursion", 
+  "Computer Science" 
+],
+ "wordcount": "583",
+ "datePublished": "2019-05-17",
+ "dateCreated": "2019-05-17",
+ "dateModified": "2019-05-22",
+ "description": "This is the next level in Haskell programming, we are going to define a simple function applying recursion!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+<img src="/images/wowed-sculpture.webp" alt="WOW" title="WOWed Sculpture">Ready to get your head cracked? Ok, let's define a simple function that multiplies each number of a list of numbers by 2. We will give this function the name of "by2".
+
+So, you have a function that takes a list of numbers as a parameter, and after the computation process shows a list of numbers. How do you write this in Haskell? Well:
+
+```haskell
+by2 :: [Int] -> [Int]
+```
+
+The brackets represent a list of something, in this case Integers. This is how you define a _type_ in Haskell, I talked about that in [my previous post.](https://lautarolobo.xyz/blog/first-haskell-function)
+
+Once the type is defined, the next step is to define the actual function. First, you call the function, with the parameters, and then you type the process that the function must do, at the end, you should have something like this:
+
+```haskell
+by2 x:xs = (2 * x) : by2 xs
+```
+
+<img src="/images/whatt.webp" alt="What?" title="What?">
+Hm, let me explain what is that code saying, you have a list with at least one element (an Integer in this case), by2 takes the first element and multiplies it by 2, nothing new, but then I'm including the element multiplied by 2 in... the function without the first element? Seems weird? Well, next and last line of code, and then I will explain much deeply a few concepts that you need to know to fully understand this function.
+
+```haskell
+by2 [] = []
+```
+
+First af all, I'm ussing _pattern matching_, a way to defining functions that compares patterns, the one given in the function definition with the paramater given. If you want to know more about it, check [this](http://learnyouahaskell.com/syntax-in-functions#pattern-matching).
+
+Remember at the start when I sayd "a simple function"? When, actually I may have been wrong, this one is not quite simple, because introduces an important concept besides pattern matching, _recursion_. by2 is a recursive function, meaning that the function is applied inside its own definition. To make a function work with recursion, you must make the recursive call smaller that the parameter given. Go back to your code and you will se this, the first element of the list is no more appearing in the recursive call of by2. Also, you always need to write your base case, the smaller case that the function may encounter, in this case is a list with no elements, just like in the second line of code that I showed you. Then, the recursive call will be getting smaller until the parameter given to the function will be... an empty list! And there, each element, in order, will be inserted in this list. 
+
+It's tough to understand, you may get it better with an example:
+
+```console
+by2 [7,3,5]
+[14,6,10]
+```
+
+This is what happened there:
+
+$$(2 \times 7) \triangleright by2 [3,5] \rightarrow$$ 
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright by2 [5]) \rightarrow$$ 
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright by2 [\hspace{2mm}])) \rightarrow $$
+$$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright [\hspace{2mm}])$$
+
+And then, solves the multiplications and each number goes back where it was; 10 goes inside the empty list, then 6 and last 14.
+
+Well, I think we explained a few concepts in the way, pattern matching and recursion. But... have you tried the function? Open the terminal, then the compiler, load your file and test by2!
+
+You can try other parameters, like the empty list, or a list with words. Start playing around, changing the definition of by2, creating a by3, or a plus2; new functions that accept more and different parameters, with new definitions. 
+
+If anything went wrong, [tell me](mailto:contact@lautarolobo.xyz) and I'll be glad to help you out!
+
+You've made it this far, kid. Impressive. Don't stop learning!
+
+
+
+

@@ -1,0 +1,154 @@
+---
+title: Is Virtualization Technology Enabled On My PC?
+date: 2019-06-24 17:55 -03
+tags: Linux
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/is-virtualization-enabled",
+ "headline": "Is Virtualization Enabled On My PC?",
+ "alternativeHeadline": "VTX or AMD On My PC?",
+ "genre": "main tag", 
+ "keywords": [
+  "Linux", 
+  "VTX", 
+  "AMD", 
+  "AMD-v" ,
+  "Virtual Machine",
+  "Virtualization Technology"
+],  
+ "wordcount": "246",
+ "datePublished": "2019-06-24",
+ "dateCreated": "2019-06-24",
+ "dateModified": "2019-06-24",
+ "description": "Let's find out if your PC can run a Virtual Machine!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+Interested in virtual machines? And you need to know if your PC can run them? Well, you are in the right place!
+
+First the never-fails one:
+
+```
+lscpu
+```
+
+This command shows a lot of information about your PC, in fact, about your CPU architecture, displaying the number, model, family, and manufacturer ID of your CPU, together with the threads, cores, sockets, nodes and so on. You should search for the line that contains the Virtualization keyword (don't worry, it's easy to find).
+
+Actually that's it. That command *never* fails. But here are another options, because some times the unpredictable happens.
+
+With the next one, you'll get  'vmx' (Intel) or 'smv' (AMD) on the output. Hopefully colored.
+
+```
+egrep "(svm|vmx)" /proc/cpuinfo
+```
+
+If it doesn't shows those keywords with colors, don't worry, I got you covered:
+
+```
+egrep --color -i "svm|vmx" /proc/cpuinfo
+```
+
+Here, the last one. If nothing worked out, don't lose hope! This one will do the job. 
+
+Some OS come with the cpu-checker package pre-installed. It may be not your case, so here's how you can installit, quick and easy with
+
+```
+sudo apt-get install cpu-checker
+```
+
+And then, let the magic happens: 
+
+```
+sudo kvm-ok
+```
+
+If you have virtualization enabled, you'll see something like
+
+```
+INFO: /dev/kvm exists
+KVM acceleration can be used
+```
+
+Otherwise:
+
+```
+INFO: Your CPU does not support KVM extensions
+KVM acceleration can NOT be used
+```
+
+<hr>
+
+Well, that's it for now. Any thought write it down in the comments. See you next time!
+
+
