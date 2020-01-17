@@ -1,0 +1,33 @@
+<% wrap_layout :layout do %>
+  <article class="post">
+    <header>
+      <img src="<%= current_page.data.image %>"></img>
+      <h1><%= current_article.title %></h1>
+      <h2 class="date"><%= current_article.date.strftime('%e %B %Y') %></h2>
+    </header>
+    <section id="post-body">
+      <%= yield %>
+    </section>
+  </article>
+
+  <footer id="post-meta">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <a href="/">
+      <img class="avatar" src="<%= url_for "/images/100px.jpg" %>" alt="Avatar">
+      <div class="details">
+        <div class="dark"><%= config[:site_author] %></div>
+        <div class="light"><%= config[:site_subtitle] %></div>
+      </div>
+    </a>
+
+    <%= component 'sharing' %>
+    
+  </footer>
+
+  <% if config[:disqus_shortname] %>
+    <%= component 'disqus' %>
+  <% end %>
+
+<% end %>

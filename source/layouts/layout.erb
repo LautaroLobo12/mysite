@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= page_title %></title>
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom Feed">
+    <link rel="stylesheet" href="<%= url_for '/stylesheets/all.css' %>">
+  </head>
+  <body>
+    <% unless current_page.data.hide_nav %>
+      <nav class="main-nav">
+        <a href="/"><span class="arrow">←</span> Home</a>
+      </nav>
+    <% end %>
+
+    <section id="wrapper"<% unless current_article %> class="home"<% end %>>
+      <%= yield %>
+
+      <footer id="footer">
+
+      <!-- MailerLite Universal -->
+      <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script>
+      <!-- End MailerLite Universal -->
+
+        <p class="small">© <%= config[:site_author] %> <%= Time.now.year %></p>
+        
+      </footer>
+    </section>
+
+    <% if config[:google_analytics] %>
+      <%= component 'google_analytics' %>
+    <% end %>
+  </body>
+</html>

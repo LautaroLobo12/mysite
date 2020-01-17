@@ -1,0 +1,122 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <title>Your First Haskell Function | Lautaro Jordan Lobo Ravarotto</title> <link rel=alternate href="/feed.xml" type="application/atom+xml" title="Atom Feed"> <link rel=stylesheet href="/stylesheets/all-3ff0324d.css"> </head> <body> <nav class=main-nav> <a href="/"><span class=arrow>←</span> Home</a> </nav> <section id=wrapper> <article class=post> <header> <img src=""></img> <h1>Your First Haskell Function</h1> <h2 class=date> 1 May 2019</h2> </header> <section id=post-body> <script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/first-haskell-function",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/first-haskell-function",
+ "headline": "Your First Haskell Function",
+ "alternativeHeadline": "You won't be a total newbie at Haskell anymore!",
+ "genre": "Haskell", 
+ "keywords": [
+  "Haskell", 
+  "Programming", 
+  "Computer Science"
+],  
+ "wordcount": "380",
+ "datePublished": "2019-05-01",
+ "dateCreated": "2019-05-01",
+ "dateModified": "2019-05-22",
+ "description": "You want to go deeper in Haskell? Well, let's do it! We will define our first function, easy peasy.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script> <p>Your first Haskell function. Who would say that you would come this far, ah. </p> <p>A function takes some parameters and shows up an output, after a computational process that used the parameters in some way.</p> <p>The function that we are going to define today, since it&rsquo;s the first one, will be basic. You will give it two numbers and it&rsquo;ll sum them, giving you back a single number. But, what kind of number? Any number? Actually not, this function will work with just Integers. You will clarifiy this by writing the <em>type</em> of the function.</p> <p>The first thing that you should know about writing functions in Haskell, is that you should always define the type of the function before you define the function itself, if you don&rsquo;t define it, Haskell will figure out which type is the best to match with your function, most of the time it will figure it out right, but some times may miss match the inferenced type and your function won&rsquo;t work.</p> <pre class="highlight haskell"><code><span class="n">sumBoth</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+</code></pre> <p>We defined the type; it takes one Integer, then another Integer, and the output will be an Integer, great. You may have noticed that I named the function &ldquo;sumBoth&rdquo;, this is because it&rsquo;s important that the function&rsquo;s name tells you what that particular function does and also, the name should be short, so when you call it you won&rsquo;t waste much time writing it. It may seem a silly advise but trust me, getting used to good practices will save you tons of bugs.</p> <p>Now, the function definition:</p> <pre class="highlight haskell"><code><span class="n">sumBoth</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre> <p>And that&rsquo;s it! Now save your file with <em>.hs</em> extension, and then open up the terminal, we will test this function there. Go to the directory where you saved your file and simply write</p> <pre class="highlight shell_session"><code>ghci
+</code></pre> <p>You&rsquo;ll see something like this:</p> <pre class="highlight shell_session"><code>GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+Prelude&gt;
+</code></pre> <p>There write</p> <pre class="highlight shell_session"><code>:load filename.hs
+</code></pre> <p>And this should show up:</p> <pre class="highlight shell_session"><code>[1 of 1] Compiling Main             ( filename.hs, interpreted )
+Ok, modules loaded: Main.
+*Main&gt;
+</code></pre> <p>Then call sumBoth and in the line below you&rsquo;ll see the result:</p> <pre class="highlight shell_session"><code>*Main&gt; sumBoth 5 4
+9
+</code></pre> <p><hr></p> <p>Something went wrong? Please <a href="mailto:contact@lautarolobo.xyz">tell me</a> and I&rsquo;ll be glad to help you out!</p> <p>Want to try the next level? <a href="https://lautarolobo.xyz/blog/recursive-function-haskell">Go ahead!</a></p> </section> </article> <footer id=post-meta> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <a href="/"> <img class=avatar src="/images/100px-3211424c.jpg" alt=Avatar> <div class=details> <div class=dark>Lautaro Jordan Lobo Ravarotto</div> <div class=light>Web Developer | Computer Science Student</div> </div> </a> <div class=sharing> <a href="https://twitter.com/share?text=Your First Haskell Function&url=https://lautarolobo.xyz/blog/first-haskell-function/" target=_blank> <span class=icon-twitter></span> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://lautarolobo.xyz/blog/first-haskell-function/" target=_blank> <span class=icon-facebook></span> </a> <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lautarolobo.xyz/blog/first-haskell-function/&title=Your First Haskell Function&source=https://lautarolobo.xyz" target=_blank> <span class=icon-linkedin></span> </a> </div> <div class=newsletter-wrapper> <div class=ml-form-embed data-account="1607694:c8w6g9c9z6" data-form="1426892:g8s3m6"> </div> </div> </footer> <div id=disqus_thread></div> <script>
+  var disqus_shortname = 'lautarolobo';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel=nofollow>comments powered by Disqus.</a></noscript> <footer id=footer> <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script> <p class=small>© Lautaro Jordan Lobo Ravarotto 2020</p> </footer> </section> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-138446504-1', 'auto');
+  ga('send', 'pageview');
+</script> </body> </html>

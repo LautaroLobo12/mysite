@@ -1,0 +1,117 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <title>A Recursive Function in Haskell | Lautaro Jordan Lobo Ravarotto</title> <link rel=alternate href="/feed.xml" type="application/atom+xml" title="Atom Feed"> <link rel=stylesheet href="/stylesheets/all-3ff0324d.css"> </head> <body> <nav class=main-nav> <a href="/"><span class=arrow>←</span> Home</a> </nav> <section id=wrapper> <article class=post> <header> <img src=""></img> <h1>A Recursive Function in Haskell</h1> <h2 class=date>17 May 2019</h2> </header> <section id=post-body> <script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/recursive-function-haskell",
+ "headline": "A Recursive Function in Haskell",
+ "alternativeHeadline": "Recursion 101",
+ "genre": "Haskell", 
+ "keywords": [
+  "Programming", 
+  "Haskell", 
+  "Recursion", 
+  "Computer Science" 
+],
+ "wordcount": "583",
+ "datePublished": "2019-05-17",
+ "dateCreated": "2019-05-17",
+ "dateModified": "2019-05-22",
+ "description": "This is the next level in Haskell programming, we are going to define a simple function applying recursion!",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script> <p><img src="/images/wowed-sculpture-e3234923.webp" alt=WOW title="WOWed Sculpture">Ready to get your head cracked? Ok, let&rsquo;s define a simple function that multiplies each number of a list of numbers by 2. We will give this function the name of &ldquo;by2&rdquo;.</p> <p>So, you have a function that takes a list of numbers as a parameter, and after the computation process shows a list of numbers. How do you write this in Haskell? Well:</p> <pre class="highlight haskell"><code><span class="n">by2</span> <span class="o">::</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
+</code></pre> <p>The brackets represent a list of something, in this case Integers. This is how you define a <em>type</em> in Haskell, I talked about that in <a href="https://lautarolobo.xyz/blog/first-haskell-function">my previous post.</a></p> <p>Once the type is defined, the next step is to define the actual function. First, you call the function, with the parameters, and then you type the process that the function must do, at the end, you should have something like this:</p> <pre class="highlight haskell"><code><span class="n">by2</span> <span class="n">x</span><span class="o">:</span><span class="n">xs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="n">by2</span> <span class="n">xs</span>
+</code></pre> <p><img src="/images/whatt-2a343d2e.webp" alt="What?" title="What?"> Hm, let me explain what is that code saying, you have a list with at least one element (an Integer in this case), by2 takes the first element and multiplies it by 2, nothing new, but then I&rsquo;m including the element multiplied by 2 in&hellip; the function without the first element? Seems weird? Well, next and last line of code, and then I will explain much deeply a few concepts that you need to know to fully understand this function.</p> <pre class="highlight haskell"><code><span class="n">by2</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">[]</span>
+</code></pre> <p>First af all, I&rsquo;m ussing <em>pattern matching</em>, a way to defining functions that compares patterns, the one given in the function definition with the paramater given. If you want to know more about it, check <a href="http://learnyouahaskell.com/syntax-in-functions#pattern-matching">this</a>.</p> <p>Remember at the start when I sayd &ldquo;a simple function&rdquo;? When, actually I may have been wrong, this one is not quite simple, because introduces an important concept besides pattern matching, <em>recursion</em>. by2 is a recursive function, meaning that the function is applied inside its own definition. To make a function work with recursion, you must make the recursive call smaller that the parameter given. Go back to your code and you will se this, the first element of the list is no more appearing in the recursive call of by2. Also, you always need to write your base case, the smaller case that the function may encounter, in this case is a list with no elements, just like in the second line of code that I showed you. Then, the recursive call will be getting smaller until the parameter given to the function will be&hellip; an empty list! And there, each element, in order, will be inserted in this list. </p> <p>It&rsquo;s tough to understand, you may get it better with an example:</p> <pre class="highlight shell_session"><code>by2 [7,3,5]
+[14,6,10]
+</code></pre> <p>This is what happened there:</p> <p>$$(2 \times 7) \triangleright by2 [3,5] \rightarrow$$ $$(2 \times 7) \triangleright ((2 \times 3) \triangleright by2 [5]) \rightarrow$$ $$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright by2 [\hspace{2mm}])) \rightarrow $$ $$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triangleright [\hspace{2mm}])$$</p> <p>And then, solves the multiplications and each number goes back where it was; 10 goes inside the empty list, then 6 and last 14.</p> <p>Well, I think we explained a few concepts in the way, pattern matching and recursion. But&hellip; have you tried the function? Open the terminal, then the compiler, load your file and test by2!</p> <p>You can try other parameters, like the empty list, or a list with words. Start playing around, changing the definition of by2, creating a by3, or a plus2; new functions that accept more and different parameters, with new definitions. </p> <p>If anything went wrong, <a href="mailto:contact@lautarolobo.xyz">tell me</a> and I&rsquo;ll be glad to help you out!</p> <p>You&rsquo;ve made it this far, kid. Impressive. Don&rsquo;t stop learning!</p> </section> </article> <footer id=post-meta> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <a href="/"> <img class=avatar src="/images/100px-3211424c.jpg" alt=Avatar> <div class=details> <div class=dark>Lautaro Jordan Lobo Ravarotto</div> <div class=light>Web Developer | Computer Science Student</div> </div> </a> <div class=sharing> <a href="https://twitter.com/share?text=A Recursive Function in Haskell&url=https://lautarolobo.xyz/blog/recursive-function-haskell/" target=_blank> <span class=icon-twitter></span> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://lautarolobo.xyz/blog/recursive-function-haskell/" target=_blank> <span class=icon-facebook></span> </a> <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lautarolobo.xyz/blog/recursive-function-haskell/&title=A Recursive Function in Haskell&source=https://lautarolobo.xyz" target=_blank> <span class=icon-linkedin></span> </a> </div> <div class=newsletter-wrapper> <div class=ml-form-embed data-account="1607694:c8w6g9c9z6" data-form="1426892:g8s3m6"> </div> </div> </footer> <div id=disqus_thread></div> <script>
+  var disqus_shortname = 'lautarolobo';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel=nofollow>comments powered by Disqus.</a></noscript> <footer id=footer> <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script> <p class=small>© Lautaro Jordan Lobo Ravarotto 2020</p> </footer> </section> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-138446504-1', 'auto');
+  ga('send', 'pageview');
+</script> </body> </html>

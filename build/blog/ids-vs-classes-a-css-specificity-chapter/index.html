@@ -1,0 +1,118 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <title>IDs vs Classes: a CSS Specificity Chapter | Lautaro Jordan Lobo Ravarotto</title> <link rel=alternate href="/feed.xml" type="application/atom+xml" title="Atom Feed"> <link rel=stylesheet href="/stylesheets/all-3ff0324d.css"> </head> <body> <nav class=main-nav> <a href="/"><span class=arrow>←</span> Home</a> </nav> <section id=wrapper> <article class=post> <header> <img src="/images/g945-1d342e75.webp"></img> <h1>IDs vs Classes: a CSS Specificity Chapter</h1> <h2 class=date>25 August 2019</h2> </header> <section id=post-body> <script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter",
+ "headline": "IDs vs Classes: a CSS Specificity Chapter",
+ "alternativeHeadline": "Which one should I use? IDs or Classes?",
+ "image": "https://lautarolobo.xyz/images/g945-afa10c28.png",
+ "genre": "Web Development", 
+ "keywords": [
+  "CSS", 
+  "Web Development", 
+  "Web Design", 
+  "Front-End" ,
+  "UX",
+  "UI"
+],  
+ "wordcount": "778",
+ "datePublished": "2019-08-25",
+ "dateCreated": "2019-08-25",
+ "dateModified": "2019-08-25",
+ "description": "Thousands of Web Developers asked the question, which one should I use? IDs or Classes? We will answer this question by explaining what CSS Specificity is and how it's related to the correct usage of CSS selectors",
+ "isFamilyFriendly": "true",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script> <p>Who will win? IDs or classes? </p> <p>We may be able to answer this question by looking at the context, and the differences between each one.</p> <p>Let&rsquo;s jump right in!</p> <h2>What is CSS Specificity?</h2> <p>CSS Specificity is like a rank, that determines which set of rules will be applied to an element instead of other sets of rules.</p> <p>If the browser finds two conflicting styles pointing to the same element, it will apply the rules with higher &lsquo;ranking&rsquo;.</p> <p>When writing CSS, you should always remember this:</p> <blockquote> <p>inline style &gt; #id &gt; .class &gt; element </p> </blockquote> <p>That&rsquo;s the CSS Specificity Hierarchy between the CSS Selectors. </p> <p>The all-mighty styles that would be applied no matter what, are the inline styles. Next, if there are no inline styles, the ID selector takes the lead. Among the other two, the class styles have a higher ranking than the element type ones.</p> <h2>Benefits of using them wisely</h2> <ul> <li>You&rsquo;ll get less conflicting styles</li> <li>You&rsquo;ll find and correct conflicting styles faster</li> <li>You&rsquo;ll understand better what&rsquo;s happening in your stylesheet</li> <li>You&rsquo;ll end up with a better CSS code (cleaner, shorter, more readable)</li> </ul> <h2>Differences between each CSS Selector</h2> <h3>Inline styles</h3> <p>Most of the times these styles are never used. Why? Well, to write better code more <em>humanly-readable</em>, it&rsquo;s better to have the CSS code all in one place: an external file.</p> <p>Using inline styles is often seen as a bad practice. You are mixing HTML code with CSS so your code will be larger and harder to read and often harder to write too.</p> <p>Try to avoid it.</p> <h3>IDs</h3> <p>IDs are unique, meaning that:</p> <ul> <li>there&rsquo;s only one ID per element</li> <li>there&rsquo;s only one element with that particular ID on the page</li> </ul> <p>IDs are often used when adding JavaScript code, for performance sakes. But we are talking about CSS here! When adding styles, IDs are usually avoided because the code won&rsquo;t end up being scalable nor modular. You can&rsquo;t reuse styles, and if you are working on a big site, that will slow down the development process.</p> <h3>Classes</h3> <p>Classes are not unique, meaning that:</p> <ul> <li>the same class can be used on different elements</li> <li>the same element can have different classes</li> </ul> <p>The common practice is to use mostly (if not only) classes for CSS.</p> <p>Like said before, you can apply the same styles to different elements, ending up with less and easier to read code. </p> <p>This approach works better with big websites when you don&rsquo;t want to write over and over again styles to each element, just give a set of rules for a class and give all the desired elements the same class. And if you want to add some different styles, add another class and problem solved.</p> <h3>Element type</h3> <p>By using these you are styling the element (&lsquo;tag&rsquo;) that has the specified name, like:</p> <pre class="highlight css"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Roboto</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre> <p>It&rsquo;s not really specific, right?</p> <p>If you use &lsquo;div&rsquo; as the selector, you&rsquo;ll apply those styles to <em>all</em> the divs of your website. </p> <p>Why would you do that? </p> <p>There are plenty of divs on your site, ones on the footer, others on the navbar, on the header, some may contain text, others images&hellip;</p> <p>There is no good rule of thumb on when to use type selectors. Just use classes a lot and add type selectors whenever possible, to keep specificity levels low, preventing styling conflicts.</p> <h2>Summary</h2> <p>You should keep the specificity levels low, so when a styling conflict shows up, you can easily solve it. The way to do it is using element type selectors and classes most of the times, along with pseudo-classes and attributes, avoiding IDs and inline styles.</p> <p>Also, as told before, <a href="https://dev.to/clairecodes/reasons-not-to-use-ids-in-css-4ni4" hreflang=en rel=external>classes have several advantages over IDs.</a></p> <p>So in the war between IDs and classes, classes win. But hey! You know the differences now, and keep in mind that there may be cases when using an ID selector would be better than using a class, so keep your eyes open!</p> <p>There are some other good posts on the topic that I encourage for further reading:</p> <ul> <li><a href="https://www.w3schools.com/css/css_specificity.asp" hreflang=en rel=external>W3S: CSS Specificity</a></li> <li><a href="https://dev.to/emmawedekind/css-specificity-1kca" hreflang=en rel=external>Emma Wedekind on Dev: CSS Specificity</a></li> <li><a href="https://css-tricks.com/the-difference-between-id-and-class/" hreflang=en rel=external>CSS Tricks: The Difference Between ID and Class</a> </li> </ul> <p><hr></p> <p>I hope that this post has somehow helped you. Thanks for reading!</p> <p>PS: Consider subscribing to my monthly newsletter down below to get my recent posts right into your inbox 😉</p> </section> </article> <footer id=post-meta> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <a href="/"> <img class=avatar src="/images/100px-3211424c.jpg" alt=Avatar> <div class=details> <div class=dark>Lautaro Jordan Lobo Ravarotto</div> <div class=light>Web Developer | Computer Science Student</div> </div> </a> <div class=sharing> <a href="https://twitter.com/share?text=IDs vs Classes: a CSS Specificity Chapter&url=https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter/" target=_blank> <span class=icon-twitter></span> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter/" target=_blank> <span class=icon-facebook></span> </a> <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lautarolobo.xyz/blog/ids-vs-classes-a-css-specificity-chapter/&title=IDs vs Classes: a CSS Specificity Chapter&source=https://lautarolobo.xyz" target=_blank> <span class=icon-linkedin></span> </a> </div> <div class=newsletter-wrapper> <div class=ml-form-embed data-account="1607694:c8w6g9c9z6" data-form="1426892:g8s3m6"> </div> </div> </footer> <div id=disqus_thread></div> <script>
+  var disqus_shortname = 'lautarolobo';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel=nofollow>comments powered by Disqus.</a></noscript> <footer id=footer> <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script> <p class=small>© Lautaro Jordan Lobo Ravarotto 2020</p> </footer> </section> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-138446504-1', 'auto');
+  ga('send', 'pageview');
+</script> </body> </html>

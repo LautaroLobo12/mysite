@@ -1,0 +1,18 @@
+<header class="profile">
+  <img class="avatar" src="<%= url_for '/images/100px.jpg' %>" srcset="<%= url_for '/images/200px.jpg' %> 2x" alt="Avatar">
+  <h1><%= config[:site_title] %></h1>
+  <h2><%= config[:site_subtitle] %></h2>
+</header>
+<hr>
+<p><center><%= config[:profile_text] %></center></p>
+
+<div class="social">
+  <div class="social-left">
+    <a target="_blank" class="social-link" href="https://github.com/<%= config[:github_username]%>"><span class="icon-github"></span> GitHub</a>
+    <a target="_blank" class="social-link" href="https://www.codepen.io/<%= config[:codepen_username] %>"><span class="icon-codepen"></span> CodePen</a>
+  </div>
+  <div class="social-right">
+    <a target="_blank" class="social-link" href="https://www.linkedin.com/in/<%= config[:linkedin_username] %>"><span class="icon-linkedin"></span> LinkedIn</a>
+    <a target="_blank" class="social-link" href="https://t.me/<%= config[:telegram_username] %>"><span class="icon-telegram"></span> Telegram</a>
+  </div>
+</div>

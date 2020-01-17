@@ -1,0 +1,20 @@
+<% title = current_article.title %>
+<% url = URI.join(config[:site_url], current_page.url) %>
+<div class="sharing">
+  <a href="https://twitter.com/share?text=<%= title %>&url=<%= url %>" target="_blank">
+    <span class="icon-twitter"></span>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= url %>" target="_blank">
+    <span class="icon-facebook"></span>
+  </a>
+  <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= url %>&title=<%= title %>&source=https://lautarolobo.xyz" target="_blank">
+    <span class="icon-linkedin"></span>
+  </a>
+</div>
+
+<div class="newsletter-wrapper">
+  <div class="ml-form-embed"
+    data-account="1607694:c8w6g9c9z6"
+    data-form="1426892:g8s3m6">
+  </div>
+</div>
