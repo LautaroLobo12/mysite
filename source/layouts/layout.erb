@@ -9,9 +9,27 @@
   </head>
   <body>
     <% unless current_page.data.hide_nav %>
-      <nav class="main-nav">
-        <a href="/"><span class="arrow">←</span> Home</a>
-      </nav>
+    <nav class="main-nav" id="main-nav">
+    <a href="https://lautarolobo.xyz">
+      <span class="home">←HOME</span>
+    </a>
+    <a href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=19988" target="_blank"><img src="/images/join-hostinger.png" alt="Join Hostinger CTA" class="join-hostinger"></a>
+    <!-- when the user scrolls on a post on every device, the nav bar hides and re-appears when scrolling upwards -->
+    <script>
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("main-nav").style.top = "0";
+        } else {
+            document.getElementById("main-nav").style.top = "-60px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    </script>
+  </nav>
     <% end %>
 
     <section id="wrapper"<% unless current_article %> class="home"<% end %>>

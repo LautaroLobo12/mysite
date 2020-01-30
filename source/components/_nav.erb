@@ -1,0 +1,21 @@
+<nav class="home-nav" id="home-nav">
+    <a href="https://lautarolobo.xyz"><img src="/images/logo.png" alt="Lautaro Lobo Logo" class="nav-logo"></a>
+    <a href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=19988" target="_blank"><img src="/images/join-hostinger.png" alt="Join Hostinger CTA" class="join-hostinger"></a>
+</nav>
+
+<script>
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    const mq = window.matchMedia("(min-width: 974px)");
+    if (mq.matches) {} else {
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("home-nav").style.top = "0";
+            } else {
+                document.getElementById("home-nav").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    }
+</script>
