@@ -5,11 +5,169 @@
   <link href="https://lautarolobo.xyz/feed.xml" rel="self"/>
   <link href="https://lautarolobo.xyz/"/>
   <id>urn:uuid:4b6fc0ee-c5f9-4c67-849f-b220d14bb6f1</id>
-  <updated>2020-01-22T11:18:50-03:00</updated>
+  <updated>2020-02-29T15:18:01-03:00</updated>
   <author>
     <name>Lautaro Jordan Lobo Ravarotto</name>
   </author>
   <rights>© Lautaro Jordan Lobo Ravarotto 2020</rights>
+  <entry>
+    <title>February of Fortran</title>
+    <link href="https://lautarolobo.xyz/blog/february-of-fortran/" rel="alternate"/>
+    <id/>
+    <published>2020-02-29T15:07:00-03:00</published>
+    <updated>2020-02-29T15:18:01-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/february-of-fortran",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/february-of-fortran",
+ "headline": "February of Fortran",
+ "alternativeHeadline": "February of Fortran",
+ "genre": "Fortran", 
+ "keywords": [
+  "fortran", 
+  "february", 
+  "programming",
+  "coding",
+  "computational physics",
+  "high-performance computing"
+],  
+ "wordcount": "476",
+ "datePublished": "2019-02-29",
+ "dateCreated": "2019-02-29",
+ "dateModified": "2019-02-29",
+ "description": "February smells like Fortran right? Well, maybe not but, is Fortran still something?",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;h2&gt;What is Fortran?&lt;/h2&gt;
+
+&lt;p&gt;Fortran is a 63 y.o. programming language developed by IBM for scientific and engineering applications. Its name is an acronym from &lt;strong&gt;FORmula TRANslation&lt;/strong&gt;, and still being in use for that purpose.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a general-purpose programming language, but best suited for computationally intensive areas like computational physics, computational chemistry, high-performance computing and so.&lt;/p&gt;
+
+&lt;p&gt;Many programming languages were based on or influenced by, Fortran. And it has received many updates among the years, last one in 2018. &lt;/p&gt;
+
+&lt;p&gt;It was originally conceived as FORTRAN, all uppercase, in 1956. 5 updates later, in the 90s, it became Fortran. The update also added many other changes like free-form source, inline comments, modules, recursive procedures, dynamic memory allocation and many other changes that make the language &lt;em&gt;modern-er&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;How to Compile and Run a Fortran Program&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you want to compile and run your first Fortran program, like this one:&lt;/p&gt;
+&lt;pre class="highlight fortran"&gt;&lt;code&gt;&lt;span class="k"&gt;program&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HelloWorld&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="k"&gt;implicit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;none&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"hello world"&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="k"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"hello world"&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;program&lt;/span&gt;&lt;span class="w"&gt;
+
+&lt;/span&gt;&lt;span class="c1"&gt;! it should return:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="c1"&gt;! hello world&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="c1"&gt;! hello world&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Well, you should make a series of things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href="https://gcc.gnu.org/wiki/GFortran"&gt;gfortran&lt;/a&gt;, which is a Fortran compiler.&lt;/li&gt;
+&lt;li&gt;Save your code with .f90 extension (even if you are writing in Fortran 2015, .f90 it&amp;rsquo;s the standard file extension).&lt;/li&gt;
+&lt;li&gt;Compile with gfortran.&lt;/li&gt;
+&lt;li&gt;Run your program as you would run any C program.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And that&amp;rsquo;s how you do it!&lt;/p&gt;
+
+&lt;h2&gt;What is Fortran Used For&lt;/h2&gt;
+
+&lt;p&gt;Fortran is still in use in HPC (High Performace Computing). All that is mathematical chunk is probably done with Fortran. It&amp;rsquo;s widely used in scientific computing from Chemistry and Physics to Astronomy and Mathematics. &lt;/p&gt;
+
+&lt;p&gt;I can almost hear the masses&amp;hellip; why not Python? &lt;/p&gt;
+
+&lt;p&gt;In fact, you can use Python in those areas. But even if Python is a better choice in many cases, you wouldn&amp;rsquo;t use it in HPC, since Fortran is &lt;em&gt;performant-er&lt;/em&gt;. It may take more time to write, but sometimes code performance means everything. &lt;/p&gt;
+
+&lt;p&gt;You know, even that Python has evolved, wasn&amp;rsquo;t born exclusively for Physicists and Mathematicians.&lt;/p&gt;
+
+&lt;p&gt;As I&amp;rsquo;ve read somewhere:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;At the end of the day, Physicists are writing very different programs than Computer Scientists with very different goals and concerns.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You may say that Physicists are not willing to change, or that there&amp;rsquo;s a lot of Fortran legacy code out there, but even then, Fortran keeps being the best choice for some HPC projects, or Physics calculations.&lt;/p&gt;
+
+&lt;p&gt;But that doesn&amp;rsquo;t mean that you can only use Fortran. Other programming languages used in HPC are C and C++, both being faster than Fortran in many cases, or the somehow-new &lt;a href="https://julialang.org/"&gt;Julia&lt;/a&gt; that is &lt;a href="https://www.hpcwire.com/2020/01/14/julia-programmings-dramatic-rise-in-hpc-and-elsewhere/"&gt;slowly entering the market&lt;/a&gt;, is also faster than Fortran and it was developed by MIT exclusively for HPC and all scientific computing. &lt;/p&gt;
+
+&lt;p&gt;If you want to see a detailed comparison between Python, C++, and Fortran on scientific computing, check out &lt;a href="http://downloads.hindawi.com/journals/sp/2014/870146.pdf"&gt;this amazing paper&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>January of JavaScript</title>
     <link href="https://lautarolobo.xyz/blog/january-of-javascript/" rel="alternate"/>
