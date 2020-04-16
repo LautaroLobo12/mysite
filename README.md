@@ -1,2 +1,2 @@
 # mysite
-Me personal blog, built with Middleman.
+My personal blog, built with Middleman.
