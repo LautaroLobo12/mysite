@@ -1,0 +1,404 @@
+---
+title: Use JavaScript and HTML5 to Code a Fractal Tree
+date: 2020-04-15 14:51 -03
+tags: JavaScript, Fractals, HTML5
+image: /images/fractal_cover.webp
+---
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "headline": "Use JavaScript and HTML5 to Code a Fractal Tree",
+ "alternativeHeadline": "How to Code a Fractal Tree with JavaScript and HTML5",
+ "genre": "JavaScript", 
+ "keywords": [
+  "fractals", 
+  "fractal", 
+  "programming",
+  "coding",
+  "fractal tree",
+  "Canvas API",
+  "HTML5"
+],  
+ "wordcount": "967",
+ "datePublished": "2020-04-16",
+ "dateCreated": "2020-04-16",
+ "dateModified": "2020-04-16",
+ "description": "Let's code a Fractal Tree! Nothing weird, Vanilla JavaScript and the Canvas API.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://lautarolobo.xyz/images/100px-3211424c.jpg"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script>
+
+Fractals, those enigmatic figures that are everywhere, but can not be seen by the untrained eye. Today we'll draw one of the best-known Fractals, using only Vainilla JS and the HTML5's Canvas API. Let's code!
+
+<div id="index">
+
+<h4> Index </h4>
+ 
+<ul>
+
+<li>
+    <a href="#h2-1">What is a Fractal Tree?</a>
+</li>
+<li>
+    <a href="#h2-2">Writing the Fractal Tree in Vainilla JS</a>
+</li>
+<li>
+    <a href="#h2-3">Beyond the Fractal Tree</a>
+</li>
+
+</ul>
+
+</div>
+
+<h2 id="h2-1"> What is a Fractal Tree? </h2>
+
+To define a Fractal Tree first we must know the definition of Fractal, of course.
+
+Fractals are never-ending patterns created by repeating mathematical equations, which on any scale, on any level of zoom, look roughly the same. In other words, a geometric object which's basic structure, rough or fragmented, repites itself in different scales. 
+
+So if we split a Fractal, we'll see a reduced-size copy of the whole.
+
+Benoit Mandelbrot, which coined the term Fractal in 1975, said:
+
+> A Fractal is a shape made of parts similar to the whole in some way.
+
+Pretty clear, right?
+
+Here are some examples:
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif" alt="Animated Von Koch Curve">
+<p><table><td><center>Von Koch Curve</center></td></table></p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Animated_Sierpinski_carpet.gif" alt="Animated Sierpinski Carpet">
+<p><table><td><center>Sierpinski Carpet</center></td></table></p>
+</center>
+
+Now, what is a Fractal Tree? 
+
+Imagine a branch, and branches coming out of it, and then two branches coming out of each branch, and so on... that's what a Fractal Tree looks like. 
+
+Its form comes from the Sierpinski triangle (or Sierpinski gasket). 
+
+As you can see, one becomes the other when changing the angle between branches:
+
+<center>
+![From Sierpinski Triangle to Fractal Tree](https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif)
+</center>
+
+Today we'll end up with a figure similar to the final form of that gif.
+
+<h2 id="h2-1"> Writing the Fractal Tree in Vanilla JS </h2>
+
+First of all, here's the final product (you can tweak it along the way):
+
+<center>
+![Final Fractal Tree](/images/fractalTree.webp)
+</center>
+
+Now let's draw that, step by step.
+
+First of all, we initialize our index.html file, with a canvas of any reasonable dimensions, and a script tag where all our JS code will be.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script></script>
+</body>
+</html>
+~~~
+
+Then, we start writing our JavaScript.
+
+We initialize our canvas element on JS, by accessing it through the myCanvas variable and creating the 2D rendering context with the ctx (context) variable.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script>
+    var myCanvas = document.getElementById("my_canvas");
+    var ctx = myCanvas.getContext("2d");
+    </script>
+</body>
+</html>
+~~~
+
+So yeah, the getContext method adds properties and methods that allow you to draw, in this case, in 2D.
+
+Now it's time to think. How can we define the algorithm to draw a Fractal tree? Hm... 🤔
+
+Let's see, we know that the branches keep becoming smaller. And that each branch ends with two branches coming out of it, one to the left and one to the right.
+
+In other words, when a branch is long enough, attach two smaller branches to it. Repeat.
+
+It kinda sounds like we shall use some recursive statement somewhere, isn't it?
+
+Back to the code, we now define our function ```fractalTree``` that should take at least four arguments: the X and Y coordinates where the branch starts, the length of its branch and its angle.
+
+Inside our function, we begin the drawing with the beginPath() method, and then save the state of the canvas with the save() method.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script>
+    var myCanvas = document.getElementById("my_canvas");
+    var ctx = myCanvas.getContext("2d");
+    function draw(startX, startY, len, angle) {
+        ctx.beginPath();
+        ctx.save();
+    }        
+    </script>
+</body>
+</html>
+~~~
+
+The beginPath method is often used when you start a new line or figure that has a fixed style, like the same color along the entire line, or the same width. The save method just saves the entire state of the canvas by pushing the current state onto a stack.
+
+Now we'll draw our Fractal Tree, by drawing a line (branch), rotating the canvas and drawing the next branch, and so on. It goes like this (I'll explain each method below the code sample):
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script>
+    var myCanvas = document.getElementById("my_canvas");
+    var ctx = myCanvas.getContext("2d");
+    function draw(startX, startY, len, angle) {
+        ctx.beginPath();
+        ctx.save();
+
+        ctx.translate(startX, startY);
+        ctx.rotate(angle * Math.PI/180);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -len);
+        ctx.stroke();
+
+        if(len < 10) {
+            ctx.restore();
+            return;
+        }
+
+        draw(0, -len, len*0.8, -15);
+        draw(0, -len, len*0.8, +15);
+  
+        ctx.restore();
+    }
+    draw(400, 600, 120, 0)       
+    </script>
+</body>
+</html>
+~~~
+
+So we first add three methods, translate, rotate and moveTo, which 'moves' the canvas, its origin and our 'pencil' so we can draw the branch in our desired angle. It's like we are drawing a branch, then centering this branch (by moving the hole canvas) and then drawing a new brand from the end of our previous branch. 
+
+The last two methods before the if statement are lineTo and stroke, the first adds a straight line to the current path and the second one renders it, you can think of it like this: lineTo gives the order and stroke executes it. 
+
+Now we have an if statement that tells when to stop the recursion, when to stop drawing. The restore method, as stated in the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/restore), "restores the most recently saved canvas state by popping the top entry in the drawing state stack".  
+
+After the if statement we have the recursive call, and another call to the restore method. And then a call to the function that we just finished.
+
+Now run the code in your browser. You'll see, finally, a Fractal Tree!
+
+<center>
+![Fractal Tree First Iteration](/images/fractalTree1.webp)
+</center>
+
+Awesome, right? Now let's make it even better.
+
+We'll add a new parameter to our draw function, branchWidth, to make our Fractal Tree more realistic.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script>
+    var myCanvas = document.getElementById("my_canvas");
+    var ctx = myCanvas.getContext("2d");
+    function draw(startX, startY, len, angle, branchWidth) {
+        ctx.lineWidth = branchWidth;
+        
+        ctx.beginPath();
+        ctx.save();
+
+        ctx.translate(startX, startY);
+        ctx.rotate(angle * Math.PI/180);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -len);
+        ctx.stroke();
+
+        if(len < 10) {
+            ctx.restore();
+            return;
+        }
+
+        draw(0, -len, len*0.8, angle-15, branchWidth*0.8);
+        draw(0, -len, len*0.8, angle+15, branchWidth*0.8);
+  
+        ctx.restore();
+    }
+    draw(400, 600, 120, 0, 10)       
+    </script>
+</body>
+</html>
+~~~
+
+So in every iteration, we are making each branch thinner. I've also changed the angle paramater in the recursive call, to make a more "open" tree.
+
+Now, let's add some color! And shadows, why not.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
+    <script>
+    var myCanvas = document.getElementById("my_canvas");
+    var ctx = myCanvas.getContext("2d");
+    function draw(startX, startY, len, angle, branchWidth) {
+        ctx.lineWidth = branchWidth;
+        
+        ctx.beginPath();
+        ctx.save();
+
+        ctx.strokeStyle = "green";
+        ctx.fillStyle = "green";
+
+        ctx.translate(startX, startY);
+        ctx.rotate(angle * Math.PI/180);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -len);
+        ctx.stroke();
+
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = "rgba(0,0,0,0.8)";
+
+        if(len < 10) {
+            ctx.restore();
+            return;
+        }
+
+        draw(0, -len, len*0.8, angle-15, branchWidth*0.8);
+        draw(0, -len, len*0.8, angle+15, branchWidth*0.8);
+  
+        ctx.restore();
+    }
+    draw(400, 600, 120, 0, 10)       
+    </script>
+</body>
+</html>
+~~~
+
+Both color methods are self-explanatory (strokeStyle and fillStyle). Also the shadow ones, shadowBlur and shadowColor.
+
+And that's it! Save the file and open it with your browser to see the final product.
+
+Now I encourage you to play with the code! Change the shadowColor, the fillStyle, make a shorter or longer Fractal Tree, change the angle or try to add leaves, that should be challenging 😉
+
+<h2 id="h2-1"> Beyond the Fractal Tree </h2>
+
+As I showed you at the beginning of this post, there are different Fractals. Ain't gonna be easy to make all them with the Canvas API, but it should be possible. I made some of those in the C programming language, and I've also played around with p5.js.
+
+p5.js is an Open Source JavaScript library made by artists, for artists, based in the [Processing language](https://processing.org/). You can draw, or animate, anything imaginable. If you are interested in making art with code, it's a must. They have a great _get-started_ page that you can check out <a href="https://p5js.org/get-started/" title="p5.js - Get Started">here.</a>
+
+I've also found recently a website that makes a Fractal Tree in JS using L-Systems. Really cool. Take a look into [The Fractal Zone](https://thefractal.zone/)! Code is <a href="https://github.com/Rizz0S/the-fractal-zone" title="The Fractal Zone in GitHub">here</a> 🤓
+
+***
+
+Well, that's it for now! Thanks for reading, comment any questions and see you in my next post! 🧔
+
+> <p style="font-size: 13px;">Cover by <a href="https://pixabay.com/users/socialtrendspr0-1358346/">socialtrendspr0</a> from <a href="https://pixabay.com">Pixabay</a></p>
