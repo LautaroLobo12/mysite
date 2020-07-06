@@ -5,17 +5,411 @@
   <link href="https://lautarolobo.xyz/feed.xml" rel="self"/>
   <link href="https://lautarolobo.xyz/"/>
   <id>urn:uuid:4b6fc0ee-c5f9-4c67-849f-b220d14bb6f1</id>
-  <updated>2020-02-29T15:18:01-03:00</updated>
+  <updated>2020-04-16T11:29:40-03:00</updated>
   <author>
     <name>Lautaro Jordan Lobo Ravarotto</name>
   </author>
   <rights>© Lautaro Jordan Lobo Ravarotto 2020</rights>
   <entry>
+    <title>Use JavaScript and HTML5 to Code a Fractal Tree</title>
+    <link href="https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/" rel="alternate"/>
+    <id/>
+    <published>2020-04-16T12:40:00-03:00</published>
+    <updated>2020-04-16T11:29:40-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "headline": "Use JavaScript and HTML5 to Code a Fractal Tree",
+ "alternativeHeadline": "How to Code a Fractal Tree with JavaScript and HTML5",
+ "genre": "JavaScript", 
+ "keywords": [
+  "fractals", 
+  "fractal", 
+  "programming",
+  "coding",
+  "fractal tree",
+  "Canvas API",
+  "HTML5"
+],  
+ "wordcount": "967",
+ "datePublished": "2020-04-16",
+ "dateCreated": "2020-04-16",
+ "dateModified": "2020-04-16",
+ "description": "Let's code a Fractal Tree! Nothing weird, Vanilla JavaScript and the Canvas API.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://lautarolobo.xyz/images/100px-3211424c.jpg"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+&lt;/script&gt;
+
+&lt;p&gt;Fractals, those enigmatic figures that are everywhere, but can not be seen by the untrained eye. Today we&amp;rsquo;ll draw one of the best-known Fractals, using only Vainilla JS and the HTML5&amp;rsquo;s Canvas API. Let&amp;rsquo;s code!&lt;/p&gt;
+
+&lt;div id="index"&gt;
+
+&lt;h4&gt; Index &lt;/h4&gt;
+ 
+&lt;ul&gt;
+
+&lt;li&gt;
+    &lt;a href="#h2-1"&gt;What is a Fractal Tree?&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href="#h2-2"&gt;Writing the Fractal Tree in Vainilla JS&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href="#h2-3"&gt;Beyond the Fractal Tree&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id="h2-1"&gt; What is a Fractal Tree? &lt;/h2&gt;
+
+&lt;p&gt;To define a Fractal Tree first we must know the definition of Fractal, of course.&lt;/p&gt;
+
+&lt;p&gt;Fractals are never-ending patterns created by repeating mathematical equations, which on any scale, on any level of zoom, look roughly the same. In other words, a geometric object which&amp;rsquo;s basic structure, rough or fragmented, repites itself in different scales. &lt;/p&gt;
+
+&lt;p&gt;So if we split a Fractal, we&amp;rsquo;ll see a reduced-size copy of the whole.&lt;/p&gt;
+
+&lt;p&gt;Benoit Mandelbrot, which coined the term Fractal in 1975, said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A Fractal is a shape made of parts similar to the whole in some way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pretty clear, right?&lt;/p&gt;
+
+&lt;p&gt;Here are some examples:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif" alt="Animated Von Koch Curve"&gt;
+&lt;p&gt;&lt;table&gt;&lt;td&gt;&lt;center&gt;Von Koch Curve&lt;/center&gt;&lt;/td&gt;&lt;/table&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Animated_Sierpinski_carpet.gif" alt="Animated Sierpinski Carpet"&gt;
+&lt;p&gt;&lt;table&gt;&lt;td&gt;&lt;center&gt;Sierpinski Carpet&lt;/center&gt;&lt;/td&gt;&lt;/table&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, what is a Fractal Tree? &lt;/p&gt;
+
+&lt;p&gt;Imagine a branch, and branches coming out of it, and then two branches coming out of each branch, and so on&amp;hellip; that&amp;rsquo;s what a Fractal Tree looks like. &lt;/p&gt;
+
+&lt;p&gt;Its form comes from the Sierpinski triangle (or Sierpinski gasket). &lt;/p&gt;
+
+&lt;p&gt;As you can see, one becomes the other when changing the angle between branches:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt="From Sierpinski Triangle to Fractal Tree" /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Today we&amp;rsquo;ll end up with a figure similar to the final form of that gif.&lt;/p&gt;
+
+&lt;h2 id="h2-1"&gt; Writing the Fractal Tree in Vanilla JS &lt;/h2&gt;
+
+&lt;p&gt;First of all, here&amp;rsquo;s the final product (you can tweak it along the way):&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src="/images/fractalTree-39b48caf.webp" alt="Final Fractal Tree" /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s draw that, step by step.&lt;/p&gt;
+
+&lt;p&gt;First of all, we initialize our index.html file, with a canvas of any reasonable dimensions, and a script tag where all our JS code will be.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, we start writing our JavaScript.&lt;/p&gt;
+
+&lt;p&gt;We initialize our canvas element on JS, by accessing it through the myCanvas variable and creating the 2D rendering context with the ctx (context) variable.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;my_canvas&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;2d&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So yeah, the getContext method adds properties and methods that allow you to draw, in this case, in 2D.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s time to think. How can we define the algorithm to draw a Fractal tree? Hm&amp;hellip; 🤔&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see, we know that the branches keep becoming smaller. And that each branch ends with two branches coming out of it, one to the left and one to the right.&lt;/p&gt;
+
+&lt;p&gt;In other words, when a branch is long enough, attach two smaller branches to it. Repeat.&lt;/p&gt;
+
+&lt;p&gt;It kinda sounds like we shall use some recursive statement somewhere, isn&amp;rsquo;t it?&lt;/p&gt;
+
+&lt;p&gt;Back to the code, we now define our function &lt;code&gt;fractalTree&lt;/code&gt; that should take at least four arguments: the X and Y coordinates where the branch starts, the length of its branch and its angle.&lt;/p&gt;
+
+&lt;p&gt;Inside our function, we begin the drawing with the beginPath() method, and then save the state of the canvas with the save() method.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;my_canvas&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;2d&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;beginPath&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;save&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;        
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The beginPath method is often used when you start a new line or figure that has a fixed style, like the same color along the entire line, or the same width. The save method just saves the entire state of the canvas by pushing the current state onto a stack.&lt;/p&gt;
+
+&lt;p&gt;Now we&amp;rsquo;ll draw our Fractal Tree, by drawing a line (branch), rotating the canvas and drawing the next branch, and so on. It goes like this (I&amp;rsquo;ll explain each method below the code sample):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;my_canvas&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;2d&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;beginPath&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;save&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;rotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;angle&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nb"&gt;Math&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;PI&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;180&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;moveTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lineTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;stroke&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;120&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;       
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So we first add three methods, translate, rotate and moveTo, which &amp;lsquo;moves&amp;rsquo; the canvas, its origin and our &amp;lsquo;pencil&amp;rsquo; so we can draw the branch in our desired angle. It&amp;rsquo;s like we are drawing a branch, then centering this branch (by moving the hole canvas) and then drawing a new brand from the end of our previous branch. &lt;/p&gt;
+
+&lt;p&gt;The last two methods before the if statement are lineTo and stroke, the first adds a straight line to the current path and the second one renders it, you can think of it like this: lineTo gives the order and stroke executes it. &lt;/p&gt;
+
+&lt;p&gt;Now we have an if statement that tells when to stop the recursion, when to stop drawing. The restore method, as stated in the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/restore"&gt;MDN Docs&lt;/a&gt;, &amp;ldquo;restores the most recently saved canvas state by popping the top entry in the drawing state stack&amp;rdquo;.  &lt;/p&gt;
+
+&lt;p&gt;After the if statement we have the recursive call, and another call to the restore method. And then a call to the function that we just finished.&lt;/p&gt;
+
+&lt;p&gt;Now run the code in your browser. You&amp;rsquo;ll see, finally, a Fractal Tree!&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src="/images/fractalTree1-4748f669.webp" alt="Fractal Tree First Iteration" /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Awesome, right? Now let&amp;rsquo;s make it even better.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll add a new parameter to our draw function, branchWidth, to make our Fractal Tree more realistic.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;my_canvas&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;2d&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lineWidth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;beginPath&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;save&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;rotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;angle&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nb"&gt;Math&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;PI&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;180&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;moveTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lineTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;stroke&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;120&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;       
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So in every iteration, we are making each branch thinner. I&amp;rsquo;ve also changed the angle paramater in the recursive call, to make a more &amp;ldquo;open&amp;rdquo; tree.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s add some color! And shadows, why not.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&lt;/span&gt; &lt;span class="na"&gt;lang=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my_canvas"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"1000"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"800"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;my_canvas&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myCanvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;2d&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lineWidth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;beginPath&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;save&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;strokeStyle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;green&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fillStyle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;green&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;startX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;startY&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;rotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;angle&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nb"&gt;Math&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;PI&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;180&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;moveTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lineTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;stroke&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;shadowBlur&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;shadowColor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;rgba(0,0,0,0.8)&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;len&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;angle&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;branchWidth&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;restore&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;120&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;       
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Both color methods are self-explanatory (strokeStyle and fillStyle). Also the shadow ones, shadowBlur and shadowColor.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it! Save the file and open it with your browser to see the final product.&lt;/p&gt;
+
+&lt;p&gt;Now I encourage you to play with the code! Change the shadowColor, the fillStyle, make a shorter or longer Fractal Tree, change the angle or try to add leaves, that should be challenging 😉&lt;/p&gt;
+
+&lt;h2 id="h2-1"&gt; Beyond the Fractal Tree &lt;/h2&gt;
+
+&lt;p&gt;As I showed you at the beginning of this post, there are different Fractals. Ain&amp;rsquo;t gonna be easy to make all them with the Canvas API, but it should be possible. I made some of those in the C programming language, and I&amp;rsquo;ve also played around with p5.js.&lt;/p&gt;
+
+&lt;p&gt;p5.js is an Open Source JavaScript library made by artists, for artists, based in the &lt;a href="https://processing.org/"&gt;Processing language&lt;/a&gt;. You can draw, or animate, anything imaginable. If you are interested in making art with code, it&amp;rsquo;s a must. They have a great &lt;em&gt;get-started&lt;/em&gt; page that you can check out &lt;a href="https://p5js.org/get-started/" title="p5.js - Get Started"&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also found recently a website that makes a Fractal Tree in JS using L-Systems. Really cool. Take a look into &lt;a href="https://thefractal.zone/"&gt;The Fractal Zone&lt;/a&gt;! Code is &lt;a href="https://github.com/Rizz0S/the-fractal-zone" title="The Fractal Zone in GitHub"&gt;here&lt;/a&gt; 🤓&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Well, that&amp;rsquo;s it for now! Thanks for reading, comment any questions and see you in my next post! 🧔&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p style="font-size: 13px;"&gt;Cover by &lt;a href="https://pixabay.com/users/socialtrendspr0-1358346/"&gt;socialtrendspr0&lt;/a&gt; from &lt;a href="https://pixabay.com"&gt;Pixabay&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
     <title>February of Fortran</title>
     <link href="https://lautarolobo.xyz/blog/february-of-fortran/" rel="alternate"/>
     <id/>
     <published>2020-02-29T15:07:00-03:00</published>
-    <updated>2020-02-29T15:18:01-03:00</updated>
+    <updated>2020-04-16T11:12:35-03:00</updated>
     <author>
       <name>Lautaro Jordan Lobo Ravarotto</name>
     </author>
@@ -37,12 +431,12 @@
   "high-performance computing"
 ],  
  "wordcount": "476",
- "datePublished": "2019-02-29",
- "dateCreated": "2019-02-29",
- "dateModified": "2019-02-29",
+ "datePublished": "2020-02-29",
+ "dateCreated": "2020-02-29",
+ "dateModified": "2020-02-29",
  "description": "February smells like Fortran right? Well, maybe not but, is Fortran still something?",
  "isFamilyFriendly": "true",
- "image": "https://imgsafe.org/image/5709e8ceba",
+ "image": "https://lautarolobo.xyz/images/february-of-fortran-653ed35e.webp",
  "publisher": {
   "@type": "Organization",
   "name": "Lautaro Jordan Lobo Ravarotto",
@@ -50,7 +444,7 @@
   "logo": {  
    "@type": "ImageObject",
    "author": "Lautaro Jordan Lobo Ravarotto",
-   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   "url": "https://lautarolobo.xyz/images/100px-3211424c.jpg"
    }
   },
  "author": {
@@ -123,7 +517,7 @@
 &lt;h2&gt;How to Compile and Run a Fortran Program&lt;/h2&gt;
 
 &lt;p&gt;Let&amp;rsquo;s say you want to compile and run your first Fortran program, like this one:&lt;/p&gt;
-&lt;pre class="highlight fortran"&gt;&lt;code&gt;&lt;span class="k"&gt;program&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HelloWorld&lt;/span&gt;&lt;span class="w"&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight fortran"&gt;&lt;code&gt;&lt;span class="k"&gt;program&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HelloWorld&lt;/span&gt;&lt;span class="w"&gt;
   &lt;/span&gt;&lt;span class="k"&gt;implicit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;none&lt;/span&gt;&lt;span class="w"&gt;
   &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"hello world"&lt;/span&gt;&lt;span class="w"&gt;
   &lt;/span&gt;&lt;span class="k"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"hello world"&lt;/span&gt;&lt;span class="w"&gt;
@@ -132,8 +526,7 @@
 &lt;/span&gt;&lt;span class="c1"&gt;! it should return:&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;span class="c1"&gt;! hello world&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;span class="c1"&gt;! hello world&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Well, you should make a series of things:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -299,17 +692,14 @@
 &lt;h2&gt;Weird Stuff&lt;/h2&gt;
 
 &lt;p&gt;When using JS, you may find some weird stuff going one, like that NaN (which stands for Not a Number) it&amp;rsquo;s a&amp;hellip; number:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;typeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;// number&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;typeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;// number&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And NaN it&amp;rsquo;s not NaN ¿?&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;// false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And that NaN is an infinite number. Wait&amp;hellip; what?&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;isFinite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;// false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;isFinite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And you know what&amp;rsquo;s the weirdest part? You should expect JS to behave like this! I mean, this is all on the specs.&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;&lt;a href="https://giphy.com/gifs/CDJo4EgHwbaPS"&gt;&lt;iframe src="https://giphy.com/embed/CDJo4EgHwbaPS" width="480" height="254" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
@@ -437,7 +827,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;When writing this solution, I realized that I needed a function that returns &lt;code&gt;true&lt;/code&gt; if a number is prime. So I wrote that function first:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -447,10 +837,9 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;isPrime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And once I had that, I was ready to write primesUntil, which you can see here:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -459,12 +848,11 @@
       &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
   &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Those are the first '&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;' primes.'&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Those are the first &lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt; primes.&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It&amp;rsquo;s possible to write both functions with for loops instead of while loops. If you are just starting out with loops in JavaScript, you should try to do that.&lt;/p&gt;
 
 &lt;p&gt;Any questions? Write a comment!&lt;/p&gt;
@@ -578,14 +966,13 @@
 &lt;p&gt;Write a function that takes a Natural number &lt;code&gt;n&lt;/code&gt;, which returns all the primes from 0 to &lt;code&gt;n&lt;/code&gt; and a string at the end with some phrase.&lt;/p&gt;
 
 &lt;p&gt;Example: &lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;primesUntil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="mi"&gt;2&lt;/span&gt;
 &lt;span class="mi"&gt;3&lt;/span&gt;
 &lt;span class="mi"&gt;5&lt;/span&gt;
-&lt;span class="s1"&gt;'Why the string?'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Why the string?&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Hint: you may want to use a helper function.&lt;/p&gt;
 
 &lt;p&gt;Give it time. If you feel frustrated, go take a walk and then sit down to try it again. &lt;/p&gt;
@@ -691,7 +1078,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;I first wrote this code using the &lt;code&gt;push()&lt;/code&gt; method:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
@@ -701,33 +1088,30 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, using concatenation:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-    &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;.&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
   &lt;span class="p"&gt;}&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This returns a string, not an array.&lt;/p&gt;
 
 &lt;p&gt;And finally, using the &lt;code&gt;map()&lt;/code&gt; method:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumToArray2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;element&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="p"&gt;})&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumToArray2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Any question? Write a comment!&lt;/p&gt;
 
 &lt;p&gt;See ya!&lt;/p&gt;
@@ -837,11 +1221,10 @@
 &lt;p&gt;Given an array and a number &lt;code&gt;n&lt;/code&gt;, return the array with each element summed to &lt;code&gt;n&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;sumToArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you want, you can also return the output as a string- If that makes it easier for you, it&amp;rsquo;s OK.&lt;/p&gt;
 
 &lt;p&gt;You can check out the solution algorithm &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-6-of-7-days-of-js/" title="#7DaysJs - myElement + n"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -945,7 +1328,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;As before, I first made it with a while loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
@@ -959,10 +1342,9 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;positionOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then, a for loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;positionOf1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
@@ -973,8 +1355,7 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;positionOf1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Do you have a better solution? Share it in the comments!&lt;/p&gt;
 
 &lt;p&gt;See you on day 6!&lt;/p&gt;
@@ -1187,30 +1568,28 @@
 &lt;/script&gt;
 
 &lt;p&gt;So, first the shortest solution:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;''&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;''&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Japan'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Japan&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I&amp;rsquo;ve used 3 methods here: &lt;code&gt;split()&lt;/code&gt;, &lt;code&gt;reverse()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt;. The split method turns the string into an array of characters, then I use the reverse method, that reverses (duh) the array, and then I take the array of characters and make it look again like a string.&lt;/p&gt;
 
 &lt;p&gt;Then I cracked my head up to make it work with a for loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="dl"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Bananas'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Bananas&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And also implemented this same algorithm as a while loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="dl"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="nx"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -1219,9 +1598,8 @@
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'goodbye'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;goodbye&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Do you have any questions? Write a comment!&lt;/p&gt;
 
 &lt;p&gt;Cheers!&lt;/p&gt;
@@ -1331,11 +1709,10 @@
 &lt;p&gt;So the statement is quite simple, although the problem has an unexpected complexity when you face it for the first time: write a function that takes a string and returns the string reversed. &lt;/p&gt;
 
 &lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Japan'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;reverseString&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Japan&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;...&lt;/span&gt;
-&lt;span class="s1"&gt;'napaJ'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;napaJ&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Give it a try. &lt;/p&gt;
 
 &lt;p&gt;You can see the solutions I made &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-4-of-7-days-of-js/" title="Solution to day 4 of 7 days of JS"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1439,7 +1816,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;I wrote first the solution using a while loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -1456,10 +1833,9 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And it works! Then, I wrote the same but with a for loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;positives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;negatives&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;zeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -1475,8 +1851,7 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You may want to write this function using the &lt;code&gt;Math.sign()&lt;/code&gt; method. You can read about it &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign" target="_blank" title="Math.sign() JavaScript method"&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Do you have a different solution? Share it in the comments!&lt;/p&gt;
@@ -1584,15 +1959,14 @@
 &lt;p&gt;Today&amp;rsquo;s challenge is to write a function that takes an array, and says how many numbers are positives, how many numbers are negatives, and how many are zeros.&lt;/p&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="o"&gt;{&lt;/span&gt;
 &lt;span class="nl"&gt;zeros:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
 &lt;span class="nl"&gt;positives:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
 &lt;span class="nl"&gt;negatives:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; 
 &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Good luck!&lt;/p&gt;
 
 &lt;p&gt;You can see the solution &lt;a href="https://lautarolobo.xyz/blog/solution-to-day-3-of-7-days-of-js/" title="#7DaysJs - Read My Sign"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1696,7 +2070,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;Let&amp;rsquo;s see. First of all a solution using a while loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -1707,10 +2081,9 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumboth&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And as a second choice, a solution using a for loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;sumboth2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;even&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;odd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -1720,12 +2093,10 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sumboth2&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I&amp;rsquo;ve used the conditional (ternary) operator:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;condition&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsTrue&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsFalse&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;condition&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsTrue&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;inCaseIsFalse&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can read more about it &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank" title="conditional (ternary) operator"&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Any questions? Leave a comment!&lt;/p&gt;
@@ -1832,7 +2203,7 @@
 &lt;/script&gt;
 
 &lt;p&gt;First of all, we have a functional solution, not the best solution (it may take some time to run with large numbers), but a solution at least:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt; 
       &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
@@ -1843,12 +2214,11 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The good thing is that is pretty easy to read.&lt;/p&gt;
 
 &lt;p&gt;Now, a better solution would be something like this:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1857,12 +2227,11 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;An imperative solution using a for loop. This makes our function run faster.&lt;/p&gt;
 
 &lt;p&gt;Now let&amp;rsquo;s see the average function. First of all, a solution using a for loop:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1876,10 +2245,9 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I also made it using the &lt;code&gt;reduce()&lt;/code&gt; method and an arrow function. Something weird came out:&lt;/p&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;count&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1890,8 +2258,7 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;average&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;That&amp;rsquo;s not very readable, so I prefer the first solution, which btw runs faster.&lt;/p&gt;
 
 &lt;p&gt;Both solutions have if and else statements, and you probably noticed why: to return 0 when the input is an empty array, and not some weird error, or the good ol&amp;rsquo; &lt;code&gt;NaN&lt;/code&gt;.&lt;/p&gt;
@@ -2010,19 +2377,17 @@
 &lt;h2&gt;Factorial&lt;/h2&gt;
 
 &lt;p&gt;So the factorial function takes a Natural number &lt;code&gt;n&lt;/code&gt;, and returns the product between all the Naturales numbers that are between 1 and &lt;code&gt;n&lt;/code&gt;, like this:&lt;/p&gt;
-&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
 &lt;span class="c1"&gt;//1*2*3*4*5&lt;/span&gt;
 &lt;span class="mi"&gt;120&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Average&lt;/h2&gt;
 
 &lt;p&gt;The average function is a well known one. It takes an array of numbers, sums them and divides that sum by the length of the initial array. Here&amp;rsquo;s an example:&lt;/p&gt;
-&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight java"&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 &lt;span class="c1"&gt;//(1+5+8+4)/4&lt;/span&gt;
 &lt;span class="mf"&gt;4.5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now it&amp;rsquo;s your turn. Give them a try, especially if you are kinda newbie on JavaScript because you’ll build a good understanding of how loops work.&lt;/p&gt;
 
 &lt;p&gt;Did you solve them already? Try a different approach! Making more than one solution will strengthen your knowledge, giving you some flexibility when facing problems. And that’s key when programming.&lt;/p&gt;
@@ -2456,7 +2821,7 @@
 &lt;p&gt;Hundreds of computers in a room could seem intimidating at first, just as hundreds of volts coursing through wires in the walls did at one time.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This is a quote taken from &lt;a href="https://en.wikipedia.org/wiki/Mark_Weiser"&gt;Mark Weiser&lt;/a&gt;&amp;lsquo;s famous paper &lt;a href="https://www.ics.uci.edu/~corps/phaseii/Weiser-Computer21stCentury-SciAm.pdf"&gt;&amp;ldquo;The Computer for the 21st Century&amp;rdquo;&lt;/a&gt;. He was talking about this newly conceived concept of ubiquitous computing. &lt;/p&gt;
+&lt;p&gt;This is a quote taken from &lt;a href="https://en.wikipedia.org/wiki/Mark_Weiser"&gt;Mark Weiser&lt;/a&gt;&amp;rsquo;s famous paper &lt;a href="https://www.ics.uci.edu/~corps/phaseii/Weiser-Computer21stCentury-SciAm.pdf"&gt;&amp;ldquo;The Computer for the 21st Century&amp;rdquo;&lt;/a&gt;. He was talking about this newly conceived concept of ubiquitous computing. &lt;/p&gt;
 
 &lt;p&gt;Now we may say that he was talking about the Internet of Things&amp;hellip; before it was actually a thing! &lt;/p&gt;
 
@@ -2655,12 +3020,11 @@
 &lt;h3&gt;Element type&lt;/h3&gt;
 
 &lt;p&gt;By using these you are styling the element (&amp;lsquo;tag&amp;rsquo;) that has the specified name, like:&lt;/p&gt;
-&lt;pre class="highlight css"&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight css"&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nl"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Roboto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;4px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It&amp;rsquo;s not really specific, right?&lt;/p&gt;
 
 &lt;p&gt;If you use &amp;lsquo;div&amp;rsquo; as the selector, you&amp;rsquo;ll apply those styles to &lt;em&gt;all&lt;/em&gt; the divs of your website. &lt;/p&gt;
@@ -2699,7 +3063,7 @@
     <link href="https://lautarolobo.xyz/blog/neural-networks-101/" rel="alternate"/>
     <id/>
     <published>2019-07-31T12:21:00-03:00</published>
-    <updated>2020-01-14T09:09:03-03:00</updated>
+    <updated>2020-04-16T11:12:35-03:00</updated>
     <author>
       <name>Lautaro Jordan Lobo Ravarotto</name>
     </author>
@@ -2735,7 +3099,7 @@
   "logo": {  
    "@type": "ImageObject",
    "author": "Lautaro Jordan Lobo Ravarotto",
-   "url": "https://imgsafe.org/image/5709e8ceba.png"
+   "url": "https://lautarolobo.xyz/images/100px-3211424c.jpg"
    }
   },
  "author": {
@@ -3151,41 +3515,34 @@
 &lt;p&gt;Interested in virtual machines? And you need to know if your PC can run them? Well, you are in the right place!&lt;/p&gt;
 
 &lt;p&gt;First the never-fails one:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lscpu
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lscpu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This command shows a lot of information about your PC, in fact, about your CPU architecture, displaying the number, model, family, and manufacturer ID of your CPU, together with the threads, cores, sockets, nodes and so on. You should search for the line that contains the Virtualization keyword (don&amp;rsquo;t worry, it&amp;rsquo;s easy to find).&lt;/p&gt;
 
 &lt;p&gt;Actually that&amp;rsquo;s it. That command &lt;em&gt;never&lt;/em&gt; fails. But here are another options, because some times the unpredictable happens.&lt;/p&gt;
 
 &lt;p&gt;With the next one, you&amp;rsquo;ll get  &amp;lsquo;vmx&amp;rsquo; (Intel) or &amp;lsquo;smv&amp;rsquo; (AMD) on the output. Hopefully colored.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep "(svm|vmx)" /proc/cpuinfo
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep "(svm|vmx)" /proc/cpuinfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If it doesn&amp;rsquo;t shows those keywords with colors, don&amp;rsquo;t worry, I got you covered:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep --color -i "svm|vmx" /proc/cpuinfo
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;egrep --color -i "svm|vmx" /proc/cpuinfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here, the last one. If nothing worked out, don&amp;rsquo;t lose hope! This one will do the job. &lt;/p&gt;
 
 &lt;p&gt;Some OS come with the cpu-checker package pre-installed. It may be not your case, so here&amp;rsquo;s how you can installit, quick and easy with&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo apt-get install cpu-checker
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo apt-get install cpu-checker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then, let the magic happens: &lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo kvm-ok
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo kvm-ok
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you have virtualization enabled, you&amp;rsquo;ll see something like&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: /dev/kvm exists
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: /dev/kvm exists
 KVM acceleration can be used
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Otherwise:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: Your CPU does not support KVM extensions
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;INFO: Your CPU does not support KVM extensions
 KVM acceleration can NOT be used
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;hr&gt;&lt;/p&gt;
 
 &lt;p&gt;Well, that&amp;rsquo;s it for now. Any thought write it down in the comments. See you next time!&lt;/p&gt;
@@ -3193,7 +3550,7 @@ KVM acceleration can NOT be used
   </entry>
   <entry>
     <title>Wich Linux distro am I running?</title>
-    <link href="https://lautarolobo.xyz/blog/which-linux-distro-am-I-running/" rel="alternate"/>
+    <link href="https://lautarolobo.xyz/blog/which-linux-distro-am-i-running/" rel="alternate"/>
     <id/>
     <published>2019-06-02T13:33:00-03:00</published>
     <updated>2020-01-14T09:09:03-03:00</updated>
@@ -3292,25 +3649,16 @@ KVM acceleration can NOT be used
 &lt;p&gt;Once I was a Linux Newbie too, and I struggled my self to answer such a frivolous question, so here I have put all these lines of code together, so you won&amp;rsquo;t need to open 7 tabs and try to figure out which one has the key to get that coveted knowledge. This are many methods, so I can asure you that at least one will work on your PC. &lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s jump right into the code:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;hostnamectl
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;gcc --version
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;uname -a
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -a
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -irc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -ds
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/issue*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /proc/version
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/*-release
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;hostnamectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;gcc --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;uname -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -irc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;lsb_release -ds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/issue*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /proc/version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;cat /etc/*-release
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;hr&gt;
 Well, I hope that this has helped to let you know which Linux distro are you running. Remember that you can approach me &lt;a href="mailto:contact@lautarolobo.xyz"&gt;by email&lt;/a&gt; or &lt;a href="https://t.me/LautaroLobo"&gt;through Telegram&lt;/a&gt;. Keep learning kiddo!&lt;/p&gt;
 </content>
@@ -3416,29 +3764,25 @@ Well, I hope that this has helped to let you know which Linux distro are you run
 &lt;p&gt;&lt;img src="/images/wowed-sculpture.webp" alt="WOW" title="WOWed Sculpture"&gt;Ready to get your head cracked? Ok, let&amp;rsquo;s define a simple function that multiplies each number of a list of numbers by 2. We will give this function the name of &amp;ldquo;by2&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;So, you have a function that takes a list of numbers as a parameter, and after the computation process shows a list of numbers. How do you write this in Haskell? Well:&lt;/p&gt;
-&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The brackets represent a list of something, in this case Integers. This is how you define a &lt;em&gt;type&lt;/em&gt; in Haskell, I talked about that in &lt;a href="https://lautarolobo.xyz/blog/first-haskell-function"&gt;my previous post.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the type is defined, the next step is to define the actual function. First, you call the function, with the parameters, and then you type the process that the function must do, at the end, you should have something like this:&lt;/p&gt;
-&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;xs&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="n"&gt;xs&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src="/images/whatt.webp" alt="What?" title="What?"&gt;
 Hm, let me explain what is that code saying, you have a list with at least one element (an Integer in this case), by2 takes the first element and multiplies it by 2, nothing new, but then I&amp;rsquo;m including the element multiplied by 2 in&amp;hellip; the function without the first element? Seems weird? Well, next and last line of code, and then I will explain much deeply a few concepts that you need to know to fully understand this function.&lt;/p&gt;
-&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;by2&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;[]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;First af all, I&amp;rsquo;m ussing &lt;em&gt;pattern matching&lt;/em&gt;, a way to defining functions that compares patterns, the one given in the function definition with the paramater given. If you want to know more about it, check &lt;a href="http://learnyouahaskell.com/syntax-in-functions#pattern-matching"&gt;this&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Remember at the start when I sayd &amp;ldquo;a simple function&amp;rdquo;? When, actually I may have been wrong, this one is not quite simple, because introduces an important concept besides pattern matching, &lt;em&gt;recursion&lt;/em&gt;. by2 is a recursive function, meaning that the function is applied inside its own definition. To make a function work with recursion, you must make the recursive call smaller that the parameter given. Go back to your code and you will se this, the first element of the list is no more appearing in the recursive call of by2. Also, you always need to write your base case, the smaller case that the function may encounter, in this case is a list with no elements, just like in the second line of code that I showed you. Then, the recursive call will be getting smaller until the parameter given to the function will be&amp;hellip; an empty list! And there, each element, in order, will be inserted in this list. &lt;/p&gt;
 
 &lt;p&gt;It&amp;rsquo;s tough to understand, you may get it better with an example:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;by2 [7,3,5]
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;by2 [7,3,5]
 [14,6,10]
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This is what happened there:&lt;/p&gt;
 
 &lt;p&gt;$$(2 \times 7) \triangleright by2 [3,5] \rightarrow$$ 
@@ -3561,39 +3905,32 @@ $$(2 \times 7) \triangleright ((2 \times 3) \triangleright ((2 \times 5) \triang
 &lt;p&gt;The function that we are going to define today, since it&amp;rsquo;s the first one, will be basic. You will give it two numbers and it&amp;rsquo;ll sum them, giving you back a single number. But, what kind of number? Any number? Actually not, this function will work with just Integers. You will clarifiy this by writing the &lt;em&gt;type&lt;/em&gt; of the function.&lt;/p&gt;
 
 &lt;p&gt;The first thing that you should know about writing functions in Haskell, is that you should always define the type of the function before you define the function itself, if you don&amp;rsquo;t define it, Haskell will figure out which type is the best to match with your function, most of the time it will figure it out right, but some times may miss match the inferenced type and your function won&amp;rsquo;t work.&lt;/p&gt;
-&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="o"&gt;::&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We defined the type; it takes one Integer, then another Integer, and the output will be an Integer, great. You may have noticed that I named the function &amp;ldquo;sumBoth&amp;rdquo;, this is because it&amp;rsquo;s important that the function&amp;rsquo;s name tells you what that particular function does and also, the name should be short, so when you call it you won&amp;rsquo;t waste much time writing it. It may seem a silly advise but trust me, getting used to good practices will save you tons of bugs.&lt;/p&gt;
 
 &lt;p&gt;Now, the function definition:&lt;/p&gt;
-&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight haskell"&gt;&lt;code&gt;&lt;span class="n"&gt;sumBoth&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And that&amp;rsquo;s it! Now save your file with &lt;em&gt;.hs&lt;/em&gt; extension, and then open up the terminal, we will test this function there. Go to the directory where you saved your file and simply write&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;ghci
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;ghci
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You&amp;rsquo;ll see something like this:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
-Prelude&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+&lt;/span&gt;&lt;span class="gp"&gt;Prelude&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;There write&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;:load filename.hs
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;:load filename.hs
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And this should show up:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;[1 of 1] Compiling Main             ( filename.hs, interpreted )
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;[1 of 1] Compiling Main             ( filename.hs, interpreted )
 Ok, modules loaded: Main.
-*Main&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/span&gt;&lt;span class="gp"&gt;*Main&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then call sumBoth and in the line below you&amp;rsquo;ll see the result:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;*Main&amp;gt; sumBoth 5 4
-9
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="gp"&gt;*Main&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sumBoth 5 4
+&lt;span class="go"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;hr&gt;&lt;/p&gt;
 
 &lt;p&gt;Something went wrong? Please &lt;a href="mailto:contact@lautarolobo.xyz"&gt;tell me&lt;/a&gt; and I&amp;rsquo;ll be glad to help you out!&lt;/p&gt;
@@ -3703,9 +4040,8 @@ Ok, modules loaded: Main.
 &lt;p&gt;Assuming that you know what Haskell is (if not, &lt;a href="https://lautarolobo.xyz/blog/what-s-haskell/"&gt;read this brief introduction&lt;/a&gt;), and you know what the Glasgow Haskell Compiler is (check &lt;a href="https://en.wikipedia.org/wiki/Glasgow_Haskell_Compiler"&gt;this&lt;/a&gt; if you don&amp;rsquo;t), I&amp;rsquo;ll show you how to get GHC up and running in your computer.&lt;/p&gt;
 
 &lt;p&gt;First things first, open the terminal and type:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;sudo apt-get install haskell-platform
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;sudo apt-get install haskell-platform
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This command should work on the most common Linux distros out there (&lt;a href="https://www.debian.org/index.en.html"&gt;Debian&lt;/a&gt;, &lt;a href="https://linuxmint.com/"&gt;Mint&lt;/a&gt;, &lt;a href="https://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt;). &lt;/p&gt;
 
 &lt;p&gt;Press Enter, and you will be asked to type your password, after you type it you&amp;rsquo;ll see a list of sugested packages, those won&amp;rsquo;t be installed, and a list of the packages that will be installed, with the amount of space that they are willing to occupe in your drive. Classic pre-installation info. Then you must type &lt;em&gt;s&lt;/em&gt; if you want to proceed with the installation, or &lt;em&gt;n&lt;/em&gt; if you regret.&lt;/p&gt;
@@ -3715,14 +4051,12 @@ Ok, modules loaded: Main.
 &lt;p&gt;Following this simple operation, you have your Glasgow Haskell Compiler installed, ready to use.&lt;/p&gt;
 
 &lt;p&gt;If you want to make sure that it&amp;rsquo;s installed, just open the terminal and simply type:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;ghci
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;ghci
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Therefore you should see in your console something like this:&lt;/p&gt;
-&lt;pre class="highlight shell_session"&gt;&lt;code&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
-Prelude&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre class="highlight console"&gt;&lt;code&gt;&lt;span class="go"&gt;GHCi, version x.y.z: http://www.haskell.org/ghc/  :? for help
+&lt;/span&gt;&lt;span class="gp"&gt;Prelude&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;hr&gt;&lt;/p&gt;
 
 &lt;p&gt;Didn&amp;rsquo;t work? &lt;a href="mailto:contact@lautarolobo.xyz"&gt;Tell me&lt;/a&gt; what went wrong and I&amp;rsquo;ll be glad to help you out!&lt;/p&gt;

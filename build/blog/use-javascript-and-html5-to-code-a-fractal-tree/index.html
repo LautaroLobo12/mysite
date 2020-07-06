@@ -1,0 +1,280 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <title>Use JavaScript and HTML5 to Code a Fractal Tree | Lautaro Jordan Lobo Ravarotto</title> <link rel=alternate href="/feed.xml" type="application/atom+xml" title="Atom Feed"> <link rel=stylesheet href="/stylesheets/all-4c40789c.css"> </head> <body> <nav class=main-nav id=main-nav> <a href="https://lautarolobo.xyz"> <span class=home>←HOME</span> </a> <a href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=19988" target=_blank><img src="/images/join-hostinger-54518c27.png" alt="Join Hostinger CTA" class=join-hostinger></a> <script>
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("main-nav").style.top = "0";
+        } else {
+            document.getElementById("main-nav").style.top = "-60px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    </script> </nav> <section id=wrapper> <article class=post> <header> <img src="/images/fractal_cover-a318fcfb.webp"></img> <h1>Use JavaScript and HTML5 to Code a Fractal Tree</h1> <h2 class=date>16 April 2020</h2> </header> <section id=post-body> <script type="application/ld+json">
+{
+ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "url": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "mainEntityOfPage": "https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/",
+ "headline": "Use JavaScript and HTML5 to Code a Fractal Tree",
+ "alternativeHeadline": "How to Code a Fractal Tree with JavaScript and HTML5",
+ "genre": "JavaScript", 
+ "keywords": [
+  "fractals", 
+  "fractal", 
+  "programming",
+  "coding",
+  "fractal tree",
+  "Canvas API",
+  "HTML5"
+],  
+ "wordcount": "967",
+ "datePublished": "2020-04-16",
+ "dateCreated": "2020-04-16",
+ "dateModified": "2020-04-16",
+ "description": "Let's code a Fractal Tree! Nothing weird, Vanilla JavaScript and the Canvas API.",
+ "isFamilyFriendly": "true",
+ "image": "https://imgsafe.org/image/5709e8ceba",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "logo": {  
+   "@type": "ImageObject",
+   "author": "Lautaro Jordan Lobo Ravarotto",
+   "url": "https://lautarolobo.xyz/images/100px-3211424c.jpg"
+   }
+  },
+ "author": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }
+   },
+ "creator": {
+  "@type": "Person",
+  "name": "Lautaro Jordan Lobo Ravarotto",
+  "url": "https://lautarolobo.xyz",
+  "email": "contact@lautarolobo.xyz",
+  "birthDate": "2000-04-12",
+  "gender": "male",
+  "nationality": "Argentina",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "legalName": "National University of Córdoba",
+   "sameAs": "https://en.wikipedia.org/wiki/National_University_of_C%C3%B3rdoba",
+   "location": {
+    "@type": "Place",
+    "sameAs": "http://unc.edu.ar",
+    "name": "National University of Córdoba",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Haya de la Torre s/n",
+      "addressCountry": "Argentina",
+      "addressLocality": "Córdoba",
+      "postalCode": "5000" 
+      }
+     }
+    }   
+   }
+  }
+ }
+},
+</script> <p>Fractals, those enigmatic figures that are everywhere, but can not be seen by the untrained eye. Today we&rsquo;ll draw one of the best-known Fractals, using only Vainilla JS and the HTML5&rsquo;s Canvas API. Let&rsquo;s code!</p> <div id=index> <h4> Index </h4> <ul> <li> <a href="#h2-1">What is a Fractal Tree?</a> </li> <li> <a href="#h2-2">Writing the Fractal Tree in Vainilla JS</a> </li> <li> <a href="#h2-3">Beyond the Fractal Tree</a> </li> </ul> </div> <h2 id=h2-1> What is a Fractal Tree? </h2> <p>To define a Fractal Tree first we must know the definition of Fractal, of course.</p> <p>Fractals are never-ending patterns created by repeating mathematical equations, which on any scale, on any level of zoom, look roughly the same. In other words, a geometric object which&rsquo;s basic structure, rough or fragmented, repites itself in different scales. </p> <p>So if we split a Fractal, we&rsquo;ll see a reduced-size copy of the whole.</p> <p>Benoit Mandelbrot, which coined the term Fractal in 1975, said:</p> <blockquote> <p>A Fractal is a shape made of parts similar to the whole in some way.</p> </blockquote> <p>Pretty clear, right?</p> <p>Here are some examples:</p> <p><center> <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif" alt="Animated Von Koch Curve"> <p><table><td><center>Von Koch Curve</center></td></table></p></p> <p><img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Animated_Sierpinski_carpet.gif" alt="Animated Sierpinski Carpet"> <p><table><td><center>Sierpinski Carpet</center></td></table></p> </center></p> <p>Now, what is a Fractal Tree? </p> <p>Imagine a branch, and branches coming out of it, and then two branches coming out of each branch, and so on&hellip; that&rsquo;s what a Fractal Tree looks like. </p> <p>Its form comes from the Sierpinski triangle (or Sierpinski gasket). </p> <p>As you can see, one becomes the other when changing the angle between branches:</p> <p><center> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt="From Sierpinski Triangle to Fractal Tree"/> </center></p> <p>Today we&rsquo;ll end up with a figure similar to the final form of that gif.</p> <h2 id=h2-1> Writing the Fractal Tree in Vanilla JS </h2> <p>First of all, here&rsquo;s the final product (you can tweak it along the way):</p> <p><center> <img src="/images/fractalTree-39b48caf.webp" alt="Final Fractal Tree"/> </center></p> <p>Now let&rsquo;s draw that, step by step.</p> <p>First of all, we initialize our index.html file, with a canvas of any reasonable dimensions, and a script tag where all our JS code will be.</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>Then, we start writing our JavaScript.</p> <p>We initialize our canvas element on JS, by accessing it through the myCanvas variable and creating the 2D rendering context with the ctx (context) variable.</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">myCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">myCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>So yeah, the getContext method adds properties and methods that allow you to draw, in this case, in 2D.</p> <p>Now it&rsquo;s time to think. How can we define the algorithm to draw a Fractal tree? Hm&hellip; 🤔</p> <p>Let&rsquo;s see, we know that the branches keep becoming smaller. And that each branch ends with two branches coming out of it, one to the left and one to the right.</p> <p>In other words, when a branch is long enough, attach two smaller branches to it. Repeat.</p> <p>It kinda sounds like we shall use some recursive statement somewhere, isn&rsquo;t it?</p> <p>Back to the code, we now define our function <code>fractalTree</code> that should take at least four arguments: the X and Y coordinates where the branch starts, the length of its branch and its angle.</p> <p>Inside our function, we begin the drawing with the beginPath() method, and then save the state of the canvas with the save() method.</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">myCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">myCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">draw</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="nx">angle</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+    <span class="p">}</span>        
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>The beginPath method is often used when you start a new line or figure that has a fixed style, like the same color along the entire line, or the same width. The save method just saves the entire state of the canvas by pushing the current state onto a stack.</p> <p>Now we&rsquo;ll draw our Fractal Tree, by drawing a line (branch), rotating the canvas and drawing the next branch, and so on. It goes like this (I&rsquo;ll explain each method below the code sample):</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">myCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">myCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">draw</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="nx">angle</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">angle</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nx">len</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">);</span>
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">+</span><span class="mi">15</span><span class="p">);</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>       
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>So we first add three methods, translate, rotate and moveTo, which &lsquo;moves&rsquo; the canvas, its origin and our &lsquo;pencil&rsquo; so we can draw the branch in our desired angle. It&rsquo;s like we are drawing a branch, then centering this branch (by moving the hole canvas) and then drawing a new brand from the end of our previous branch. </p> <p>The last two methods before the if statement are lineTo and stroke, the first adds a straight line to the current path and the second one renders it, you can think of it like this: lineTo gives the order and stroke executes it. </p> <p>Now we have an if statement that tells when to stop the recursion, when to stop drawing. The restore method, as stated in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/restore">MDN Docs</a>, &ldquo;restores the most recently saved canvas state by popping the top entry in the drawing state stack&rdquo;. </p> <p>After the if statement we have the recursive call, and another call to the restore method. And then a call to the function that we just finished.</p> <p>Now run the code in your browser. You&rsquo;ll see, finally, a Fractal Tree!</p> <p><center> <img src="/images/fractalTree1-4748f669.webp" alt="Fractal Tree First Iteration"/> </center></p> <p>Awesome, right? Now let&rsquo;s make it even better.</p> <p>We&rsquo;ll add a new parameter to our draw function, branchWidth, to make our Fractal Tree more realistic.</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">myCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">myCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">draw</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="nx">angle</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="nx">branchWidth</span><span class="p">;</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">angle</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nx">len</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="nx">angle</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="o">*</span><span class="mf">0.8</span><span class="p">);</span>
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="nx">angle</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="o">*</span><span class="mf">0.8</span><span class="p">);</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>       
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>So in every iteration, we are making each branch thinner. I&rsquo;ve also changed the angle paramater in the recursive call, to make a more &ldquo;open&rdquo; tree.</p> <p>Now, let&rsquo;s add some color! And shadows, why not.</p> <div class=highlight><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"my_canvas"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"800"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">myCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">myCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">draw</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="nx">angle</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="nx">branchWidth</span><span class="p">;</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">;</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">angle</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">);</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">shadowBlur</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">shadowColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">rgba(0,0,0,0.8)</span><span class="dl">"</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nx">len</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="nx">angle</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="o">*</span><span class="mf">0.8</span><span class="p">);</span>
+        <span class="nx">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nx">len</span><span class="p">,</span> <span class="nx">len</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span> <span class="nx">angle</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="nx">branchWidth</span><span class="o">*</span><span class="mf">0.8</span><span class="p">);</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>       
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div> <p>Both color methods are self-explanatory (strokeStyle and fillStyle). Also the shadow ones, shadowBlur and shadowColor.</p> <p>And that&rsquo;s it! Save the file and open it with your browser to see the final product.</p> <p>Now I encourage you to play with the code! Change the shadowColor, the fillStyle, make a shorter or longer Fractal Tree, change the angle or try to add leaves, that should be challenging 😉</p> <h2 id=h2-1> Beyond the Fractal Tree </h2> <p>As I showed you at the beginning of this post, there are different Fractals. Ain&rsquo;t gonna be easy to make all them with the Canvas API, but it should be possible. I made some of those in the C programming language, and I&rsquo;ve also played around with p5.js.</p> <p>p5.js is an Open Source JavaScript library made by artists, for artists, based in the <a href="https://processing.org/">Processing language</a>. You can draw, or animate, anything imaginable. If you are interested in making art with code, it&rsquo;s a must. They have a great <em>get-started</em> page that you can check out <a href="https://p5js.org/get-started/" title="p5.js - Get Started">here.</a></p> <p>I&rsquo;ve also found recently a website that makes a Fractal Tree in JS using L-Systems. Really cool. Take a look into <a href="https://thefractal.zone/">The Fractal Zone</a>! Code is <a href="https://github.com/Rizz0S/the-fractal-zone" title="The Fractal Zone in GitHub">here</a> 🤓</p> <hr> <p>Well, that&rsquo;s it for now! Thanks for reading, comment any questions and see you in my next post! 🧔</p> <blockquote> <p style="font-size: 13px;">Cover by <a href="https://pixabay.com/users/socialtrendspr0-1358346/">socialtrendspr0</a> from <a href="https://pixabay.com">Pixabay</a></p> </blockquote> </section> </article> <footer id=post-meta> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <a href="/"> <img class=avatar src="/images/100px-458a0fba.jpg" alt=Avatar> <div class=details> <div class=dark>Lautaro Jordan Lobo Ravarotto</div> <div class=light>Web Developer | Computer Science Student</div> </div> </a> <div class=sharing> <a href="https://twitter.com/share?text=Use JavaScript and HTML5 to Code a Fractal Tree&url=https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/" target=_blank> <span class=icon-twitter></span> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/" target=_blank> <span class=icon-facebook></span> </a> <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/&title=Use JavaScript and HTML5 to Code a Fractal Tree&source=https://lautarolobo.xyz" target=_blank> <span class=icon-linkedin></span> </a> </div> <div class=newsletter-wrapper> <div class=ml-form-embed data-account="1607694:c8w6g9c9z6" data-form="1426892:g8s3m6"> </div> </div> </footer> <div id=disqus_thread></div> <script>
+  var disqus_shortname = 'lautarolobo';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel=nofollow>comments powered by Disqus.</a></noscript> <footer id=footer> <script>
+      (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+      var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+      f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+      var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+      _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    
+      var ml_account = ml('accounts', '1607694', 'c8w6g9c9z6', 'load');
+      </script> <p class=small>© Lautaro Jordan Lobo Ravarotto 2020</p> </footer> </section> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-138446504-1', 'auto');
+  ga('send', 'pageview');
+</script> </body> </html>
