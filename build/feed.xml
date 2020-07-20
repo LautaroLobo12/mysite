@@ -5,11 +5,85 @@
   <link href="https://lautarolobo.xyz/feed.xml" rel="self"/>
   <link href="https://lautarolobo.xyz/"/>
   <id>urn:uuid:4b6fc0ee-c5f9-4c67-849f-b220d14bb6f1</id>
-  <updated>2020-07-06T10:16:00-03:00</updated>
+  <updated>2020-07-19T11:42:07-03:00</updated>
   <author>
     <name>Lautaro Jordan Lobo Ravarotto</name>
   </author>
   <rights>© Lautaro Jordan Lobo Ravarotto 2020</rights>
+  <entry>
+    <title>5 Key Challenges In Today’s Era of Big Data</title>
+    <link href="https://lautarolobo.xyz/blog/5-key-challenges-in-todays-era-of-big-data/" rel="alternate"/>
+    <id/>
+    <published>2020-07-20T09:38:00-03:00</published>
+    <updated>2020-07-19T11:42:07-03:00</updated>
+    <author>
+      <name>Lautaro Jordan Lobo Ravarotto</name>
+    </author>
+    <content type="html">&lt;div class="guest-post"&gt;This &lt;a href="https://www.makeen.io/5-key-challenges-in-todays-era-of-big-data/"&gt;article&lt;/a&gt; is a a guest post by &lt;a href="https://www.makeen.io/author/tamjid-aijazi/"&gt;Tamjid Aijazi&lt;/a&gt; from &lt;a href="https://www.makeen.io/"&gt;Makeen Technologies&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;Digital transformation will create trillions of dollars of value. While estimates vary, the World Economic Forum in 2016 estimated an increase in $100 trillion in global business and social value by 2030. Due to AI, &lt;a href="https://www.pwc.com/"&gt;PwC&lt;/a&gt; has estimated an increase of $15.7 trillion and &lt;a href="https://www.mckinsey.com/"&gt;McKinsey&lt;/a&gt; has estimated an increase of $13 trillion in annual global GDP by 2030. &lt;/p&gt;
+
+&lt;p&gt;We are currently in the middle of an AI renaissance, driven by big data and breakthroughs in machine learning and deep learning. These breakthroughs offer opportunities and challenges to companies depending on the speed at which they adapt to these changes.&lt;/p&gt;
+
+&lt;h2&gt;Modern enterprises face 5 key challenges in today’s era of big data&lt;/h2&gt;
+
+&lt;h3&gt;Handling a multiplicity of enterprise source systems&lt;/h3&gt;
+
+&lt;p&gt;The average &lt;a href="https://fortune.com/fortune500/"&gt;Fortune 500&lt;/a&gt; enterprise has a few hundred enterprise IT systems, all with their different data formats, mismatched references across data sources, and duplication&lt;/p&gt;
+
+&lt;h3&gt;Incorporating and contextualising high frequency data&lt;/h3&gt;
+
+&lt;p&gt;The challenge gets significantly harder with increase in sensoring, resulting inflows of real time data. For example, readings of the gas exhaust temperature for an offshore low-pressure compressor are only of limited value in of itself. But combined with ambient temperature, wind speed, compressor pump speed, history of previous maintenance actions, and maintenance logs, this real-time data can create a valuable alarm system for offshore rig operators.&lt;/p&gt;
+
+&lt;h3&gt;Working with data lakes&lt;/h3&gt;
+
+&lt;p&gt;Today, storing large amounts of disparate data by putting it all in one infrastructure location does not reduce data complexity any more than letting data sit in siloed enterprise systems. &lt;/p&gt;
+
+&lt;h3&gt;Ensuring data consistency, referential integrity, and continuous downstream use&lt;/h3&gt;
+
+&lt;p&gt;A fourth big data challenge is representing all existing data as a unified image, keeping this image updated in real-time and updating all downstream analytics that use these data. Data arrival rates vary by system, data formats from source systems change, and data arrive out of order due to networking delays.&lt;/p&gt;
+
+&lt;h3&gt;Enabling new tools and skills for new needs&lt;/h3&gt;
+
+&lt;p&gt;Enterprise IT and analytics teams need to provide tools that enable employees with different levels of data science proficiency to work with large data sets and perform predictive analytics using a unified data image.&lt;/p&gt;
+
+&lt;h2&gt;Let’s look at what’s involved in developing and deploying AI applications at scale&lt;/h2&gt;
+
+&lt;h3&gt;Data assembly and preparation&lt;/h3&gt;
+
+&lt;p&gt;The first step is to identify the required and relevant data sets and assemble them. There are often issues with data duplication, gaps in data, unavailable data and data out of sequence.&lt;/p&gt;
+
+&lt;h3&gt;Feature engineering&lt;/h3&gt;
+
+&lt;p&gt;This involves going through the data and crafting individual signals that the data scientists and domain experts think will be relevant to the problem being solved. In the case of AI-based predictive maintenance, signals could include the count of specific fault alarms over the trailing 7 days, 14 days and 21 days, the sum of the specific alarms over the same trailing periods; and the maximum value of certain sensor signals over those trailing periods. &lt;/p&gt;
+
+&lt;h3&gt;Labelling the outcomes&lt;/h3&gt;
+
+&lt;p&gt;This step involves labeling the outcomes the model tries to predict. For example, in AI-based predictive maintenance applications, source data sets rarely identify actual failure labels, and practitioners have to infer failure points based on a  combination of factors such as fault codes and technician work orders.&lt;/p&gt;
+
+&lt;h3&gt;Setting up the training data&lt;/h3&gt;
+
+&lt;p&gt;For classification tasks, data scientists need to ensure that labels are appropriately balanced with positive and negative examples to provide the classifier algorithm enough balanced data. Data scientists also need to ensure the classifier is not biased with artificial patterns in the data.&lt;/p&gt;
+
+&lt;h3&gt;Choosing and training the algorithm&lt;/h3&gt;
+
+&lt;p&gt;Numerous algorithm libraries are available to data scientists today, created by companies, universities, research organizations, government agencies and individual contributors.&lt;/p&gt;
+
+&lt;h3&gt;Deploying the algorithm into production&lt;/h3&gt;
+
+&lt;p&gt;Machine learning algorithms, once deployed, need to receive new data, generate outputs, and have some actions or decisions be made based on those outputs. This may mean embedding the algorithm within an enterprise application used by humans to make decisions – for example, a predictive maintenance application that identifies and prioritizes equipment requiring maintenance to provide guidance for maintenance crews. This is where the real value is created – by reducing equipment downtime and servicing costs through more accurate failure prediction that enables proactive maintenance before the equipment actually fails. In order for the machine learning algorithms to operate in production, the underlying compute infrastructure needs to be set up and managed. &lt;/p&gt;
+
+&lt;h3&gt;Close-loop continuous improvement&lt;/h3&gt;
+
+&lt;p&gt;Algorithms typically require frequent retraining by data science teams. As market conditions change, business objects and processes evolve, and new data sources are identified. Organizations need to rapidly develop, retrain, and deploy new models as circumstances change.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Problems that have to be addressed to solve AI computing problems are nontrivial. Massively parallel elastic computing and storage capacity are prerequisites. In addition to the cloud, there is a multiplicity of data services necessary to develop, provision, and operate applications of this nature. However, the price of missing a transformational strategic shift is steep. The corporate graveyard is littered with once-great companies that failed to change.&lt;/p&gt;
+
+&lt;div class="guest-post"&gt;This &lt;a href="https://www.makeen.io/5-key-challenges-in-todays-era-of-big-data/"&gt;article&lt;/a&gt; is a a guest post by &lt;a href="https://www.makeen.io/author/tamjid-aijazi/"&gt;Tamjid Aijazi&lt;/a&gt; from &lt;a href="https://www.makeen.io/"&gt;Makeen Technologies&lt;/a&gt;&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>Use JavaScript and HTML5 to Code a Fractal Tree</title>
     <link href="https://lautarolobo.xyz/blog/use-javascript-and-html5-to-code-a-fractal-tree/" rel="alternate"/>
